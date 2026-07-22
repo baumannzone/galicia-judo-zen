@@ -4,10 +4,10 @@ import heroImg from "@/assets/hero-judo.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dojo Breogán — Club de Judo en Galicia" },
-      { name: "description", content: "Club de Judo en A Coruña. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
-      { property: "og:title", content: "Dojo Breogán — Club de Judo en Galicia" },
-      { property: "og:description", content: "Club de Judo en A Coruña. Técnica, disciplina y respeto." },
+      { title: "Club Baixo Minho — Club de Judo en Galicia" },
+      { name: "description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
+      { property: "og:title", content: "Club Baixo Minho — Club de Judo en Galicia" },
+      { property: "og:description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
     ],
   }),
   component: Index,
