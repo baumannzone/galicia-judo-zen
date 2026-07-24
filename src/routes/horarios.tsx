@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/horarios")({
   head: () => ({
     meta: [
-      { title: "Horarios y clases — Dojo Breogán" },
-      { name: "description", content: "Consulta los horarios de las clases de judo por grupos de edad y nivel en el Dojo Breogán, A Coruña." },
-      { property: "og:title", content: "Horarios y clases — Dojo Breogán" },
+      { title: "Horarios y clases — CD Baixo Minho" },
+      { name: "description", content: "Consulta los horarios de las clases de judo por grupos de edad y nivel en el CD Baixo Minho, A Guarda." },
+      { property: "og:title", content: "Horarios y clases — CD Baixo Minho" },
       { property: "og:description", content: "Grupos por edad y nivel. Judo infantil, juvenil, adultos y competición." },
     ],
   }),

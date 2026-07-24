@@ -4,9 +4,9 @@ import { useState } from "react";
 export const Route = createFileRoute("/contacto")({
   head: () => ({
     meta: [
-      { title: "Contacto e inscripción — Dojo Breogán" },
-      { name: "description", content: "Solicita tu clase de prueba en el Dojo Breogán, A Coruña. Formulario de inscripción y datos de contacto." },
-      { property: "og:title", content: "Contacto e inscripción — Dojo Breogán" },
+      { title: "Contacto e inscripción — CD Baixo Minho" },
+      { name: "description", content: "Solicita tu clase de prueba en el CD Baixo Minho, A Guarda. Formulario de inscripción y datos de contacto." },
+      { property: "og:title", content: "Contacto e inscripción — CD Baixo Minho" },
       { property: "og:description", content: "Reserva tu clase de prueba gratuita." },
     ],
   }),

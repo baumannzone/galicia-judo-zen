@@ -30,7 +30,7 @@ function Index() {
                 de la fuerza.
               </h1>
               <p className="reveal reveal-delay-2 mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-                En el Dojo Breogán entrenamos judo tradicional en un espacio amplio y luminoso. Técnica, respeto y comunidad, para todas las edades.
+                En el CD Baixo Minho entrenamos judo tradicional en un espacio amplio y luminoso. Técnica, respeto y comunidad, para todas las edades.
               </p>
               <div className="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4">
                 <Link
@@ -86,7 +86,7 @@ function Index() {
           </div>
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
-              Fundado en 1998 en el corazón de A Coruña, el Dojo Breogán es un espacio dedicado al estudio del judo tradicional según los principios del maestro Jigoro Kano.
+              Fundado en 2008 en el corazón de A Guarda, el CD Baixo Minho es un espacio dedicado al estudio del judo tradicional según los principios del maestro Jigoro Kano.
             </p>
             <p>
               Nuestros más de 400 m² de tatami están diseñados para entrenar con seguridad y concentración: luz natural, silencio y un ambiente donde cada alumno progresa a su ritmo.

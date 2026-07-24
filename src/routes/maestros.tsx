@@ -6,9 +6,9 @@ import s3 from "@/assets/sensei-3.jpg";
 export const Route = createFileRoute("/maestros")({
   head: () => ({
     meta: [
-      { title: "Maestros — Dojo Breogán" },
-      { name: "description", content: "Conoce al equipo técnico del Dojo Breogán: sensei con décadas de experiencia en judo tradicional y competición." },
-      { property: "og:title", content: "Maestros — Dojo Breogán" },
+      { title: "Maestros — CD Baixo Minho" },
+      { name: "description", content: "Conoce al equipo técnico del CD Baixo Minho: sensei con décadas de experiencia en judo tradicional y competición." },
+      { property: "og:title", content: "Maestros — CD Baixo Minho" },
       { property: "og:description", content: "Nuestros sensei: técnica, experiencia y vocación docente." },
     ],
   }),
@@ -18,9 +18,9 @@ export const Route = createFileRoute("/maestros")({
 const SENSEI = [
   {
     img: s1,
-    name: "Xoán Vilar",
-    rank: "7º Dan · Director técnico",
-    bio: "Formado en Tokio bajo el maestro Yamashita. Fundador del Dojo Breogán y árbitro internacional.",
+    name: "Mónica Pacheco",
+    rank: "4º Dan · Director técnico",
+    bio: "Formado en Tokio bajo el maestro Yamashita. Fundador del CD Baixo Minho y árbitro internacional.",
   },
   {
     img: s2,

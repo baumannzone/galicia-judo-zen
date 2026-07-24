@@ -74,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Club Baixo Minho — Club de Judo en Galicia" },
       { name: "description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
-      { name: "author", content: "Dojo Breogán" },
+      { name: "author", content: "CD Baixo Minho" },
       { property: "og:title", content: "Club Baixo Minho — Club de Judo en Galicia" },
       { property: "og:description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
       { property: "og:type", content: "website" },
@@ -86,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/logo.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -128,8 +128,8 @@ function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2 font-display text-base font-semibold tracking-tight">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background text-xs">柔</span>
-          <span>Dojo Breogán</span>
+          <img src="/logo.png" alt="" className="h-8 w-8 rounded-full object-cover" width={32} height={32} />
+          <span>CD Baixo Minho</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (
@@ -189,11 +189,11 @@ function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 font-display text-base font-semibold">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background text-xs">柔</span>
-            <span>Dojo Breogán</span>
+            <img src="/logo.png" alt="" className="h-8 w-8 rounded-full object-cover" width={32} height={32} />
+            <span>CD Baixo Minho</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Club de Judo en Galicia. Técnica, disciplina y comunidad desde 1998.
+            Club de Judo en Galicia. Técnica, disciplina y comunidad desde 2008.
           </p>
         </div>
         <div>
@@ -207,8 +207,10 @@ function SiteFooter() {
       </div>
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
-          <span>© {new Date().getFullYear()} Dojo Breogán — Club de Judo</span>
-          <span>Feito en Galicia</span>
+          <span>© {new Date().getFullYear()} CD Baixo Minho — Club de Judo</span>
+          <span>Feito en Galicia · <a href="https://instagram.com/baumannzone" target="_blank" rel="noopener noreferrer">@baumannzone</a>
+
+          </span>
         </div>
       </div>
     </footer>
