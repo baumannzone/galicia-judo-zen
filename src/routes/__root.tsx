@@ -197,7 +197,7 @@ function SiteFooter() {
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Dojo</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Academia</p>
           <p className="mt-3 text-sm">Rúa Irmáns Noia Gil, 2, bajo<br/>36780 A Guarda, Pontevedra</p>
         </div>
         <div>
@@ -208,7 +208,7 @@ function SiteFooter() {
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
           <span>© {new Date().getFullYear()} CD Baixo Minho — Club de Judo</span>
-          <span>Feito en Galicia · <a href="https://instagram.com/baumannzone" target="_blank" rel="noopener noreferrer">@baumannzone</a>
+          <span>Feito en Galicia por <a href="https://instagram.com/baumannzone" target="_blank" rel="noopener noreferrer">@baumannzone</a>
 
           </span>
         </div>

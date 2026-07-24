@@ -45,7 +45,7 @@ function Index() {
               </div>
             </div>
             <div className="md:col-span-6">
-              <div className="reveal reveal-delay-2 relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-secondary">
+              <div className="reveal reveal-delay-2 relative aspect-4/5 w-full overflow-hidden rounded-3xl bg-secondary">
                 <img
                   src={heroImg}
                   alt="Judoka en el dojo"
@@ -81,7 +81,7 @@ function Index() {
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">La academia</p>
             <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-              Un dojo pensado para crecer.
+              Una academia pensada para crecer.
             </h2>
           </div>
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-base leading-relaxed text-muted-foreground">
@@ -92,7 +92,7 @@ function Index() {
               Nuestros más de 100 m² de tatami están diseñados para entrenar con seguridad y concentración: luz natural, silencio y un ambiente donde cada alumno progresa a su ritmo.
             </p>
             <p>
-              Formamos parte de la Federación Galega de Judo y trabajamos con niños desde los 4 años, jóvenes, adultos y competidores.
+              Formamos parte de la Federación Galega de Judo y trabajamos con niños desde los 3 años, jóvenes, adultos y competidores.
             </p>
           </div>
         </div>

@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const ADDRESS = "Rúa Irmáns Noia Gil, 2, bajo, 36780 A Guarda, Pontevedra";
-const MAPS_QUERY = encodeURIComponent(ADDRESS);
-const MAPS_EMBED_SRC = `https://maps.google.com/maps?q=${MAPS_QUERY}&z=16&output=embed`;
-const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${MAPS_QUERY}`;
+const MAPS_LINK =
+  "https://www.google.com/maps/place/Centro+Deportivo+Baixo+Mi%C3%B1o/@41.9049296,-8.8755687,17z/data=!3m1!4b1!4m6!3m5!1s0xd25ea8bb849c317:0x9ecaed688d2ca3f7!8m2!3d41.9049296!4d-8.8755687!16s%2Fg%2F11c1mzhz55?hl=es-ES";
+const MAPS_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.2!2d-8.8755687!3d41.9049296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd25ea8bb849c317%3A0x9ecaed688d2ca3f7!2sCentro%20Deportivo%20Baixo%20Mi%C3%B1o!5e0!3m2!1ses-ES!2ses!4v1!5m2!1ses-ES!2ses";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -37,7 +37,7 @@ function Contacto() {
             </div>
             <div>
               <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Teléfono</dt>
-              <dd className="mt-2">+34 981 123 456</dd>
+              <dd className="mt-2">+34 986 910 408</dd>
             </div>
             <div>
               <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Email</dt>
