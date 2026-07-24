@@ -4,10 +4,10 @@ import heroImg from "@/assets/hero-judo.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Club Baixo Minho — Club de Judo en Galicia" },
-      { name: "description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
-      { property: "og:title", content: "Club Baixo Minho — Club de Judo en Galicia" },
-      { property: "og:description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
+      { title: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
+      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil, masajes y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos." },
+      { property: "og:title", content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
+      { property: "og:description", content: "Centro deportivo con judo, pilates, zumba, entrenamiento infantil, masajes, campus y torneo internacional en A Guarda." },
     ],
   }),
   component: Index,
@@ -22,15 +22,15 @@ function Index() {
           <div className="grid gap-14 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-6 flex flex-col justify-center">
               <p className="reveal text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                Club de Judo · Galicia · desde 1998
+                Centro Deportivo · A Guarda · Pontevedra
               </p>
               <h1 className="reveal reveal-delay-1 mt-6 font-display text-5xl leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl">
-                El camino <br/>
-                <span className="text-muted-foreground">suave</span> <br/>
-                de la fuerza.
+                Deporte, <br/>
+                <span className="text-muted-foreground">valores</span> <br/>
+                y familia.
               </h1>
               <p className="reveal reveal-delay-2 mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-                En el Dojo Breogán entrenamos judo tradicional en un espacio amplio y luminoso. Técnica, respeto y comunidad, para todas las edades.
+                Judo, pilates, zumba, entrenamiento infantil y masajes. Acompañamos a niños, jóvenes y adultos en su crecimiento deportivo y personal.
               </p>
               <div className="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4">
                 <Link
@@ -75,33 +75,33 @@ function Index() {
         </div>
       </section>
 
-      {/* Sobre la academia */}
+      {/* Sobre el club */}
       <section id="academia" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">La academia</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">El club</p>
             <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-              Un dojo pensado para crecer.
+              Un proyecto de deporte y valores.
             </h2>
           </div>
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
-              Fundado en 1998 en el corazón de A Coruña, el Dojo Breogán es un espacio dedicado al estudio del judo tradicional según los principios del maestro Jigoro Kano.
+              El Centro Deportivo Baixo Miño es un proyecto deportivo de A Guarda dedicado a la enseñanza del judo, la actividad física, el bienestar y la formación en valores.
             </p>
             <p>
-              Nuestros más de 400 m² de tatami están diseñados para entrenar con seguridad y concentración: luz natural, silencio y un ambiente donde cada alumno progresa a su ritmo.
+              Combinamos deporte base y competición de alto nivel con actividades como pilates, zumba, entrenamiento infantil y masajes. Nuestra filosofía se apoya en el respeto, el esfuerzo, la humildad, la amistad y el sentimiento de equipo.
             </p>
             <p>
-              Formamos parte de la Federación Galega de Judo y trabajamos con niños desde los 4 años, jóvenes, adultos y competidores.
+              Formamos parte de la Federación Galega de Judo. Trabajamos con niños, jóvenes y adultos, acompañándolos en su desarrollo tanto dentro como fuera del tatami.
             </p>
           </div>
         </div>
 
         <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-3">
           {[
-            { k: "26", l: "años formando judokas" },
-            { k: "400", l: "m² de tatami" },
-            { k: "180", l: "alumnos activos" },
+            { k: "160+", l: "licencias deportivas" },
+            { k: "20+", l: "participantes nacionales" },
+            { k: "500+", l: "en Torneo Santa Trega 2026" },
           ].map((s) => (
             <div key={s.l} className="bg-background p-10">
               <p className="font-display text-5xl font-semibold tracking-tight text-foreground">{s.k}</p>
@@ -114,15 +114,15 @@ function Index() {
       {/* Valores */}
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Nuestro método</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Nuestros valores</p>
           <h2 className="mt-6 max-w-2xl font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-            Tres principios guían cada entrenamiento.
+            Entendemos el deporte como herramienta de crecimiento.
           </h2>
           <div className="mt-16 grid gap-10 md:grid-cols-3">
             {[
-              { n: "01", t: "Técnica ante todo", d: "Progresión clara del kihon al randori, con corrección individual en cada sesión." },
-              { n: "02", t: "Respeto y disciplina", d: "El reigi —la etiqueta— es el fundamento del judo, dentro y fuera del tatami." },
-              { n: "03", t: "Comunidad gallega", d: "Un club abierto, con salidas, cursos y competiciones por toda Galicia." },
+              { n: "01", t: "Respeto", d: "Base de la convivencia dentro y fuera del tatami. Respeto al compañero, al entrenador, a las normas." },
+              { n: "02", t: "Esfuerzo", d: "Superación constante. En cada entrenamiento trabajamos por mejorar, juntos y en equipo." },
+              { n: "03", t: "Familia", d: "El club como comunidad. Las familias participan en el proceso de crecimiento de nuestros deportistas." },
             ].map((v) => (
               <div key={v.n} className="group">
                 <p className="font-display text-sm text-muted-foreground">{v.n}</p>
@@ -139,23 +139,23 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="rounded-3xl bg-foreground px-10 py-20 text-center text-background md:px-16 md:py-28">
           <h2 className="mx-auto max-w-2xl font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-            Sube al tatami. La primera clase es nuestra invitación.
+            Forma parte de nuestro equipo.
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-sm text-background/70">
-            Reserva una sesión gratuita y descubre el judo desde dentro.
+            Prueba una clase gratis. Judo, pilates, zumba, entrenamiento infantil. Actividades para todas las edades.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
-              to="/contacto"
+              to="/actividades"
               className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
             >
-              Solicitar clase de prueba
+              Conoce nuestras actividades
             </Link>
             <Link
-              to="/horarios"
+              to="/contacto"
               className="inline-flex items-center justify-center rounded-full border border-background/30 px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10"
             >
-              Ver horarios
+              Contacta con nosotros
             </Link>
           </div>
         </div>

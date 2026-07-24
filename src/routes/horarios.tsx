@@ -3,70 +3,96 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/horarios")({
   head: () => ({
     meta: [
-      { title: "Horarios y clases — Dojo Breogán" },
-      { name: "description", content: "Consulta los horarios de las clases de judo por grupos de edad y nivel en el Dojo Breogán, A Coruña." },
-      { property: "og:title", content: "Horarios y clases — Dojo Breogán" },
-      { property: "og:description", content: "Grupos por edad y nivel. Judo infantil, juvenil, adultos y competición." },
+      { title: "Horarios y actividades — Club Deportivo Baixo Miño" },
+      { name: "description", content: "Horarios de judo, pilates, zumba, entrenamiento infantil y masajes en el Club Deportivo Baixo Miño, A Guarda." },
+      { property: "og:title", content: "Horarios y actividades — Club Deportivo Baixo Miño" },
+      { property: "og:description", content: "Actividades para todas las edades en A Guarda. Judo, pilates, zumba, entrenamiento infantil." },
     ],
   }),
   component: Horarios,
 });
 
-type Group = {
+type Activity = {
   name: string;
   age: string;
   level: string;
-  slots: { day: string; time: string }[];
+  description?: string;
+  slots?: { day: string; time: string }[];
 };
 
-const GROUPS: Group[] = [
+const ACTIVITIES: Activity[] = [
   {
     name: "Judo Infantil",
     age: "4 – 7 años",
     level: "Iniciación",
+    description: "Introducción al judo con enfoque lúdico. Desarrollamos seguridad, coordinación y valores.",
     slots: [
-      { day: "Lunes", time: "17:00 – 18:00" },
-      { day: "Miércoles", time: "17:00 – 18:00" },
+      { day: "Lunes", time: "[PENDIENTE]" },
+      { day: "Miércoles", time: "[PENDIENTE]" },
     ],
   },
   {
-    name: "Judo Alevín",
+    name: "Judo Básico",
     age: "8 – 11 años",
     level: "Básico",
+    description: "Progresión en técnica de judo. Trabajo de fundamentos y primeros movimientos de competición.",
     slots: [
-      { day: "Lunes", time: "18:00 – 19:15" },
-      { day: "Miércoles", time: "18:00 – 19:15" },
-      { day: "Viernes", time: "18:00 – 19:15" },
+      { day: "Lunes", time: "[PENDIENTE]" },
+      { day: "Miércoles", time: "[PENDIENTE]" },
+      { day: "Viernes", time: "[PENDIENTE]" },
     ],
   },
   {
-    name: "Judo Juvenil",
-    age: "12 – 17 años",
-    level: "Intermedio",
-    slots: [
-      { day: "Martes", time: "19:00 – 20:30" },
-      { day: "Jueves", time: "19:00 – 20:30" },
-    ],
-  },
-  {
-    name: "Judo Adultos",
+    name: "Judo Adulto",
     age: "18+ años",
     level: "Todos los niveles",
+    description: "Entrenamiento progresivo. Desde iniciación hasta técnica avanzada y preparación para competición.",
     slots: [
-      { day: "Lunes", time: "20:00 – 21:30" },
-      { day: "Miércoles", time: "20:00 – 21:30" },
-      { day: "Viernes", time: "20:00 – 21:30" },
+      { day: "Lunes", time: "[PENDIENTE]" },
+      { day: "Miércoles", time: "[PENDIENTE]" },
+      { day: "Viernes", time: "[PENDIENTE]" },
     ],
   },
   {
-    name: "Competición",
-    age: "14+ años",
-    level: "Avanzado · convocatoria",
+    name: "Judo de Competición",
+    age: "10+ años (convocatoria)",
+    level: "Avanzado",
+    description: "Preparación intensiva para competiciones autonómicas, nacionales e internacionales.",
     slots: [
-      { day: "Martes", time: "20:30 – 22:00" },
-      { day: "Jueves", time: "20:30 – 22:00" },
-      { day: "Sábado", time: "10:00 – 12:00" },
+      { day: "Martes", time: "[PENDIENTE]" },
+      { day: "Jueves", time: "[PENDIENTE]" },
+      { day: "Sábado", time: "[PENDIENTE]" },
     ],
+  },
+  {
+    name: "Pilates",
+    age: "Adultos",
+    level: "Todos los niveles",
+    description: "Fortalecimiento y flexibilidad. Trabajo de core y conciencia corporal.",
+  },
+  {
+    name: "Zumba",
+    age: "Adultos",
+    level: "Todos los niveles",
+    description: "Baile y cardio. Diversión, ritmo y actividad física en grupo.",
+  },
+  {
+    name: "Entrenamiento Infantil",
+    age: "Niños",
+    level: "Multideporte",
+    description: "Actividad física variada. Juegos, psicomotricidad y desarrollo de habilidades motoras.",
+  },
+  {
+    name: "Masaje Deportivo",
+    age: "Adultos",
+    level: "Recuperación",
+    description: "Masaje terapéutico, deportivo y relajante para recuperación y bienestar.",
+  },
+  {
+    name: "Presoterapia",
+    age: "Adultos",
+    level: "Recuperación",
+    description: "[PENDIENTE]: Tratamiento de recuperación y bienestar.",
   },
 ];
 
@@ -76,62 +102,70 @@ function Horarios() {
       <div className="max-w-2xl">
         <p className="reveal text-xs uppercase tracking-[0.3em] text-muted-foreground">Horarios</p>
         <h1 className="reveal reveal-delay-1 mt-6 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-          Clases por grupo y nivel.
+          Actividades para todas las edades.
         </h1>
         <p className="reveal reveal-delay-2 mt-6 text-base leading-relaxed text-muted-foreground">
-          Temporada 2025 – 2026. Todas las clases se imparten en el tatami principal del dojo.
-          Consulta plazas disponibles al inscribirte.
+          Temporada 2025 – 2026. Actividades en el Centro Deportivo Baixo Miño.
+          <br/>
+          <span className="text-xs text-primary">[PENDIENTE]: Horarios exactos a confirmar con el club.</span>
         </p>
       </div>
 
       <div className="mt-16 space-y-px overflow-hidden rounded-3xl border border-border bg-border">
-        {GROUPS.map((g, i) => (
+        {ACTIVITIES.map((a, i) => (
           <article
-            key={g.name}
+            key={a.name}
             className="reveal group grid gap-6 bg-background p-8 transition-colors hover:bg-secondary/40 md:grid-cols-12 md:items-center md:p-10"
             style={{ animationDelay: `${0.1 + i * 0.06}s` }}
           >
-            <div className="md:col-span-4">
+            <div className="md:col-span-5">
               <p className="font-display text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 {String(i + 1).padStart(2, "0")}
               </p>
               <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight md:text-3xl">
-                {g.name}
+                {a.name}
               </h2>
-              <p className="mt-2 text-sm text-muted-foreground">{g.age} · {g.level}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{a.age} · {a.level}</p>
+              {a.description && (
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.description}</p>
+              )}
             </div>
-            <div className="md:col-span-8">
-              <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {g.slots.map((s) => (
-                  <li
-                    key={s.day + s.time}
-                    className="rounded-2xl border border-border/70 bg-background px-4 py-3 transition-transform group-hover:-translate-y-0.5"
-                  >
-                    <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground">{s.day}</p>
-                    <p className="mt-1 font-display text-base font-medium">{s.time}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {a.slots && a.slots.length > 0 && (
+              <div className="md:col-span-7">
+                <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                  {a.slots.map((s) => (
+                    <li
+                      key={s.day + s.time}
+                      className="rounded-2xl border border-border/70 bg-background px-4 py-3 transition-transform group-hover:-translate-y-0.5"
+                    >
+                      <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground">{s.day}</p>
+                      <p className="mt-1 font-display text-base font-medium">{s.time}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </article>
         ))}
       </div>
 
-      <div className="mt-16 grid gap-8 rounded-3xl border border-border p-8 md:grid-cols-3 md:p-10">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Cuota mensual</p>
-          <p className="mt-3 font-display text-3xl font-semibold">45 € — 65 €</p>
-          <p className="mt-2 text-sm text-muted-foreground">Según grupo y frecuencia.</p>
-        </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Matrícula</p>
-          <p className="mt-3 font-display text-3xl font-semibold">única</p>
-          <p className="mt-2 text-sm text-muted-foreground">Incluye seguro federativo anual.</p>
-        </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Prueba gratuita</p>
-          <p className="mt-3 font-display text-3xl font-semibold">1 sesión</p>
-          <p className="mt-2 text-sm text-muted-foreground">Para conocer el dojo sin compromiso.</p>
+      <div className="mt-16 rounded-3xl border border-border bg-secondary/30 p-8 md:p-10">
+        <div className="max-w-2xl">
+          <p className="font-display text-xl font-semibold tracking-tight">Información importante</p>
+          <ul className="mt-6 space-y-4 text-sm text-muted-foreground leading-relaxed">
+            <li>
+              <strong className="text-foreground">[PENDIENTE]:</strong> Horarios exactos de actividades vigentes.
+            </li>
+            <li>
+              <strong className="text-foreground">[PENDIENTE]:</strong> Tarifas y precios por actividad.
+            </li>
+            <li>
+              <strong className="text-foreground">[PENDIENTE]:</strong> Información de matrícula y seguro federativo.
+            </li>
+            <li>
+              <strong className="text-foreground">Clase de prueba:</strong> Disponible. Contacta para reservar.
+            </li>
+          </ul>
         </div>
       </div>
     </section>

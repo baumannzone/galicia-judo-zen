@@ -72,15 +72,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Club Baixo Minho — Club de Judo en Galicia" },
-      { name: "description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
-      { name: "author", content: "Dojo Breogán" },
-      { property: "og:title", content: "Club Baixo Minho — Club de Judo en Galicia" },
-      { property: "og:description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
+      { title: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
+      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil, masajes y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos." },
+      { name: "author", content: "Club Deportivo Baixo Miño" },
+      { name: "keywords", content: "judo A Guarda, club deportivo, pilates, zumba, campus verano, torneo santa trega, A Guarda Pontevedra" },
+      { property: "og:title", content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
+      { property: "og:description", content: "Centro deportivo con judo, pilates, zumba, entrenamiento infantil, masajes, campus y torneo internacional en A Guarda." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Club Baixo Minho — Club de Judo en Galicia" },
-      { name: "twitter:description", content: "Club de Judo en A Guarda. Formación integral en técnica, disciplina y respeto para niños, jóvenes y adultos." },
+      { name: "twitter:title", content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
+      { name: "twitter:description", content: "Judo, pilates, zumba, entrenamiento infantil, masajes y campus en A Guarda." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/11d686cf-84c9-4850-a7ff-b78241215cd4/id-preview-b92fa60a--07910a82-7b24-43fd-9817-00904d83ad6a.lovable.app-1784758799298.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/11d686cf-84c9-4850-a7ff-b78241215cd4/id-preview-b92fa60a--07910a82-7b24-43fd-9817-00904d83ad6a.lovable.app-1784758799298.png" },
     ],
@@ -117,8 +118,11 @@ function RootShell({ children }: { children: ReactNode }) {
 
 const NAV = [
   { to: "/", label: "Inicio" },
-  { to: "/horarios", label: "Horarios" },
-  { to: "/maestros", label: "Maestros" },
+  { to: "/judo", label: "Judo" },
+  { to: "/actividades", label: "Actividades" },
+  { to: "/campus", label: "Campus y Familias" },
+  { to: "/torneo-santa-trega", label: "Torneo Santa Trega" },
+  { to: "/noticias", label: "Noticias" },
   { to: "/contacto", label: "Contacto" },
 ] as const;
 
@@ -129,7 +133,7 @@ function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2 font-display text-base font-semibold tracking-tight">
           <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background text-xs">柔</span>
-          <span>Dojo Breogán</span>
+          <span>Baixo Miño</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (
@@ -190,25 +194,28 @@ function SiteFooter() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 font-display text-base font-semibold">
             <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background text-xs">柔</span>
-            <span>Dojo Breogán</span>
+            <span>Club Deportivo Baixo Miño</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Club de Judo en Galicia. Técnica, disciplina y comunidad desde 1998.
+            Deporte, valores y familia en A Guarda. Judo, pilates, zumba y más.
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Dojo</p>
-          <p className="mt-3 text-sm">Rúa da Ponte, 14<br/>15001 A Coruña, Galicia</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Ubicación</p>
+          <p className="mt-3 text-sm">Rúa Irmáns Noia Gil, 2<br/>36780 A Guarda, Pontevedra</p>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contacto</p>
-          <p className="mt-3 text-sm">hola@dojobreogan.gal<br/>+34 981 123 456</p>
+          <p className="mt-3 text-sm">judobaixominho@gmail.com<br/>+34 663 374 895</p>
         </div>
       </div>
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
-          <span>© {new Date().getFullYear()} Dojo Breogán — Club de Judo</span>
-          <span>Feito en Galicia</span>
+          <span>© {new Date().getFullYear()} Club Deportivo Baixo Miño</span>
+          <div className="flex items-center gap-4">
+            <Link to="/legal" className="hover:text-foreground transition-colors">Aviso Legal</Link>
+            <span>Feito en Galicia por <a href="https://instagram.com/baumannzone" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">@baumannzone</a></span>
+          </div>
         </div>
       </div>
     </footer>

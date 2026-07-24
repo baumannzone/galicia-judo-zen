@@ -9,25 +9,31 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as MaestrosRouteImport } from './routes/maestros'
-import { Route as HorariosRouteImport } from './routes/horarios'
-import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActividadesRouteImport } from './routes/actividades'
+import { Route as CampusRouteImport } from './routes/campus'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as HorariosRouteImport } from './routes/horarios'
+import { Route as JudoRouteImport } from './routes/judo'
+import { Route as LegalRouteImport } from './routes/legal'
+import { Route as MaestrosRouteImport } from './routes/maestros'
+import { Route as NoticiasRouteImport } from './routes/noticias'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TorneoSantaTregaRouteImport } from './routes/torneo-santa-trega'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MaestrosRoute = MaestrosRouteImport.update({
-  id: '/maestros',
-  path: '/maestros',
+const ActividadesRoute = ActividadesRouteImport.update({
+  id: '/actividades',
+  path: '/actividades',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HorariosRoute = HorariosRouteImport.update({
-  id: '/horarios',
-  path: '/horarios',
+const CampusRoute = CampusRouteImport.update({
+  id: '/campus',
+  path: '/campus',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactoRoute = ContactoRouteImport.update({
@@ -35,77 +41,159 @@ const ContactoRoute = ContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const HorariosRoute = HorariosRouteImport.update({
+  id: '/horarios',
+  path: '/horarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JudoRoute = JudoRouteImport.update({
+  id: '/judo',
+  path: '/judo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalRoute = LegalRouteImport.update({
+  id: '/legal',
+  path: '/legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaestrosRoute = MaestrosRouteImport.update({
+  id: '/maestros',
+  path: '/maestros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasRoute = NoticiasRouteImport.update({
+  id: '/noticias',
+  path: '/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TorneoSantaTregaRoute = TorneoSantaTregaRouteImport.update({
+  id: '/torneo-santa-trega',
+  path: '/torneo-santa-trega',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/actividades': typeof ActividadesRoute
+  '/campus': typeof CampusRoute
   '/contacto': typeof ContactoRoute
   '/horarios': typeof HorariosRoute
+  '/judo': typeof JudoRoute
+  '/legal': typeof LegalRoute
   '/maestros': typeof MaestrosRoute
+  '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/torneo-santa-trega': typeof TorneoSantaTregaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/actividades': typeof ActividadesRoute
+  '/campus': typeof CampusRoute
   '/contacto': typeof ContactoRoute
   '/horarios': typeof HorariosRoute
+  '/judo': typeof JudoRoute
+  '/legal': typeof LegalRoute
   '/maestros': typeof MaestrosRoute
+  '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/torneo-santa-trega': typeof TorneoSantaTregaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/actividades': typeof ActividadesRoute
+  '/campus': typeof CampusRoute
   '/contacto': typeof ContactoRoute
   '/horarios': typeof HorariosRoute
+  '/judo': typeof JudoRoute
+  '/legal': typeof LegalRoute
   '/maestros': typeof MaestrosRoute
+  '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/torneo-santa-trega': typeof TorneoSantaTregaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contacto' | '/horarios' | '/maestros' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/actividades'
+    | '/campus'
+    | '/contacto'
+    | '/horarios'
+    | '/judo'
+    | '/legal'
+    | '/maestros'
+    | '/noticias'
+    | '/sitemap.xml'
+    | '/torneo-santa-trega'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contacto' | '/horarios' | '/maestros' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/actividades'
+    | '/campus'
+    | '/contacto'
+    | '/horarios'
+    | '/judo'
+    | '/legal'
+    | '/maestros'
+    | '/noticias'
+    | '/sitemap.xml'
+    | '/torneo-santa-trega'
   id:
     | '__root__'
     | '/'
+    | '/actividades'
+    | '/campus'
     | '/contacto'
     | '/horarios'
+    | '/judo'
+    | '/legal'
     | '/maestros'
+    | '/noticias'
     | '/sitemap.xml'
+    | '/torneo-santa-trega'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActividadesRoute: typeof ActividadesRoute
+  CampusRoute: typeof CampusRoute
   ContactoRoute: typeof ContactoRoute
   HorariosRoute: typeof HorariosRoute
+  JudoRoute: typeof JudoRoute
+  LegalRoute: typeof LegalRoute
   MaestrosRoute: typeof MaestrosRoute
+  NoticiasRoute: typeof NoticiasRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TorneoSantaTregaRoute: typeof TorneoSantaTregaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/maestros': {
-      id: '/maestros'
-      path: '/maestros'
-      fullPath: '/maestros'
-      preLoaderRoute: typeof MaestrosRouteImport
+    '/actividades': {
+      id: '/actividades'
+      path: '/actividades'
+      fullPath: '/actividades'
+      preLoaderRoute: typeof ActividadesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/horarios': {
-      id: '/horarios'
-      path: '/horarios'
-      fullPath: '/horarios'
-      preLoaderRoute: typeof HorariosRouteImport
+    '/campus': {
+      id: '/campus'
+      path: '/campus'
+      fullPath: '/campus'
+      preLoaderRoute: typeof CampusRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contacto': {
@@ -115,11 +203,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/horarios': {
+      id: '/horarios'
+      path: '/horarios'
+      fullPath: '/horarios'
+      preLoaderRoute: typeof HorariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/judo': {
+      id: '/judo'
+      path: '/judo'
+      fullPath: '/judo'
+      preLoaderRoute: typeof JudoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal': {
+      id: '/legal'
+      path: '/legal'
+      fullPath: '/legal'
+      preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maestros': {
+      id: '/maestros'
+      path: '/maestros'
+      fullPath: '/maestros'
+      preLoaderRoute: typeof MaestrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias': {
+      id: '/noticias'
+      path: '/noticias'
+      fullPath: '/noticias'
+      preLoaderRoute: typeof NoticiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/torneo-santa-trega': {
+      id: '/torneo-santa-trega'
+      path: '/torneo-santa-trega'
+      fullPath: '/torneo-santa-trega'
+      preLoaderRoute: typeof TorneoSantaTregaRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -127,10 +257,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActividadesRoute: ActividadesRoute,
+  CampusRoute: CampusRoute,
   ContactoRoute: ContactoRoute,
   HorariosRoute: HorariosRoute,
+  JudoRoute: JudoRoute,
+  LegalRoute: LegalRoute,
   MaestrosRoute: MaestrosRoute,
+  NoticiasRoute: NoticiasRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TorneoSantaTregaRoute: TorneoSantaTregaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
