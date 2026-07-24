@@ -19,20 +19,31 @@ const SENSEI = [
   {
     img: s1,
     name: "Mónica Pacheco",
-    rank: "4º Dan · Director técnico",
-    bio: "Formado en Tokio bajo el maestro Yamashita. Fundador del CD Baixo Minho y árbitro internacional.",
+    rank: "5º Dan · Presidenta y entrenadora",
+    bio: [
+      "Presidenta del Clube de Judo Baixo Minho",
+      "Maestra entrenadora nacional de judo",
+      "Coordinadora de programas federativos",
+      "Directora deportiva de la Federación Galega de Judo",
+    ],
   },
   {
     img: s2,
     name: "Aiko Tanaka",
     rank: "5º Dan · Judo femenino y competición",
-    bio: "Excampeona nacional. Especialista en newaza y preparación para competición autonómica.",
+    bio: [
+      "Excampeona nacional",
+      "Especialista en newaza y preparación para competición autonómica",
+    ],
   },
   {
     img: s3,
     name: "Diego Castromil",
     rank: "3º Dan · Judo infantil",
-    bio: "Educador y monitor titulado. Dirige los grupos de iniciación con una metodología lúdica y progresiva.",
+    bio: [
+      "Educador y monitor titulado",
+      "Dirige los grupos de iniciación con una metodología lúdica y progresiva",
+    ],
   },
 ];
 
@@ -56,20 +67,24 @@ function Maestros() {
             className="reveal group"
             style={{ animationDelay: `${0.15 + i * 0.1}s` }}
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-secondary">
+            <div className="relative aspect-4/5 overflow-hidden rounded-3xl bg-secondary">
               <img
                 src={p.img}
                 alt={p.name}
                 loading="lazy"
                 width={800}
                 height={1000}
-                className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-1200 ease-out group-hover:scale-105"
               />
             </div>
             <div className="mt-6">
               <h2 className="font-display text-2xl font-semibold tracking-tight">{p.name}</h2>
               <p className="mt-1 text-xs uppercase tracking-[0.15em] text-muted-foreground">{p.rank}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.bio}</p>
+              <ul className="mt-4 list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-muted-foreground">
+                {p.bio.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
           </article>
         ))}
