@@ -193,16 +193,16 @@ function SiteFooter() {
             <span>CD Baixo Minho</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Club de Judo en Galicia. Técnica, disciplina y comunidad desde 2008.
+            Club de Judo en Galicia. Técnica, disciplina y comunidad desde 2017.
           </p>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Dojo</p>
-          <p className="mt-3 text-sm">Rúa da Ponte, 14<br/>15001 A Coruña, Galicia</p>
+          <p className="mt-3 text-sm">Rúa Irmáns Noia Gil, 2, bajo<br/>36780 A Guarda, Pontevedra</p>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contacto</p>
-          <p className="mt-3 text-sm">hola@dojobreogan.gal<br/>+34 981 123 456</p>
+          <p className="mt-3 text-sm">judobaixominho@gmail.com<br/>+34 986 910 408</p>
         </div>
       </div>
       <div className="border-t border-border/60">

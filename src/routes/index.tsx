@@ -86,10 +86,10 @@ function Index() {
           </div>
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
-              Fundado en 2008 en el corazón de A Guarda, el CD Baixo Minho es un espacio dedicado al estudio del judo tradicional según los principios del maestro Jigoro Kano.
+              Fundado en 2017 en el corazón de A Guarda, el CD Baixo Minho es un espacio dedicado al estudio del judo tradicional según los principios del maestro Jigoro Kano.
             </p>
             <p>
-              Nuestros más de 400 m² de tatami están diseñados para entrenar con seguridad y concentración: luz natural, silencio y un ambiente donde cada alumno progresa a su ritmo.
+              Nuestros más de 100 m² de tatami están diseñados para entrenar con seguridad y concentración: luz natural, silencio y un ambiente donde cada alumno progresa a su ritmo.
             </p>
             <p>
               Formamos parte de la Federación Galega de Judo y trabajamos con niños desde los 4 años, jóvenes, adultos y competidores.
@@ -100,8 +100,8 @@ function Index() {
         <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-3">
           {[
             { k: "26", l: "años formando judokas" },
-            { k: "400", l: "m² de tatami" },
-            { k: "180", l: "alumnos activos" },
+            { k: "+100", l: "m² de tatami" },
+            { k: "+380", l: "alumnos activos" },
           ].map((s) => (
             <div key={s.l} className="bg-background p-10">
               <p className="font-display text-5xl font-semibold tracking-tight text-foreground">{s.k}</p>
