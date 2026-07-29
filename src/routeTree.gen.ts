@@ -10,29 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ContactoRouteImport } from './routes/contacto'
-import { Route as HorariosRouteImport } from './routes/horarios'
-import { Route as MaestrosRouteImport } from './routes/maestros'
+import { Route as LocaleRouteImport } from './routes/$locale'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
+import { Route as LocaleContactoRouteImport } from './routes/$locale/contacto'
+import { Route as LocaleHorariosRouteImport } from './routes/$locale/horarios'
+import { Route as LocaleMaestrosRouteImport } from './routes/$locale/maestros'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactoRoute = ContactoRouteImport.update({
-  id: '/contacto',
-  path: '/contacto',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HorariosRoute = HorariosRouteImport.update({
-  id: '/horarios',
-  path: '/horarios',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MaestrosRoute = MaestrosRouteImport.update({
-  id: '/maestros',
-  path: '/maestros',
+const LocaleRoute = LocaleRouteImport.update({
+  id: '/$locale',
+  path: '/$locale',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -40,43 +32,86 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocaleIndexRoute = LocaleIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleContactoRoute = LocaleContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleHorariosRoute = LocaleHorariosRouteImport.update({
+  id: '/horarios',
+  path: '/horarios',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleMaestrosRoute = LocaleMaestrosRouteImport.update({
+  id: '/maestros',
+  path: '/maestros',
+  getParentRoute: () => LocaleRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/contacto': typeof ContactoRoute
-  '/horarios': typeof HorariosRoute
-  '/maestros': typeof MaestrosRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$locale/contacto': typeof LocaleContactoRoute
+  '/$locale/horarios': typeof LocaleHorariosRoute
+  '/$locale/maestros': typeof LocaleMaestrosRoute
+  '/$locale/': typeof LocaleIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/contacto': typeof ContactoRoute
-  '/horarios': typeof HorariosRoute
-  '/maestros': typeof MaestrosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$locale/contacto': typeof LocaleContactoRoute
+  '/$locale/horarios': typeof LocaleHorariosRoute
+  '/$locale/maestros': typeof LocaleMaestrosRoute
+  '/$locale': typeof LocaleIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/contacto': typeof ContactoRoute
-  '/horarios': typeof HorariosRoute
-  '/maestros': typeof MaestrosRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$locale/contacto': typeof LocaleContactoRoute
+  '/$locale/horarios': typeof LocaleHorariosRoute
+  '/$locale/maestros': typeof LocaleMaestrosRoute
+  '/$locale/': typeof LocaleIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contacto' | '/horarios' | '/maestros' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/$locale'
+    | '/sitemap.xml'
+    | '/$locale/contacto'
+    | '/$locale/horarios'
+    | '/$locale/maestros'
+    | '/$locale/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contacto' | '/horarios' | '/maestros' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/sitemap.xml'
+    | '/$locale/contacto'
+    | '/$locale/horarios'
+    | '/$locale/maestros'
+    | '/$locale'
   id:
-    '__root__' | '/' | '/contacto' | '/horarios' | '/maestros' | '/sitemap.xml'
+    | '__root__'
+    | '/'
+    | '/$locale'
+    | '/sitemap.xml'
+    | '/$locale/contacto'
+    | '/$locale/horarios'
+    | '/$locale/maestros'
+    | '/$locale/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ContactoRoute: typeof ContactoRoute
-  HorariosRoute: typeof HorariosRoute
-  MaestrosRoute: typeof MaestrosRoute
+  LocaleRoute: typeof LocaleRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -89,25 +124,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contacto': {
-      id: '/contacto'
-      path: '/contacto'
-      fullPath: '/contacto'
-      preLoaderRoute: typeof ContactoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/horarios': {
-      id: '/horarios'
-      path: '/horarios'
-      fullPath: '/horarios'
-      preLoaderRoute: typeof HorariosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/maestros': {
-      id: '/maestros'
-      path: '/maestros'
-      fullPath: '/maestros'
-      preLoaderRoute: typeof MaestrosRouteImport
+    '/$locale': {
+      id: '/$locale'
+      path: '/$locale'
+      fullPath: '/$locale'
+      preLoaderRoute: typeof LocaleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -117,14 +138,57 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$locale/': {
+      id: '/$locale/'
+      path: '/'
+      fullPath: '/$locale/'
+      preLoaderRoute: typeof LocaleIndexRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/contacto': {
+      id: '/$locale/contacto'
+      path: '/contacto'
+      fullPath: '/$locale/contacto'
+      preLoaderRoute: typeof LocaleContactoRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/horarios': {
+      id: '/$locale/horarios'
+      path: '/horarios'
+      fullPath: '/$locale/horarios'
+      preLoaderRoute: typeof LocaleHorariosRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/maestros': {
+      id: '/$locale/maestros'
+      path: '/maestros'
+      fullPath: '/$locale/maestros'
+      preLoaderRoute: typeof LocaleMaestrosRouteImport
+      parentRoute: typeof LocaleRoute
+    }
   }
 }
 
+interface LocaleRouteChildren {
+  LocaleContactoRoute: typeof LocaleContactoRoute
+  LocaleHorariosRoute: typeof LocaleHorariosRoute
+  LocaleMaestrosRoute: typeof LocaleMaestrosRoute
+  LocaleIndexRoute: typeof LocaleIndexRoute
+}
+
+const LocaleRouteChildren: LocaleRouteChildren = {
+  LocaleContactoRoute: LocaleContactoRoute,
+  LocaleHorariosRoute: LocaleHorariosRoute,
+  LocaleMaestrosRoute: LocaleMaestrosRoute,
+  LocaleIndexRoute: LocaleIndexRoute,
+}
+
+const LocaleRouteWithChildren =
+  LocaleRoute._addFileChildren(LocaleRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ContactoRoute: ContactoRoute,
-  HorariosRoute: HorariosRoute,
-  MaestrosRoute: MaestrosRoute,
+  LocaleRoute: LocaleRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
