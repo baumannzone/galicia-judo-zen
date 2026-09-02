@@ -4,7 +4,7 @@ export const Route = createFileRoute("/horarios")({
   head: () => ({
     meta: [
       { title: "Horarios y actividades — Club Deportivo Baixo Miño" },
-      { name: "description", content: "Horarios de judo, pilates, zumba, entrenamiento infantil y masajes en el Club Deportivo Baixo Miño, A Guarda." },
+      { name: "description", content: "Horarios de judo, pilates, zumba, entrenamiento infantil y fisioterapia en el Club Deportivo Baixo Miño, A Guarda." },
       { property: "og:title", content: "Horarios y actividades — Club Deportivo Baixo Miño" },
       { property: "og:description", content: "Actividades para todas las edades en A Guarda. Judo, pilates, zumba, entrenamiento infantil." },
     ],
@@ -22,46 +22,44 @@ type Activity = {
 
 const ACTIVITIES: Activity[] = [
   {
-    name: "Judo Infantil",
-    age: "4 – 7 años",
+    name: "Judo Grupo 1",
+    age: "Nacidos en 2023, 2022, 2021 y 2020",
     level: "Iniciación",
     description: "Introducción al judo con enfoque lúdico. Desarrollamos seguridad, coordinación y valores.",
     slots: [
-      { day: "Lunes", time: "[PENDIENTE]" },
-      { day: "Miércoles", time: "[PENDIENTE]" },
+      { day: "Lunes", time: "17:10 – 18:00" },
+      { day: "Miércoles", time: "17:10 – 18:00" },
     ],
   },
   {
-    name: "Judo Básico",
-    age: "8 – 11 años",
+    name: "Judo Grupo 2",
+    age: "Nacidos en 2019, 2018 y 2017 (iniciados)",
     level: "Básico",
     description: "Progresión en técnica de judo. Trabajo de fundamentos y primeros movimientos de competición.",
     slots: [
-      { day: "Lunes", time: "[PENDIENTE]" },
-      { day: "Miércoles", time: "[PENDIENTE]" },
-      { day: "Viernes", time: "[PENDIENTE]" },
+      { day: "Lunes", time: "18:10 – 19:00" },
+      { day: "Miércoles", time: "18:10 – 19:00" },
     ],
   },
   {
-    name: "Judo Adulto",
-    age: "18+ años",
-    level: "Todos los niveles",
-    description: "Entrenamiento progresivo. Desde iniciación hasta técnica avanzada y preparación para competición.",
+    name: "Judo Grupo 3",
+    age: "Nacidos en 2017, 2016 y 2015",
+    level: "Perfeccionamiento",
+    description: "Trabajo técnico y físico para seguir avanzando en el judo.",
     slots: [
-      { day: "Lunes", time: "[PENDIENTE]" },
-      { day: "Miércoles", time: "[PENDIENTE]" },
-      { day: "Viernes", time: "[PENDIENTE]" },
+      { day: "Lunes", time: "19:10 – 20:00" },
+      { day: "Miércoles", time: "19:10 – 20:00" },
     ],
   },
   {
     name: "Judo de Competición",
-    age: "10+ años (convocatoria)",
+    age: "Categorías alevín, infantil, cadete y júnior",
     level: "Avanzado",
     description: "Preparación intensiva para competiciones autonómicas, nacionales e internacionales.",
     slots: [
-      { day: "Martes", time: "[PENDIENTE]" },
-      { day: "Jueves", time: "[PENDIENTE]" },
-      { day: "Sábado", time: "[PENDIENTE]" },
+      { day: "Martes", time: "17:10 – 18:00" },
+      { day: "Lunes", time: "20:00 – 21:00" },
+      { day: "Miércoles", time: "20:00 – 21:00" },
     ],
   },
   {
@@ -71,22 +69,29 @@ const ACTIVITIES: Activity[] = [
     description: "Fortalecimiento y flexibilidad. Trabajo de core y conciencia corporal.",
   },
   {
-    name: "Zumba",
-    age: "Adultos",
+    name: "Zumba Infantil",
+    age: "Grupo 1: 2023 – 2019 · Grupo 2: 2018 – 2014",
     level: "Todos los niveles",
-    description: "Baile y cardio. Diversión, ritmo y actividad física en grupo.",
+    description: "Baile, ritmo y diversión para niños y niñas.",
+    slots: [
+      { day: "Jueves", time: "17:00 – 17:50 · Grupo 1" },
+      { day: "Jueves", time: "18:00 – 18:50 · Grupo 2" },
+    ],
   },
   {
     name: "Entrenamiento Infantil",
-    age: "Niños",
-    level: "Multideporte",
-    description: "Actividad física variada. Juegos, psicomotricidad y desarrollo de habilidades motoras.",
+    age: "Nacidos entre 2020 y 2016",
+    level: "Training infantil",
+    description: "Actividad física variada para desarrollar fuerza, coordinación y habilidades motoras.",
+    slots: [
+      { day: "Martes", time: "18:00 – 18:50" },
+    ],
   },
   {
-    name: "Masaje Deportivo",
+    name: "Fisioterapia",
     age: "Adultos",
     level: "Recuperación",
-    description: "Masaje terapéutico, deportivo y relajante para recuperación y bienestar.",
+    description: "Fisioterapia para recuperación, prevención y tratamiento de lesiones.",
   },
   {
     name: "Presoterapia",
@@ -105,9 +110,7 @@ function Horarios() {
           Actividades para todas las edades.
         </h1>
         <p className="reveal reveal-delay-2 mt-6 text-base leading-relaxed text-muted-foreground">
-          Temporada 2025 – 2026. Actividades en el Centro Deportivo Baixo Miño.
-          <br/>
-          <span className="text-xs text-primary">[PENDIENTE]: Horarios exactos a confirmar con el club.</span>
+          Curso 2026 – 2027. Actividades en el Centro Deportivo Baixo Miño.
         </p>
       </div>
 
@@ -153,9 +156,6 @@ function Horarios() {
         <div className="max-w-2xl">
           <p className="font-display text-xl font-semibold tracking-tight">Información importante</p>
           <ul className="mt-6 space-y-4 text-sm text-muted-foreground leading-relaxed">
-            <li>
-              <strong className="text-foreground">[PENDIENTE]:</strong> Horarios exactos de actividades vigentes.
-            </li>
             <li>
               <strong className="text-foreground">[PENDIENTE]:</strong> Tarifas y precios por actividad.
             </li>

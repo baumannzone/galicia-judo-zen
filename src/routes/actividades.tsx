@@ -4,47 +4,15 @@ export const Route = createFileRoute("/actividades")({
   head: () => ({
     meta: [
       { title: "Actividades — Club Deportivo Baixo Miño" },
-      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil y masajes en A Guarda. Actividades para todas las edades en el Club Deportivo Baixo Miño." },
+      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil y fisioterapia en A Guarda. Actividades para todas las edades en el Club Deportivo Baixo Miño." },
       { property: "og:title", content: "Actividades — Club Deportivo Baixo Miño" },
-      { property: "og:description", content: "Descubre nuestras actividades: judo, pilates, zumba, entrenamiento infantil, masajes y más." },
+      { property: "og:description", content: "Descubre nuestras actividades: judo, pilates, zumba, entrenamiento infantil, fisioterapia y más." },
     ],
   }),
   component: Actividades,
 });
 
 const ACTIVITIES = [
-  {
-    id: "judo-infantil",
-    name: "Judo Infantil",
-    age: "4 – 7 años",
-    level: "Iniciación",
-    description: "Introducción al judo con enfoque lúdico y seguro. Desarrollamos coordinación, seguridad en uno mismo, y valores como el respeto y la amistad.",
-    benefits: ["Coordinación motora", "Confianza", "Respeto", "Diversión"],
-  },
-  {
-    id: "judo-basico",
-    name: "Judo Básico",
-    age: "8 – 11 años",
-    level: "Básico",
-    description: "Progresión en técnica de judo. Trabajo de fundamentos, primeros movimientos de competición, y fortalecimiento de valores de equipo.",
-    benefits: ["Técnica de judo", "Fuerza", "Disciplina", "Trabajo en equipo"],
-  },
-  {
-    id: "judo-adulto",
-    name: "Judo Adulto",
-    age: "18+ años",
-    level: "Todos los niveles",
-    description: "Entrenamiento progresivo de judo. Desde iniciación hasta técnica avanzada. Abierto a todos los niveles de experiencia.",
-    benefits: ["Actividad física completa", "Defensa personal", "Comunidad", "Superación personal"],
-  },
-  {
-    id: "judo-competicion",
-    name: "Judo de Competición",
-    age: "10+ años (convocatoria)",
-    level: "Avanzado",
-    description: "Preparación intensiva para competiciones autonómicas, nacionales e internacionales. Entrenamiento especializado bajo convocatoria.",
-    benefits: ["Entrenamiento de élite", "Competición internacional", "Mentoring", "Desarrollo deportivo"],
-  },
   {
     id: "pilates",
     name: "Pilates",
@@ -70,13 +38,22 @@ const ACTIVITIES = [
     benefits: ["Desarrollo motriz", "Juego organizado", "Socialización", "Actividad física divertida"],
   },
   {
-    id: "masaje",
-    name: "Masaje Deportivo y Terapéutico",
+    id: "fisioterapia",
+    name: "Fisioterapia",
     age: "Adultos",
     level: "Recuperación",
-    description: "Servicios de masaje especializado: deportivo, terapéutico y relajante. Para recuperación, bienestar y alivio de tensiones.",
-    benefits: ["Recuperación muscular", "Reducción de tensión", "Bienestar", "Alivio del dolor"],
+    description: "Servicio de fisioterapia para recuperación, prevención y tratamiento de lesiones. Bienestar y alivio de tensiones.",
+    benefits: ["Recuperación muscular", "Prevención de lesiones", "Bienestar", "Alivio del dolor"],
   },
+];
+
+const SCHEDULE_ROWS = [
+  { time: "17:00 – 17:50", monday: "", tuesday: "", wednesday: "", thursday: "Zumba 1" },
+  { time: "17:10 – 18:00", monday: "Judo 1", tuesday: "Training competidores", wednesday: "Judo 1", thursday: "" },
+  { time: "18:00 – 18:50", monday: "", tuesday: "Training infantil", wednesday: "", thursday: "Zumba 2" },
+  { time: "18:10 – 19:00", monday: "Judo 2", tuesday: "", wednesday: "Judo 2", thursday: "" },
+  { time: "19:10 – 20:00", monday: "Judo 3", tuesday: "", wednesday: "Judo 3", thursday: "" },
+  { time: "20:00 – 21:00", monday: "Judo competición", tuesday: "", wednesday: "Judo competición", thursday: "" },
 ];
 
 function Actividades() {
@@ -84,12 +61,12 @@ function Actividades() {
     <>
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="max-w-2xl">
-          <p className="reveal text-xs uppercase tracking-[0.3em] text-muted-foreground">Actividades</p>
+          <p className="reveal text-xs uppercase tracking-[0.3em] text-muted-foreground">Otras actividades</p>
           <h1 className="reveal reveal-delay-1 mt-6 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
             Deporte y bienestar para todas las edades.
           </h1>
           <p className="reveal reveal-delay-2 mt-6 text-base leading-relaxed text-muted-foreground">
-            Desde judo infantil hasta actividades de bienestar para adultos. Encuentra la actividad que se adapte a ti y forma parte de nuestra comunidad.
+            Actividades para niños y adultos, movimiento y bienestar. Encuentra la actividad que se adapte a ti y forma parte de nuestra comunidad.
           </p>
         </div>
 
@@ -129,6 +106,36 @@ function Actividades() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-20">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Curso 2026–2027</p>
+            <h2 className="mt-5 font-display text-3xl leading-tight tracking-tight sm:text-4xl">Tabla de horarios.</h2>
+          </div>
+          <div className="mt-8 overflow-x-auto rounded-3xl border border-border">
+            <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="bg-secondary/60">
+                  {['Horarios', 'Lunes', 'Martes', 'Miércoles', 'Jueves'].map((heading) => (
+                    <th key={heading} className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground">{heading}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {SCHEDULE_ROWS.map((row) => (
+                  <tr key={row.time} className="border-b border-border/70 last:border-b-0">
+                    <th className="whitespace-nowrap px-5 py-4 font-display font-semibold">{row.time}</th>
+                    {[row.monday, row.tuesday, row.wednesday, row.thursday].map((activity, index) => (
+                      <td key={`${row.time}-${index}`} className={`px-5 py-4 ${activity ? "font-medium text-foreground" : "text-muted-foreground/30"}`}>
+                        {activity || "—"}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 

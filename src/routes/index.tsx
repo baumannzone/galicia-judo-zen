@@ -5,9 +5,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
-      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil, masajes y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos." },
+      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil, fisioterapia y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos." },
       { property: "og:title", content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
-      { property: "og:description", content: "Centro deportivo con judo, pilates, zumba, entrenamiento infantil, masajes, campus y torneo internacional en A Guarda." },
+      { property: "og:description", content: "Centro deportivo con judo, pilates, zumba, entrenamiento infantil, fisioterapia, campus y torneo internacional en A Guarda." },
     ],
   }),
   component: Index,
@@ -30,7 +30,7 @@ function Index() {
                 y familia.
               </h1>
               <p className="reveal reveal-delay-2 mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-                Judo, pilates, zumba, entrenamiento infantil y masajes. Acompañamos a niños, jóvenes y adultos en su crecimiento deportivo y personal.
+                Judo, pilates, zumba, entrenamiento infantil y fisioterapia. Acompañamos a niños, jóvenes y adultos en su crecimiento deportivo y personal.
               </p>
               <div className="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4">
                 <Link
@@ -45,7 +45,7 @@ function Index() {
               </div>
             </div>
             <div className="md:col-span-6">
-              <div className="reveal reveal-delay-2 relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-secondary">
+              <div className="reveal reveal-delay-2 relative aspect-4/5 w-full overflow-hidden rounded-3xl bg-secondary">
                 <img
                   src={heroImg}
                   alt="Judoka en el dojo"
@@ -63,11 +63,11 @@ function Index() {
           <div className="marquee-track flex w-max gap-16 whitespace-nowrap font-display text-2xl font-medium text-muted-foreground">
             {Array.from({ length: 2 }).map((_, i) => (
               <div key={i} className="flex gap-16">
-                <span>礼 Respeto</span>
-                <span>· 精力善用 Máxima eficiencia</span>
-                <span>· 自他共栄 Prosperidad mutua</span>
-                <span>· 柔 Suavidad</span>
-                <span>· 道 El camino</span>
+                <span> 礼 Respeto</span>
+                <span>· 精力善用 Valores </span>
+                <span>· 自他共栄 Familia </span>
+                <span>· 柔 Judo </span>
+                <span>· 道 Pilates </span>
                 <span>·</span>
               </div>
             ))}
@@ -89,7 +89,7 @@ function Index() {
               El Centro Deportivo Baixo Miño es un proyecto deportivo de A Guarda dedicado a la enseñanza del judo, la actividad física, el bienestar y la formación en valores.
             </p>
             <p>
-              Combinamos deporte base y competición de alto nivel con actividades como pilates, zumba, entrenamiento infantil y masajes. Nuestra filosofía se apoya en el respeto, el esfuerzo, la humildad, la amistad y el sentimiento de equipo.
+              Combinamos deporte base y competición de alto nivel con actividades como pilates, zumba, entrenamiento infantil y fisioterapia. Nuestra filosofía se apoya en el respeto, el esfuerzo, la humildad, la amistad y el sentimiento de equipo.
             </p>
             <p>
               Formamos parte de la Federación Galega de Judo. Trabajamos con niños, jóvenes y adultos, acompañándolos en su desarrollo tanto dentro como fuera del tatami.

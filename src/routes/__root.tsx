@@ -73,15 +73,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
-      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil, masajes y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos." },
+      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil, fisioterapia y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos." },
       { name: "author", content: "Club Deportivo Baixo Miño" },
       { name: "keywords", content: "judo A Guarda, club deportivo, pilates, zumba, campus verano, torneo santa trega, A Guarda Pontevedra" },
       { property: "og:title", content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
-      { property: "og:description", content: "Centro deportivo con judo, pilates, zumba, entrenamiento infantil, masajes, campus y torneo internacional en A Guarda." },
+      { property: "og:description", content: "Centro deportivo con judo, pilates, zumba, entrenamiento infantil, fisioterapia, campus y torneo internacional en A Guarda." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
-      { name: "twitter:description", content: "Judo, pilates, zumba, entrenamiento infantil, masajes y campus en A Guarda." },
+      { name: "twitter:description", content: "Judo, pilates, zumba, entrenamiento infantil, fisioterapia y campus en A Guarda." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/11d686cf-84c9-4850-a7ff-b78241215cd4/id-preview-b92fa60a--07910a82-7b24-43fd-9817-00904d83ad6a.lovable.app-1784758799298.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/11d686cf-84c9-4850-a7ff-b78241215cd4/id-preview-b92fa60a--07910a82-7b24-43fd-9817-00904d83ad6a.lovable.app-1784758799298.png" },
     ],
@@ -120,8 +120,6 @@ const NAV = [
   { to: "/", label: "Inicio" },
   { to: "/judo", label: "Judo" },
   { to: "/actividades", label: "Actividades" },
-  { to: "/campus", label: "Campus y Familias" },
-  { to: "/torneo-santa-trega", label: "Torneo Santa Trega" },
   { to: "/noticias", label: "Noticias" },
   { to: "/contacto", label: "Contacto" },
 ] as const;
@@ -147,12 +145,6 @@ function SiteHeader() {
               {n.label}
             </Link>
           ))}
-          <Link
-            to="/contacto"
-            className="rounded-full bg-foreground px-4 py-2 text-xs font-medium text-background transition-all hover:bg-primary hover:shadow-soft"
-          >
-            Inscríbete
-          </Link>
         </nav>
         <button
           onClick={() => setOpen((v) => !v)}
@@ -202,11 +194,17 @@ function SiteFooter() {
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Ubicación</p>
-          <p className="mt-3 text-sm">Rúa Irmáns Noia Gil, 2<br/>36780 A Guarda, Pontevedra</p>
+          <p className="mt-3 text-sm">Rúa Irmáns Noia Xil, 2<br/>36780 A Guarda, Pontevedra</p>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contacto</p>
-          <p className="mt-3 text-sm">judobaixominho@gmail.com<br/>+34 663 374 895</p>
+          <p className="mt-3 text-sm">
+            <a href="tel:+34663374895" className="hover:text-primary transition-colors">+34 663 37 48 95</a>
+            <br />
+            <a href="mailto:judobaixominho@gmail.com" className="hover:text-primary transition-colors">judobaixominho@gmail.com</a>
+            <br />
+            <a href="https://www.instagram.com/cdbaixominho/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram @cdbaixominho</a>
+          </p>
         </div>
       </div>
       <div className="border-t border-border/60">

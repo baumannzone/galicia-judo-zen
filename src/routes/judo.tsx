@@ -12,6 +12,29 @@ export const Route = createFileRoute("/judo")({
   component: Judo,
 });
 
+const JUDO_SCHEDULE = [
+  {
+    name: "Judo Grupo 1",
+    ages: "Nacidos en 2023, 2022, 2021 y 2020",
+    slots: ["Lunes · 17:10 – 18:00", "Miércoles · 17:10 – 18:00"],
+  },
+  {
+    name: "Judo Grupo 2",
+    ages: "Nacidos en 2019, 2018 y 2017 (iniciados)",
+    slots: ["Lunes · 18:10 – 19:00", "Miércoles · 18:10 – 19:00"],
+  },
+  {
+    name: "Judo Grupo 3",
+    ages: "Nacidos en 2017, 2016 y 2015",
+    slots: ["Lunes · 19:10 – 20:00", "Miércoles · 19:10 – 20:00"],
+  },
+  {
+    name: "Judo Competición",
+    ages: "Categorías alevín, infantil, cadete y júnior",
+    slots: ["Martes · 17:10 – 18:00", "Lunes · 20:00 – 21:00", "Miércoles · 20:00 – 21:00"],
+  },
+];
+
 function Judo() {
   return (
     <>
@@ -66,6 +89,29 @@ function Judo() {
 
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="max-w-2xl mb-16">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Curso 2026–2027</p>
+          <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
+            Horarios de judo.
+          </h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {JUDO_SCHEDULE.map((group) => (
+            <article key={group.name} className="rounded-3xl border border-border bg-background p-8 md:p-10">
+              <h3 className="font-display text-2xl font-semibold tracking-tight">{group.name}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{group.ages}</p>
+              <ul className="mt-6 space-y-2 border-t border-border pt-5">
+                {group.slots.map((slot) => (
+                  <li key={slot} className="text-sm font-medium text-primary">{slot}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="max-w-2xl mb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Beneficios</p>
           <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
             Por qué practicar judo.
@@ -106,55 +152,6 @@ function Judo() {
         </div>
       </section>
 
-      <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="max-w-2xl mb-16">
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Estructura</p>
-            <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-              Categorías y progresión.
-            </h2>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-4">
-            {[
-              {
-                name: "Infantil",
-                age: "4–7 años",
-                focus: "Iniciación lúdica y segura",
-              },
-              {
-                name: "Básico",
-                age: "8–11 años",
-                focus: "Fundamentos técnicos",
-              },
-              {
-                name: "Juvenil",
-                age: "12–17 años",
-                focus: "Técnica avanzada",
-              },
-              {
-                name: "Adulto",
-                age: "18+ años",
-                focus: "Todos los niveles",
-              },
-            ].map((cat) => (
-              <div key={cat.name} className="rounded-2xl border border-border p-6">
-                <p className="font-display text-xl font-semibold">{cat.name}</p>
-                <p className="mt-2 text-sm text-muted-foreground">{cat.age}</p>
-                <p className="mt-3 text-sm font-medium text-primary">{cat.focus}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 rounded-3xl bg-background border border-border p-8 md:p-10">
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Cinturones</p>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              El sistema de cinturones en judo representa la progresión del judoka. Desde blanco (iniciación) hasta negro (maestría), cada cinturón marca una etapa de aprendizaje y desarrollo.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="max-w-2xl mb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Competición</p>
@@ -185,26 +182,6 @@ function Judo() {
             </ul>
           </div>
 
-          <div className="rounded-3xl border border-border bg-background p-8 md:p-10">
-            <p className="font-display text-2xl font-semibold tracking-tight">Logros 2026</p>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              Nuestros deportistas destacan a nivel autonómico, nacional e internacional. En la temporada 2025/26, representamos a Baixo Miño con excelencia.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <li className="flex gap-2">
-                <span className="text-primary">→</span> 20+ participantes nacionales
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">→</span> Selección Gallega
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">→</span> European Cup
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">→</span> Supercopa de España
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
 

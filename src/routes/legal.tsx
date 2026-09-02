@@ -24,8 +24,8 @@ function Legal() {
         <ul>
           <li><strong>Razón Social:</strong> Club Deportivo Baixo Miño / Clube de Judo Baixo Miño</li>
           <li><strong>NIF:</strong> G94146552</li>
-          <li><strong>Domicilio:</strong> Rúa Irmáns Noia Gil, 2, bajo, 36780 A Guarda, Pontevedra, España</li>
-          <li><strong>Teléfono:</strong> +34 663 374 895</li>
+          <li><strong>Domicilio:</strong> Rúa Irmáns Noia Xil, 2, 36780 A Guarda, Pontevedra, España</li>
+          <li><strong>Teléfono:</strong> +34 986 910 408 / +34 663 374 895</li>
           <li><strong>Email:</strong> judobaixominho@gmail.com</li>
           <li><strong>Número de Registro:</strong> C-12756 (Federación Galega de Judo)</li>
         </ul>
@@ -109,8 +109,8 @@ function Legal() {
         <p>
           <strong>Club Deportivo Baixo Miño</strong><br/>
           Email: judobaixominho@gmail.com<br/>
-          Teléfono: +34 663 374 895<br/>
-          Dirección: Rúa Irmáns Noia Gil, 2, bajo, 36780 A Guarda, Pontevedra
+          Teléfono: +34 986 910 408 / +34 663 374 895<br/>
+          Dirección: Rúa Irmáns Noia Xil, 2, 36780 A Guarda, Pontevedra
         </p>
 
         <p className="mt-12 text-sm text-muted-foreground">

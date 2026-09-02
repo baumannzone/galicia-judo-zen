@@ -28,14 +28,21 @@ function Contacto() {
           <dl className="mt-12 space-y-8 text-sm">
             <div>
               <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Dirección</dt>
-              <dd className="mt-2 font-medium">Rúa Irmáns Noia Gil, 2, bajo<br/>36780 A Guarda, Pontevedra</dd>
+              <dd className="mt-2 font-medium">Rúa Irmáns Noia Xil, 2<br/>36780 A Guarda, Pontevedra</dd>
             </div>
             <div>
               <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Teléfono</dt>
-              <dd className="mt-2">
-                <a href="tel:+34663374895" className="font-medium hover:text-primary transition-colors">
-                  +34 663 374 895
-                </a>
+              <dd className="mt-2 space-y-1">
+                <div>
+                  <a href="tel:+34986910408" className="font-medium hover:text-primary transition-colors">
+                    +34 986 910 408
+                  </a>
+                </div>
+                <div>
+                  <a href="tel:+34663374895" className="font-medium hover:text-primary transition-colors">
+                    +34 663 374 895
+                  </a>
+                </div>
               </dd>
             </div>
             <div>
@@ -68,17 +75,18 @@ function Contacto() {
           <div className="reveal reveal-delay-2 rounded-3xl border border-border bg-secondary/30 p-8 md:p-10">
             <h2 className="font-display text-2xl font-semibold tracking-tight">Ubicación</h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Estamos en A Guarda, a pocos minutos del centro. Junto al pabellón de A Sangriña, donde celebramos competiciones y eventos.
+              Estamos en Rúa Irmáns Noia Xil, 2, en A Guarda (Pontevedra).
             </p>
             <div className="mt-6 overflow-hidden rounded-2xl">
               <iframe
+                title="Ubicación del Centro Deportivo Baixo Miño en Google Maps"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
                 loading="lazy"
-                allowFullScreen=""
+                allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2901.2394723456456!2d-8.880344!3d42.006694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e0c0c0c0c0c0d%3A0x0!2sR%C3%BAa%20Irm%C3%A1ns%20Noia%20Gil%2C%202%2C%2036780%20A%20Guarda%2C%20Pontevedra!5e0!3m2!1ses!2ses!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.2!2d-8.8755687!3d41.9049296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd25ea8bb849c317%3A0x9ecaed688d2ca3f7!2sCentro%20Deportivo%20Baixo%20Mi%C3%B1o!5e0!3m2!1ses-ES!2ses!4v1!5m2!1ses-ES!2ses"
               />
             </div>
 
