@@ -116,6 +116,10 @@ function Judo() {
           <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
             Por qué practicar judo.
           </h2>
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+            El judo es mucho más que un deporte: ayuda a mejorar la forma física, refuerza la
+            confianza y transmite valores como el respeto, la disciplina y el compañerismo.
+          </p>
         </div>
 
         <div className="grid gap-10 md:grid-cols-2">
