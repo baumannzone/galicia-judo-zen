@@ -56,6 +56,15 @@ const SCHEDULE_ROWS = [
   { time: "20:00 – 21:00", monday: "Judo competición", tuesday: "", wednesday: "Judo competición", thursday: "" },
 ];
 
+function scheduleTone(activity: string) {
+  const value = activity.toLowerCase();
+  if (value.includes("zumba")) return "bg-pink-500/15 text-pink-700 dark:text-pink-300";
+  if (value.includes("competici")) return "bg-blue-500/15 text-blue-700 dark:text-blue-300";
+  if (value.includes("training")) return "bg-green-500/15 text-green-700 dark:text-green-300";
+  if (value.includes("judo")) return "bg-yellow-400/25 text-yellow-800 dark:text-yellow-200";
+  return "";
+}
+
 function Actividades() {
   return (
     <>
@@ -127,8 +136,12 @@ function Actividades() {
                   <tr key={row.time} className="border-b border-border/70 last:border-b-0">
                     <th className="whitespace-nowrap px-5 py-4 font-display font-semibold">{row.time}</th>
                     {[row.monday, row.tuesday, row.wednesday, row.thursday].map((activity, index) => (
-                      <td key={`${row.time}-${index}`} className={`px-5 py-4 ${activity ? "font-medium text-foreground" : "text-muted-foreground/30"}`}>
-                        {activity || "—"}
+                      <td key={`${row.time}-${index}`} className={`px-5 py-4 ${activity ? "font-medium" : "text-muted-foreground/30"}`}>
+                        {activity ? (
+                          <span className={`inline-flex rounded-lg px-3 py-2 ${scheduleTone(activity)}`}>
+                            {activity}
+                          </span>
+                        ) : "—"}
                       </td>
                     ))}
                   </tr>

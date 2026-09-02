@@ -97,7 +97,7 @@ const ACTIVITIES: Activity[] = [
     name: "Presoterapia",
     age: "Adultos",
     level: "Recuperación",
-    description: "[PENDIENTE]: Tratamiento de recuperación y bienestar.",
+    description: "Tratamiento orientado a la recuperación y el bienestar.",
   },
 ];
 
