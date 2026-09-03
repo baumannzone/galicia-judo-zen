@@ -10,6 +10,7 @@ import {
 import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import logoMark from "../assets/logo-mark.png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -87,7 +88,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", href: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { rel: "icon", href: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -116,6 +121,24 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+// The club mark, tinted with the foreground token via a mask so it follows the theme.
+const maskStyle = {
+  maskImage: `url(${logoMark})`,
+  WebkitMaskImage: `url(${logoMark})`,
+  maskSize: "contain",
+  WebkitMaskSize: "contain",
+  maskRepeat: "no-repeat",
+  WebkitMaskRepeat: "no-repeat",
+  maskPosition: "center",
+  WebkitMaskPosition: "center",
+} as const;
+
+function BrandMark({ className = "h-9 w-9" }: { className?: string }) {
+  return (
+    <span aria-hidden="true" className={`${className} shrink-0 bg-foreground`} style={maskStyle} />
+  );
+}
+
 const NAV = [
   { to: "/", label: "Inicio" },
   { to: "/judo", label: "Judo" },
@@ -130,7 +153,7 @@ function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2 font-display text-base font-semibold tracking-tight">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background text-xs">柔</span>
+          <BrandMark />
           <span>Baixo Miño</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
@@ -185,7 +208,7 @@ function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 font-display text-base font-semibold">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background text-xs">柔</span>
+            <BrandMark />
             <span>Club Deportivo Baixo Miño</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
