@@ -140,7 +140,7 @@ function Judo() {
         <div className="mt-14">
           <h3 className="font-display text-2xl font-semibold tracking-tight">Judo infantil y competición.</h3>
           <div className="mt-6 overflow-x-auto rounded-3xl border border-border">
-            <table className="w-full min-w-[760px] table-fixed border-collapse text-left text-sm">
+            <table className="w-full min-w-190 table-fixed border-collapse text-left text-sm">
               <colgroup>
                 <col className="w-36" />
                 <col span={4} />
@@ -183,7 +183,7 @@ function Judo() {
         <div className="mt-14">
           <h3 className="font-display text-2xl font-semibold tracking-tight">Judo adultos.</h3>
           <div className="mt-6 overflow-x-auto rounded-3xl border border-border">
-            <table className="w-full min-w-[760px] table-fixed border-collapse text-left text-sm">
+            <table className="w-full min-w-190 table-fixed border-collapse text-left text-sm">
               <colgroup>
                 <col className="w-36" />
                 <col span={5} />
@@ -258,7 +258,7 @@ function Judo() {
               <ul className="mt-6 space-y-3">
                 {group.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
                     {benefit}
                   </li>
                 ))}
