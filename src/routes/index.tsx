@@ -39,8 +39,8 @@ function Index() {
                 >
                   Clase de prueba gratis
                 </Link>
-                <Link to="/horarios" className="link-underline text-sm font-medium">
-                  Ver horarios →
+                <Link to="/actividades" className="link-underline text-sm font-medium">
+                  Ver actividades y horarios →
                 </Link>
               </div>
             </div>

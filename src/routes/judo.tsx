@@ -35,13 +35,23 @@ const JUDO_SCHEDULE = [
   },
 ];
 
+const ADULT_JUDO_GROUP = {
+  name: "Judo Adultos",
+  ages: "Grupo de adultos",
+  slots: ["Lunes · 21:00 – 22:30", "Miércoles · 21:00 – 22:30", "Viernes · 21:00 – 22:30"],
+};
+
 const SCHEDULE_ROWS = [
-  { time: "17:00 – 17:50", monday: "", tuesday: "", wednesday: "", thursday: "Zumba 1" },
   { time: "17:10 – 18:00", monday: "Judo 1", tuesday: "Training competidores", wednesday: "Judo 1", thursday: "" },
-  { time: "18:00 – 18:50", monday: "", tuesday: "Training infantil", wednesday: "", thursday: "Zumba 2" },
+  { time: "18:00 – 18:50", monday: "", tuesday: "Training infantil", wednesday: "", thursday: "" },
   { time: "18:10 – 19:00", monday: "Judo 2", tuesday: "", wednesday: "Judo 2", thursday: "" },
   { time: "19:10 – 20:00", monday: "Judo 3", tuesday: "", wednesday: "Judo 3", thursday: "" },
   { time: "20:00 – 21:00", monday: "Judo competición", tuesday: "", wednesday: "Judo competición", thursday: "" },
+];
+
+const ADULT_SCHEDULE_ROWS = [
+  { time: "20:00 – 21:00", monday: "Judo competición", tuesday: "", wednesday: "Judo competición", thursday: "", friday: "" },
+  { time: "21:00 – 22:30", monday: "Judo adultos", tuesday: "", wednesday: "Judo adultos", thursday: "", friday: "Judo adultos" },
 ];
 
 function scheduleTone(activity: string) {
@@ -127,28 +137,78 @@ function Judo() {
           ))}
         </div>
 
-        <div className="mt-14 overflow-x-auto rounded-3xl border border-border">
-          <table className="w-full min-w-[760px] border-collapse text-left text-sm">
-            <thead>
-              <tr className="bg-secondary/60">
-                {["Horarios", "Lunes", "Martes", "Miércoles", "Jueves"].map((heading) => (
-                  <th key={heading} className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground">{heading}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {SCHEDULE_ROWS.map((row) => (
-                <tr key={row.time} className="border-b border-border/70 last:border-b-0">
-                  <th className="whitespace-nowrap px-5 py-4 font-display font-semibold">{row.time}</th>
-                  {[row.monday, row.tuesday, row.wednesday, row.thursday].map((activity, index) => (
-                    <td key={`${row.time}-${index}`} className={`px-5 py-4 ${activity ? "font-medium" : "text-muted-foreground/30"}`}>
-                      {activity ? <span className={`inline-flex rounded-lg px-3 py-2 ${scheduleTone(activity)}`}>{activity}</span> : "—"}
-                    </td>
+        <div className="mt-14">
+          <h3 className="font-display text-2xl font-semibold tracking-tight">Judo infantil y competición.</h3>
+          <div className="mt-6 overflow-x-auto rounded-3xl border border-border">
+            <table className="w-full min-w-[760px] table-fixed border-collapse text-left text-sm">
+              <colgroup>
+                <col className="w-36" />
+                <col span={4} />
+              </colgroup>
+              <thead>
+                <tr className="bg-secondary/60">
+                  {["Horarios", "Lunes", "Martes", "Miércoles", "Jueves"].map((heading) => (
+                    <th key={heading} className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground">{heading}</th>
                   ))}
                 </tr>
+              </thead>
+              <tbody>
+                {SCHEDULE_ROWS.map((row) => (
+                  <tr key={row.time} className="border-b border-border/70 last:border-b-0">
+                    <th className="whitespace-nowrap px-5 py-4 font-display font-semibold">{row.time}</th>
+                    {[row.monday, row.tuesday, row.wednesday, row.thursday].map((activity, index) => (
+                      <td key={`${row.time}-${index}`} className={`px-5 py-4 ${activity ? "font-medium" : "text-muted-foreground/30"}`}>
+                        {activity ? <span className={`inline-flex w-full justify-center rounded-lg px-3 py-2 text-center ${scheduleTone(activity)}`}>{activity}</span> : "—"}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <article className="rounded-3xl border border-border bg-background p-8 md:p-10">
+            <h3 className="font-display text-2xl font-semibold tracking-tight">{ADULT_JUDO_GROUP.name}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{ADULT_JUDO_GROUP.ages}</p>
+            <ul className="mt-6 space-y-2 border-t border-border pt-5">
+              {ADULT_JUDO_GROUP.slots.map((slot) => (
+                <li key={slot} className="text-sm font-medium text-primary">{slot}</li>
               ))}
-            </tbody>
-          </table>
+            </ul>
+          </article>
+        </div>
+
+        <div className="mt-14">
+          <h3 className="font-display text-2xl font-semibold tracking-tight">Judo adultos.</h3>
+          <div className="mt-6 overflow-x-auto rounded-3xl border border-border">
+            <table className="w-full min-w-[760px] table-fixed border-collapse text-left text-sm">
+              <colgroup>
+                <col className="w-36" />
+                <col span={5} />
+              </colgroup>
+              <thead>
+                <tr className="bg-secondary/60">
+                  {["Horarios", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"].map((heading) => (
+                    <th key={heading} className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground">{heading}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {ADULT_SCHEDULE_ROWS.map((row) => (
+                  <tr key={row.time} className="border-b border-border/70 last:border-b-0">
+                    <th className="whitespace-nowrap px-5 py-4 font-display font-semibold">{row.time}</th>
+                    {[row.monday, row.tuesday, row.wednesday, row.thursday, row.friday].map((activity, index) => (
+                      <td key={`${row.time}-${index}`} className={`px-5 py-4 ${activity ? "font-medium" : "text-muted-foreground/30"}`}>
+                        {activity ? <span className={`inline-flex w-full justify-center rounded-lg px-3 py-2 text-center ${scheduleTone(activity)}`}>{activity}</span> : "—"}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div className="mt-8 rounded-3xl border border-primary/30 bg-primary/5 p-8 md:p-10">

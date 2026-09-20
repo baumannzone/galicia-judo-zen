@@ -94,13 +94,7 @@ function Contacto() {
               <p className="font-display text-sm font-semibold tracking-tight mb-3">Información práctica</p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <strong className="text-foreground">Aparcamiento:</strong> En la calle o cercano (consultar en teléfono).
-                </li>
-                <li>
-                  <strong className="text-foreground">[PENDIENTE]:</strong> Horario de atención a confirmar.
-                </li>
-                <li>
-                  <strong className="text-foreground">Clase de prueba:</strong> Disponible. Contacta para reservar.
+                  <strong className="text-foreground">Clase de prueba:</strong> Gratuita. Contacta para reservar.
                 </li>
               </ul>
             </div>
