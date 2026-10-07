@@ -29,7 +29,8 @@
     "legal": "Aviso Legal",
     "seasons": "Temporadas",
     "madeIn": "Feito en Galicia por",
-    "instagram": "Instagram @cdbaixominho"
+    "instagram": "Instagram",
+    "facebook": "Facebook"
   },
   "errors": {
     "notFoundLabel": "Error 404",

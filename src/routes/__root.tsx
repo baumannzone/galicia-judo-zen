@@ -309,9 +309,6 @@ function SiteFooter() {
                 {phone.display}
               </a>
             ))}
-            <a href={`mailto:${CONTACT.emailAddress}`} className={`${linkClass} break-all`}>
-              {CONTACT.emailAddress}
-            </a>
             <Link to="/contacto" className={`${linkClass} leading-relaxed`}>
               {COPY.footer.address}
               <br />
@@ -333,7 +330,9 @@ function SiteFooter() {
                 rel="noopener noreferrer"
                 className={linkClass}
               >
-                {social.label.replace(" →", "")}
+                {social.href.includes("instagram.com")
+                  ? COPY.footer.instagram
+                  : COPY.footer.facebook}
               </a>
             ))}
           </nav>
