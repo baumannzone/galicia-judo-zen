@@ -176,3 +176,47 @@
     --photo-width: 76%;
   }
 }
+
+.foto-equipo-imagen {
+  transition: transform 700ms ease;
+}
+.foto-equipo-degradado {
+  transition: opacity 500ms ease;
+}
+.foto-equipo figcaption {
+  text-shadow: 0 2px 12px rgb(0 0 0 / 65%);
+}
+@media (hover: hover) and (pointer: fine) {
+  .foto-equipo:hover .foto-equipo-imagen {
+    transform: scale(1.025);
+  }
+  .foto-equipo:hover .foto-equipo-degradado {
+    opacity: 0.65;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .foto-equipo-imagen,
+  .foto-equipo-degradado {
+    transition: none;
+  }
+  .foto-equipo:hover .foto-equipo-imagen {
+    transform: none;
+  }
+}
+
+.foto-tatami-imagen {
+  transition: transform 700ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .foto-tatami:hover .foto-tatami-imagen {
+    transform: scale(1.025);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .foto-tatami-imagen {
+    transition: none;
+  }
+  .foto-tatami:hover .foto-tatami-imagen {
+    transform: none;
+  }
+}

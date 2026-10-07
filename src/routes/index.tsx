@@ -61,14 +61,21 @@ function Index() {
               </div>
             </div>
             <div className="md:col-span-6">
-              <div className="reveal reveal-delay-2 relative aspect-4/5 w-full overflow-hidden rounded-3xl bg-secondary">
+              <div className="foto-tatami reveal reveal-delay-2 relative aspect-4/5 w-full overflow-hidden rounded-3xl bg-secondary">
                 <img
                   src={tatamiImg}
                   alt="Tatami del Club Deportivo Baixo Miño en A Guarda"
                   width={1536}
                   height={1024}
-                  className="h-full w-full object-cover"
+                  className="foto-tatami-imagen h-full w-full object-cover"
                 />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-950/65 to-transparent"
+                />
+                <p className="absolute inset-x-0 bottom-0 px-6 pb-6 text-xs font-medium uppercase tracking-[0.15em] text-white sm:px-8 sm:pb-8">
+                  Nuestro tatami · A Guarda
+                </p>
               </div>
             </div>
           </div>
@@ -117,18 +124,28 @@ function Index() {
           </div>
         </div>
 
-        <figure className="mt-20 overflow-hidden rounded-3xl border border-border bg-secondary/30">
+        <figure className="foto-equipo relative mt-20 isolate overflow-hidden rounded-3xl bg-foreground">
           <img
             src={equipoImg}
-            alt="Judokas y familias del Club Deportivo Baixo Miño reunidos junto al mar en A Guarda"
+            alt="Judokas y familias del Club Deportivo Baixo Minho reunidos junto al mar en A Guarda"
             width={1536}
             height={1024}
             loading="lazy"
             decoding="async"
-            className="aspect-[3/2] w-full object-cover"
+            className="foto-equipo-imagen aspect-[3/2] w-full object-cover"
           />
-          <figcaption className="px-6 py-5 text-sm text-muted-foreground md:px-8">
-            Un club que crece dentro y fuera del tatami.
+          <div
+            aria-hidden="true"
+            className="foto-equipo-degradado pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,24,45,0.94)_0%,rgba(4,24,45,0.55)_22%,transparent_58%)]"
+          />
+          <figcaption className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-10 text-white sm:px-10 sm:pb-10 md:px-12 md:pb-12">
+            <div aria-hidden="true" className="mb-4 h-0.5 w-12 bg-sky-400 sm:mb-6 sm:w-16" />
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/85 sm:text-xs sm:tracking-[0.3em]">
+              Baixo Minho · A Guarda
+            </p>
+            <p className="mt-3 max-w-xl font-display text-2xl font-semibold leading-tight tracking-tight sm:mt-4 sm:text-4xl md:text-5xl">
+              Un equipo dentro y fuera del tatami.
+            </p>
           </figcaption>
         </figure>
 
