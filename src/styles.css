@@ -38,26 +38,26 @@
 
 :root {
   --radius: 0.5rem;
-  /* Nube Blanca palette */
+  /* Colores del club: azul, gris y negro. */
   --background: oklch(0.995 0.002 260);
   --foreground: oklch(0.18 0.02 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0.02 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 260);
-  --primary: oklch(0.62 0.19 256);              /* #3b82f6 */
+  --primary: oklch(0.48 0.13 242); /* Azul del club con contraste sobre blanco */
   --primary-foreground: oklch(0.99 0.002 260);
-  --secondary: oklch(0.96 0.008 250);           /* #e8ecf1 */
+  --secondary: oklch(0.96 0.012 242); /* #e8ecf1 */
   --secondary-foreground: oklch(0.22 0.02 260);
   --muted: oklch(0.965 0.006 255);
-  --muted-foreground: oklch(0.55 0.03 255);     /* #94a3b8-ish */
-  --accent: oklch(0.62 0.19 256);
+  --muted-foreground: oklch(0.46 0.02 250); /* #94a3b8-ish */
+  --accent: oklch(0.48 0.13 242);
   --accent-foreground: oklch(0.99 0.002 260);
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: oklch(0.99 0.002 260);
   --border: oklch(0.92 0.008 255);
   --input: oklch(0.92 0.008 255);
-  --ring: oklch(0.62 0.19 256);
+  --ring: oklch(0.48 0.13 242);
 }
 
 @layer base {
@@ -75,7 +75,10 @@
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
     font-weight: 600;
@@ -84,26 +87,48 @@
 
 /* Reveal on scroll */
 @keyframes reveal-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes fade-in-slow {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @utility reveal {
   opacity: 0;
   animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-@utility reveal-delay-1 { animation-delay: 0.12s; }
-@utility reveal-delay-2 { animation-delay: 0.24s; }
-@utility reveal-delay-3 { animation-delay: 0.36s; }
-@utility reveal-delay-4 { animation-delay: 0.48s; }
+@utility reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+@utility reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+@utility reveal-delay-3 {
+  animation-delay: 0.36s;
+}
+@utility reveal-delay-4 {
+  animation-delay: 0.48s;
+}
 
 @utility fade-slow {
   animation: fade-in-slow 1.4s ease-out both;
@@ -130,5 +155,24 @@
   &:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+  }
+}
+
+/* Center each photo while leaving the adjacent slides visible. */
+.instalaciones-galeria {
+  --photo-width: 86%;
+  padding-inline: calc((100% - var(--photo-width)) / 2);
+  scroll-padding-inline: calc((100% - var(--photo-width)) / 2);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--secondary);
+}
+.instalaciones-foto {
+  flex-basis: 100%;
+  scroll-snap-align: center;
+}
+@media (min-width: 640px) {
+  .instalaciones-galeria {
+    --photo-width: 76%;
   }
 }

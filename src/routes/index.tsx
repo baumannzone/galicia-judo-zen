@@ -1,13 +1,29 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-judo.jpg";
+import equipoImg from "@/assets/club/equipo-a-guarda.webp";
+import tatamiImg from "@/assets/club/tatami-vista-general.webp";
+import tatamiDetalleImg from "@/assets/club/tatami-segunda-vista.webp";
+import salaMasajesImg from "@/assets/club/sala-fisioterapia.webp";
+import camillaImg from "@/assets/club/camilla-fisioterapia.webp";
+import vestuarioImg from "@/assets/club/vestuario.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
-      { name: "description", content: "Judo, pilates, zumba, entrenamiento infantil, fisioterapia y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos." },
-      { property: "og:title", content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
-      { property: "og:description", content: "Centro deportivo con judo, pilates, zumba, entrenamiento infantil, fisioterapia, campus y torneo internacional en A Guarda." },
+      {
+        name: "description",
+        content:
+          "Judo, pilates, zumba, entrenamiento infantil, masajes y presoterapia y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos.",
+      },
+      {
+        property: "og:title",
+        content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda",
+      },
+      {
+        property: "og:description",
+        content:
+          "Club deportivo con judo, pilates, zumba, entrenamiento infantil, masajes, presoterapia, campus y torneo internacional en A Guarda.",
+      },
     ],
   }),
   component: Index,
@@ -22,15 +38,15 @@ function Index() {
           <div className="grid gap-14 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-6 flex flex-col justify-center">
               <p className="reveal text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                Centro Deportivo · A Guarda · Pontevedra
+                Club Deportivo · A Guarda · Pontevedra
               </p>
               <h1 className="reveal reveal-delay-1 mt-6 font-display text-5xl leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl">
-                Deporte, <br/>
-                <span className="text-muted-foreground">valores</span> <br/>
-                y familia.
+                Deporte, <br />
+                <span className="text-muted-foreground">valores</span> <br />y familia.
               </h1>
               <p className="reveal reveal-delay-2 mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-                Judo, pilates, zumba, entrenamiento infantil y fisioterapia. Acompañamos a niños, jóvenes y adultos en su crecimiento deportivo y personal.
+                Judo, pilates, zumba, entrenamiento infantil, masajes y presoterapia. Acompañamos a
+                niños, jóvenes y adultos en su crecimiento deportivo y personal.
               </p>
               <div className="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4">
                 <Link
@@ -47,10 +63,10 @@ function Index() {
             <div className="md:col-span-6">
               <div className="reveal reveal-delay-2 relative aspect-4/5 w-full overflow-hidden rounded-3xl bg-secondary">
                 <img
-                  src={heroImg}
-                  alt="Judoka en el dojo"
-                  width={1600}
-                  height={1800}
+                  src={tatamiImg}
+                  alt="Tatami del Club Deportivo Baixo Miño en A Guarda"
+                  width={1536}
+                  height={1024}
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -86,16 +102,35 @@ function Index() {
           </div>
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
-              El Centro Deportivo Baixo Miño es un proyecto deportivo de A Guarda dedicado a la enseñanza del judo, la actividad física, el bienestar y la formación en valores.
+              El Club Deportivo Baixo Miño es un proyecto deportivo de A Guarda dedicado a la
+              enseñanza del judo, la actividad física, el bienestar y la formación en valores.
             </p>
             <p>
-              Combinamos deporte base y competición de alto nivel con actividades como pilates, zumba, entrenamiento infantil y fisioterapia. Nuestra filosofía se apoya en el respeto, el esfuerzo, la humildad, la amistad y el sentimiento de equipo.
+              Combinamos deporte base y competición de alto nivel con actividades como pilates,
+              zumba, entrenamiento infantil, masajes y presoterapia. Nuestra filosofía se apoya en
+              el respeto, el esfuerzo, la humildad, la amistad y el sentimiento de equipo.
             </p>
             <p>
-              Formamos parte de la Federación Galega de Judo. Trabajamos con niños, jóvenes y adultos, acompañándolos en su desarrollo tanto dentro como fuera del tatami.
+              Formamos parte de la Federación Galega de Judo. Trabajamos con niños, jóvenes y
+              adultos, acompañándolos en su desarrollo tanto dentro como fuera del tatami.
             </p>
           </div>
         </div>
+
+        <figure className="mt-20 overflow-hidden rounded-3xl border border-border bg-secondary/30">
+          <img
+            src={equipoImg}
+            alt="Judokas y familias del Club Deportivo Baixo Miño reunidos junto al mar en A Guarda"
+            width={1536}
+            height={1024}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[3/2] w-full object-cover"
+          />
+          <figcaption className="px-6 py-5 text-sm text-muted-foreground md:px-8">
+            Un club que crece dentro y fuera del tatami.
+          </figcaption>
+        </figure>
 
         <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-3">
           {[
@@ -104,7 +139,9 @@ function Index() {
             { k: "500+", l: "en Torneo Santa Trega 2026" },
           ].map((s) => (
             <div key={s.l} className="bg-background p-10">
-              <p className="font-display text-5xl font-semibold tracking-tight text-foreground">{s.k}</p>
+              <p className="font-display text-5xl font-semibold tracking-tight text-foreground">
+                {s.k}
+              </p>
               <p className="mt-3 text-sm text-muted-foreground">{s.l}</p>
             </div>
           ))}
@@ -114,15 +151,36 @@ function Index() {
       {/* Valores */}
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Nuestros valores</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            Nuestros valores
+          </p>
           <h2 className="mt-6 max-w-2xl font-display text-4xl leading-tight tracking-tight sm:text-5xl">
             Entendemos el deporte como herramienta de crecimiento.
           </h2>
           <div className="mt-16 grid gap-10 md:grid-cols-3">
             {[
-              { n: "01", t: "Respeto", d: "Base de la convivencia dentro y fuera del tatami. Respeto al compañero, al entrenador, a las normas." },
-              { n: "02", t: "Esfuerzo", d: "Superación constante. En cada entrenamiento trabajamos por mejorar, juntos y en equipo." },
-              { n: "03", t: "Familia", d: "El club como comunidad. Las familias participan en el proceso de crecimiento de nuestros deportistas." },
+              { n: "01", t: "Respeto", d: "La base de la convivencia en el tatami y en la vida." },
+              { n: "02", t: "Eficiencia", d: "Aprovechar la energía física y mental al máximo." },
+              {
+                n: "03",
+                t: "Beneficio mutuo",
+                d: "Crecer y aprender juntos, ayudándonos a mejorar.",
+              },
+              {
+                n: "04",
+                t: "Salud y fuerza",
+                d: "Cuidar nuestro cuerpo, mantenernos activos y crecer fuertes, sanos y preparados para afrontar nuevos retos.",
+              },
+              {
+                n: "05",
+                t: "Diversión",
+                d: "Disfrutar del entrenamiento, del aprendizaje y de compartir el camino con los demás.",
+              },
+              {
+                n: "06",
+                t: "Superación",
+                d: "Esforzarnos cada día para ser un poco mejores que ayer.",
+              },
             ].map((v) => (
               <div key={v.n} className="group">
                 <p className="font-display text-sm text-muted-foreground">{v.n}</p>
@@ -135,6 +193,80 @@ function Index() {
         </div>
       </section>
 
+      {/* Instalaciones */}
+      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            Nuestras instalaciones
+          </p>
+          <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
+            Un espacio para entrenar y sentirte en casa.
+          </h2>
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+            Conoce el tatami y los espacios del club en A Guarda.
+          </p>
+        </div>
+        <p id="galeria-ayuda" className="mt-8 text-sm text-muted-foreground">
+          Desliza para descubrir los espacios del club →
+        </p>
+        <div
+          className="instalaciones-galeria mt-6 flex gap-4 overflow-x-auto pb-4 sm:gap-6 rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          role="region"
+          aria-label="Fotos de las instalaciones"
+          aria-describedby="galeria-ayuda"
+          tabIndex={0}
+        >
+          {[
+            {
+              src: tatamiImg,
+              title: "El tatami",
+              alt: "Tatami azul y zona de entrenamiento del club",
+            },
+            {
+              src: tatamiDetalleImg,
+              title: "Nuestro espacio de entrenamiento",
+              alt: "Otra vista del tatami del Club Deportivo Baixo Miño",
+            },
+            {
+              src: vestuarioImg,
+              title: "El vestuario",
+              alt: "Vestuario del club con percheros, espejo y lavabo",
+            },
+            {
+              src: salaMasajesImg,
+              title: "Área de masajes",
+              alt: "Sala de masajes del club con camilla",
+            },
+            {
+              src: camillaImg,
+              title: "Un espacio para cuidarte",
+              alt: "Detalle de la camilla y toalla del área de masajes",
+            },
+          ].map((photo, index) => (
+            <figure
+              key={photo.src}
+              className="instalaciones-foto shrink-0 overflow-hidden rounded-3xl border border-border bg-secondary/30"
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                width={1536}
+                height={1024}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[4/3] w-full object-cover sm:aspect-[3/2]"
+              />
+              <figcaption className="flex items-center justify-between gap-4 px-6 py-5 text-sm text-muted-foreground">
+                <span>{photo.title}</span>
+                <span className="shrink-0 tabular-nums" aria-label={`Foto ${index + 1} de 5`}>
+                  {index + 1} / 5
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="rounded-3xl bg-foreground px-10 py-20 text-center text-background md:px-16 md:py-28">
@@ -142,7 +274,8 @@ function Index() {
             Forma parte de nuestro equipo.
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-sm text-background/70">
-            Prueba una clase gratis. Judo, pilates, zumba, entrenamiento infantil. Actividades para todas las edades.
+            Prueba una clase gratis. Judo, pilates, zumba, entrenamiento infantil. Actividades para
+            todas las edades.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
