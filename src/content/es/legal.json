@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "Aviso Legal — Club Deportivo Baixo Miño",
+    "description": "Aviso Legal, Política de Privacidad y Política de Cookies del Club Deportivo Baixo Miño."
+  },
+  "title": "Aviso Legal",
+  "sections": [
+    {
+      "title": "1. Información General",
+      "paragraphs": [
+        "Este sitio web es propiedad y está operado por el Club Deportivo Baixo Miño."
+      ],
+      "items": [
+        ["Razón Social", "Club Deportivo Baixo Miño / Clube de Judo Baixo Miño"],
+        ["NIF", "G94146552"],
+        ["Domicilio", "Rúa Irmáns Noia Xil, 2, 36780 A Guarda, Pontevedra, España"],
+        ["Teléfono", "+34 986 910 408 / +34 663 374 895"],
+        ["Email", "judobaixominho@gmail.com"],
+        ["Número de Registro", "C-12756 (Federación Galega de Judo)"]
+      ]
+    },
+    {
+      "title": "2. Uso del Sitio Web",
+      "paragraphs": [
+        "El usuario acepta utilizar este sitio web de conformidad con la ley aplicable y de manera que no infrinja los derechos de terceros ni restrinja o inhiba su uso y disfrute. El comportamiento prohibido incluye: acosar o causar angustia o inconveniente; transmitir contenido obsceno u ofensivo; interrumpir el flujo normal del diálogo en un sitio web."
+      ]
+    },
+    {
+      "title": "3. Responsabilidad de Contenidos",
+      "paragraphs": [
+        "El Club Deportivo Baixo Miño se esfuerza por asegurar que la información contenida en este sitio sea exacta y actual. Sin embargo, no garantiza la precisión, integridad o actualidad de la información. El acceso a este sitio web se proporciona \"tal cual\" sin garantías de ningún tipo."
+      ]
+    },
+    {
+      "title": "4. Política de Privacidad",
+      "blocks": [
+        {
+          "title": "Datos Personales Recopilados",
+          "text": "Cuando completa formularios de contacto, podemos recopilar información personal como nombre, email, teléfono y mensaje. Esta información se utiliza exclusivamente para responder a sus consultas."
+        },
+        {
+          "title": "Protección de Datos",
+          "text": "Cumplimos con el Reglamento General de Protección de Datos (RGPD). Sus datos personales serán protegidos con medidas de seguridad apropiadas. No compartimos sus datos con terceros sin su consentimiento."
+        },
+        {
+          "title": "Derechos del Usuario",
+          "text": "Tiene derecho a acceder, rectificar, suprimir u oponerse al tratamiento de sus datos personales. Para ejercer estos derechos, contacte a judobaixominho@gmail.com."
+        },
+        {
+          "title": "Protección de Menores",
+          "text": "Especialmente en caso de formularios de inscripción a actividades, solicitamos consentimiento parental explícito para el tratamiento de datos de menores. Nunca compartiremos datos de menores sin autorización."
+        }
+      ]
+    },
+    {
+      "title": "5. Política de Cookies",
+      "paragraphs": [
+        "Este sitio web utiliza cookies para mejorar la experiencia del usuario. Las cookies son pequeños archivos que se almacenan en su dispositivo."
+      ],
+      "blocks": [
+        {
+          "title": "Tipos de Cookies",
+          "items": [
+            ["Cookies Esenciales", "Necesarias para el funcionamiento del sitio"],
+            ["Cookies de Analítica", "Para entender cómo usa el sitio (p.ej. Google Analytics)"],
+            ["Cookies de Publicidad", "Para mostrar contenido relevante"]
+          ]
+        }
+      ],
+      "after": "Puede controlar o borrar las cookies a través de la configuración de su navegador. Tenga en cuenta que deshabilitar cookies puede afectar la funcionalidad del sitio."
+    },
+    {
+      "title": "6. Enlaces Externos",
+      "paragraphs": [
+        "Este sitio puede contener enlaces a sitios web externos. El Club Deportivo Baixo Miño no es responsable del contenido de estos sitios ni de sus políticas de privacidad."
+      ]
+    },
+    {
+      "title": "7. Limitación de Responsabilidad",
+      "paragraphs": [
+        "En la máxima medida permitida por la ley, el Club Deportivo Baixo Miño no será responsable de ningún daño directo, indirecto, incidental, especial o consecuente derivado del uso o incapacidad de usar este sitio."
+      ]
+    },
+    {
+      "title": "8. Cambios a Este Aviso Legal",
+      "paragraphs": [
+        "El Club Deportivo Baixo Miño se reserva el derecho de modificar este aviso legal en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio."
+      ]
+    },
+    {
+      "title": "9. Ley Aplicable",
+      "paragraphs": [
+        "Este sitio web y estos términos se rigen por la ley española. Cualquier disputa será resuelta en los tribunales competentes de Pontevedra, España."
+      ]
+    },
+    {
+      "title": "10. Contacto",
+      "paragraphs": ["Para preguntas sobre este aviso legal, privacidad o cookies, contacte a:"],
+      "items": [
+        ["Club Deportivo Baixo Miño", ""],
+        ["Email", "judobaixominho@gmail.com"],
+        ["Teléfono", "+34 986 910 408 / +34 663 374 895"],
+        ["Dirección", "Rúa Irmáns Noia Xil, 2, 36780 A Guarda, Pontevedra"]
+      ]
+    }
+  ],
+  "lastUpdated": "Última actualización: Julio 2026"
+}

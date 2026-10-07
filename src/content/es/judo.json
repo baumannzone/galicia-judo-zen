@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "title": "Judo — Club Deportivo Baixo Miño",
+    "description": "Judo en A Guarda. Descubre qué es el judo, sus beneficios, categorías y competición en el Club Deportivo Baixo Miño.",
+    "socialDescription": "Judo infantil, adulto y competición. Formación en valores, técnica y desarrollo deportivo."
+  },
+  "intro": {
+    "eyebrow": "Judo",
+    "title": "El camino del judo.",
+    "description": "Jigoro Kano creó el judo en 1882 como un arte marcial que va más allá de la técnica. Es una forma de entender la vida basada en el respeto, la eficiencia y el crecimiento mutuo.",
+    "imageAlt": "Vista del tatami azul del Club Deportivo Baixo Miño",
+    "imageCaption": "Aquí empieza el camino de cada judoka."
+  },
+  "philosophy": {
+    "eyebrow": "Filosofía",
+    "title": "Más que técnica.",
+    "paragraphs": [
+      "En el Club Deportivo Baixo Miño, el judo es una herramienta de aprendizaje y crecimiento. Cada entrenamiento trabaja técnica, disciplina, respeto, diversión y superación personal.",
+      "Aprendemos a caer sin miedo, a defender sin violencia, y a ganar y perder con humildad. El tatami es el espacio donde construimos carácter, amistades, comunidad y momentos de diversión compartida.",
+      "El judo nos ayuda a cuidar nuestra salud, desarrollar un cuerpo fuerte y aprender hábitos que nos acompañan durante toda la vida. Crecemos fuertes, tanto física como mentalmente, aprendiendo a confiar en nosotros mismos y a superar nuestros límites.",
+      "El judo nos enseña que la fuerza no es solo física, sino también mental y emocional. Es el arte de aprovechar la energía del compañero para crecer juntos."
+    ],
+    "values": [
+      { "title": "Respeto", "description": "La base de la convivencia en el tatami y en la vida." },
+      { "title": "Eficiencia", "description": "Aprovechar la energía física y mental al máximo." },
+      {
+        "title": "Beneficio mutuo",
+        "description": "Crecer y aprender juntos, ayudándonos a mejorar."
+      },
+      {
+        "title": "Salud y fuerza",
+        "description": "Cuidar nuestro cuerpo, mantenernos activos y crecer fuertes, sanos y preparados para afrontar nuevos retos."
+      },
+      {
+        "title": "Diversión",
+        "description": "Disfrutar del entrenamiento, del aprendizaje y de compartir el camino con los demás."
+      },
+      {
+        "title": "Superación",
+        "description": "Esforzarnos cada día para ser un poco mejores que ayer."
+      }
+    ]
+  },
+  "schedule": {
+    "course": "Curso 2026–2027",
+    "title": "Horarios de judo.",
+    "groups": [
+      {
+        "name": "Judo Grupo 1",
+        "ages": "Nacidos en 2023, 2022, 2021 y 2020",
+        "slots": ["Lunes · 17:10 – 18:00", "Miércoles · 17:10 – 18:00"]
+      },
+      {
+        "name": "Judo Grupo 2",
+        "ages": "Nacidos en 2019, 2018 y 2017 (iniciados)",
+        "slots": ["Lunes · 18:10 – 19:00", "Miércoles · 18:10 – 19:00"]
+      },
+      {
+        "name": "Judo Grupo 3",
+        "ages": "Nacidos en 2017, 2016 y 2015",
+        "slots": ["Lunes · 19:10 – 20:00", "Miércoles · 19:10 – 20:00"]
+      },
+      {
+        "name": "Judo Competición",
+        "ages": "Solo competidores · Técnica, táctica y situaciones específicas",
+        "slots": ["Lunes · 20:00 – 21:00", "Miércoles · 20:00 – 21:00"]
+      }
+    ],
+    "adultGroup": {
+      "name": "Judo Adultos",
+      "ages": "Grupo de adultos",
+      "slots": ["Lunes · 21:00 – 22:30", "Miércoles · 21:00 – 22:30", "Viernes · 21:00 – 22:30"]
+    },
+    "kidsTableTitle": "Judo infantil y competición.",
+    "adultTableTitle": "Judo adultos.",
+    "headings": ["Horarios", "Lunes", "Martes", "Miércoles", "Jueves"],
+    "adultHeadings": ["Horarios", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+    "rows": [
+      {
+        "time": "17:00 – 18:30",
+        "monday": "",
+        "tuesday": "Training competidores",
+        "wednesday": "",
+        "thursday": ""
+      },
+      {
+        "time": "17:10 – 18:00",
+        "monday": "Judo 1",
+        "tuesday": "",
+        "wednesday": "Judo 1",
+        "thursday": ""
+      },
+      {
+        "time": "18:00 – 18:50",
+        "monday": "",
+        "tuesday": "Training infantil",
+        "wednesday": "",
+        "thursday": ""
+      },
+      {
+        "time": "18:10 – 19:00",
+        "monday": "Judo 2",
+        "tuesday": "",
+        "wednesday": "Judo 2",
+        "thursday": ""
+      },
+      {
+        "time": "19:10 – 20:00",
+        "monday": "Judo 3",
+        "tuesday": "",
+        "wednesday": "Judo 3",
+        "thursday": ""
+      },
+      {
+        "time": "20:00 – 21:00",
+        "monday": "Judo competición",
+        "tuesday": "",
+        "wednesday": "Judo competición",
+        "thursday": ""
+      }
+    ],
+    "adultRows": [
+      {
+        "time": "21:00 – 22:30",
+        "monday": "Judo adultos",
+        "tuesday": "",
+        "wednesday": "Judo adultos",
+        "thursday": "",
+        "friday": "Judo adultos"
+      }
+    ],
+    "licenseTitle": "Licencia federativa obligatoria para judokas.",
+    "licenseFees": [
+      { "amount": "25 €", "label": "Nacidos en 2011 y posteriores" },
+      { "amount": "63 €", "label": "Nacidos en 2008, 2009 y 2010" },
+      { "amount": "85 €", "label": "Nacidos en 2007 y anteriores" }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Beneficios",
+    "title": "Por qué practicar judo.",
+    "description": "El judo es mucho más que un deporte: ayuda a mejorar la forma física, refuerza la confianza y transmite valores como el respeto, la disciplina y el compañerismo.",
+    "groups": [
+      {
+        "category": "Físicos",
+        "benefits": [
+          "Fuerza y resistencia",
+          "Coordinación motora",
+          "Equilibrio",
+          "Flexibilidad",
+          "Salud cardiovascular"
+        ]
+      },
+      {
+        "category": "Mentales y Emocionales",
+        "benefits": [
+          "Confianza en uno mismo",
+          "Disciplina",
+          "Concentración",
+          "Manejo del estrés",
+          "Resiliencia"
+        ]
+      },
+      {
+        "category": "Sociales",
+        "benefits": [
+          "Comunidad y amistad",
+          "Trabajo en equipo",
+          "Respeto al otro",
+          "Liderazgo",
+          "Sentimiento de pertenencia"
+        ]
+      },
+      {
+        "category": "Educativos",
+        "benefits": [
+          "Aprender del fracaso",
+          "Perseverancia",
+          "Humildad",
+          "Empatía",
+          "Crecimiento personal"
+        ]
+      }
+    ]
+  },
+  "competition": {
+    "eyebrow": "Competición",
+    "title": "Del tatami a la competición.",
+    "cardTitle": "Competiciones",
+    "description": "Nuestros deportistas compiten en campeonatos gallegos, nacionales e internacionales. La competición es una oportunidad para poner en práctica lo aprendido, desafiarse a uno mismo y representar al club.",
+    "events": [
+      "Campeonato Gallego",
+      "Campeonato de España",
+      "Competiciones Europeas",
+      "Torneo Internacional Santa Trega"
+    ]
+  },
+  "cta": {
+    "title": "Comienza tu camino.",
+    "description": "La mejor forma de conocer el judo es viviéndolo. Ven a entrenar con nosotros.",
+    "activities": "Conoce nuestras clases",
+    "contact": "Contacta con nosotros"
+  }
+}

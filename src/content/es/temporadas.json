@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "title": "Temporadas — Club Deportivo Baixo Miño",
+    "description": "Archivo de actividades, competiciones y resultados del Club Deportivo Baixo Miño, organizado por temporadas.",
+    "socialDescription": "Recorrido por las competiciones, actividades y logros del Club Deportivo Baixo Miño."
+  },
+  "intro": {
+    "eyebrow": "Archivo del club",
+    "title": "Cada temporada deja huella.",
+    "description": "Un recorrido por las competiciones, encuentros y experiencias que compartimos dentro y fuera del tatami.",
+    "seasonLabel": "Temporada",
+    "season": "2026",
+    "seasonDescription": "Competiciones y actividades del año, mes a mes."
+  },
+  "months": [
+    {
+      "name": "Enero",
+      "events": [
+        {
+          "date": "10 enero",
+          "title": "Campeonato Gallego Júnior",
+          "place": "Ferrol",
+          "detail": "Oro para Antía Januario Rodríguez, plata para Zaira López Lamas, bronce para Alejandra Lomba Fernández y quinto puesto para Carlota Crespo Silva."
+        },
+        {
+          "date": "19 enero",
+          "title": "Sector Nacional Noroeste Júnior",
+          "place": "El Entrego, Asturias",
+          "detail": "Oro para Antía Januario Rodríguez y bronce para Alejandra Lomba Fernández."
+        },
+        {
+          "date": "24 enero",
+          "title": "3.ª Liga Rías Altas",
+          "place": "Arteixo",
+          "detail": "En las categorías benjamín, alevín, infantil y cadete: 5 medallas de oro, 4 de plata y 4 de bronce."
+        },
+        {
+          "date": "31 enero",
+          "title": "Fase final del Campeonato de España Júnior",
+          "place": "Pamplona",
+          "detail": "Quinto puesto para Antía Rodríguez Lomba."
+        }
+      ]
+    },
+    {
+      "name": "Febrero",
+      "events": [
+        {
+          "date": "7 febrero",
+          "title": "Supercopa de España Infantil",
+          "place": "Montijo, Extremadura",
+          "detail": "Quinto puesto para Melisa Simón Torrado."
+        },
+        {
+          "date": "7–8 febrero",
+          "title": "European Cup Cadete",
+          "place": "Roma, Italia",
+          "detail": "Participó Antía Januario Rodríguez, acompañada por la entrenadora nacional Mónica María Pacheco Lomba."
+        },
+        {
+          "date": "14 febrero",
+          "title": "4.ª Liga Rías Altas",
+          "place": "Ferrol",
+          "detail": "En las categorías benjamín, alevín, infantil y cadete: 4 medallas de oro, 4 de plata y 6 de bronce."
+        },
+        {
+          "date": "21 febrero",
+          "title": "Copa de España A Infantil",
+          "place": "Santiago de Compostela",
+          "detail": "Medallas de plata para Angie Leis Matos, Melisa Simón Torrado y Ainhoa Paz Álvarez."
+        }
+      ]
+    },
+    {
+      "name": "Marzo",
+      "events": [
+        {
+          "date": "7–8 marzo",
+          "title": "European Cup Júnior",
+          "place": "Portimão, Portugal",
+          "detail": "Participó Antía Januario Rodríguez. Mónica María Pacheco Lomba formó parte del equipo técnico gallego."
+        },
+        {
+          "date": "7 marzo",
+          "title": "Supercopa de España Infantil",
+          "place": "Alicante",
+          "detail": "Medalla de bronce para Angie Leis Matos."
+        },
+        {
+          "date": "28 marzo",
+          "title": "Campeonato Gallego Infantil y Cadete",
+          "place": "Marín",
+          "detail": "Tres oros, una plata y cuatro bronces para el equipo."
+        },
+        {
+          "date": "29 marzo–1 abril",
+          "title": "Stage de Tecnificación Nacional",
+          "place": "Marín",
+          "detail": "Mónica María Pacheco Lomba participó como entrenadora del equipo nacional."
+        }
+      ]
+    },
+    {
+      "name": "Abril",
+      "events": [
+        {
+          "date": "17–19 abril",
+          "title": "Campeonato de España Infantil",
+          "place": "Mallorca",
+          "detail": "Medalla de bronce para Antía Januario Rodríguez."
+        },
+        {
+          "date": "25 abril",
+          "title": "Xogajudo",
+          "place": "Vilanova de Arousa",
+          "detail": "En las categorías prebenjamín, benjamín, alevín e infantil: 5 oros, 7 platas y 8 bronces."
+        }
+      ]
+    },
+    {
+      "name": "Mayo",
+      "events": [
+        {
+          "date": "9 mayo",
+          "title": "III Torneo Internacional Santa Trega",
+          "place": "A Guarda",
+          "detail": "En las categorías benjamín, alevín e infantil: 13 medallas de oro, 12 de plata y 14 de bronce."
+        },
+        {
+          "date": "16 mayo",
+          "title": "Supercopa de España Cadete de Extremadura",
+          "place": "Extremadura",
+          "detail": "Medalla de plata para Antía Januario Rodríguez."
+        },
+        {
+          "date": "23–24 mayo",
+          "title": "European Cup",
+          "place": "Faro, Portugal",
+          "detail": "Participaron Carlota Crespo Silva y Antía Januario Rodríguez, con Mónica María Pacheco Lomba como entrenadora del equipo nacional."
+        }
+      ]
+    },
+    {
+      "name": "Junio",
+      "events": [
+        {
+          "date": "13 junio",
+          "title": "Congreso de Maestros",
+          "place": "Sanxenxo",
+          "detail": "Encuentro de formación para maestros de judo."
+        },
+        {
+          "date": "13 junio",
+          "title": "Supercopa de España Júnior",
+          "place": "Extremadura",
+          "detail": "Medalla de oro para Antía Januario Rodríguez."
+        },
+        {
+          "date": "20–25 junio",
+          "title": "Campamento de Judo Manzaneda",
+          "place": "Manzaneda",
+          "detail": "Campus para las categorías benjamín y alevín."
+        }
+      ]
+    },
+    {
+      "name": "Julio",
+      "events": [
+        {
+          "date": "18–22 julio",
+          "title": "Stage Internacional de Tecnificación Rías Altas",
+          "place": "Portonovo",
+          "detail": "Jornadas de entrenamiento y tecnificación."
+        }
+      ]
+    },
+    {
+      "name": "Agosto",
+      "events": [
+        {
+          "date": "3–6 agosto",
+          "title": "Stage de Tecnificación Rías Altas",
+          "place": "A Coruña",
+          "detail": "Jornadas de entrenamiento y tecnificación."
+        }
+      ]
+    },
+    {
+      "name": "Septiembre",
+      "events": [
+        {
+          "date": "6–7 septiembre",
+          "title": "Atenea Judo Camp",
+          "place": "Santiago de Compostela",
+          "detail": "Encuentro de judo y entrenamiento."
+        },
+        {
+          "date": "12 septiembre",
+          "title": "Copa de España A Júnior",
+          "place": "Ourense",
+          "detail": "Oro para Antía Januario Rodríguez y bronce para Carlota Crespo Silva."
+        },
+        {
+          "date": "26 septiembre",
+          "title": "Entrenamiento de las selecciones gallegas",
+          "place": "Lugo",
+          "detail": "Jornada de entrenamiento de las selecciones gallegas."
+        },
+        {
+          "date": "27 septiembre",
+          "title": "51.º Torneo San Froilán Infantil y Cadete",
+          "detail": "Participación en el torneo infantil y cadete."
+        }
+      ]
+    },
+    {
+      "name": "Octubre",
+      "events": [
+        {
+          "date": "17 octubre",
+          "title": "Supercopa de España Cadete",
+          "place": "Vigo"
+        },
+        {
+          "date": "18 octubre",
+          "title": "Entrenamiento de las selecciones gallegas",
+          "place": "Vigo"
+        },
+        {
+          "date": "24–25 octubre",
+          "title": "Supercopa de España Cadete e Infantil",
+          "place": "Avilés"
+        },
+        {
+          "date": "25 octubre",
+          "title": "Supercopa de España Absoluta",
+          "place": "Getafe"
+        },
+        {
+          "date": "31 octubre",
+          "title": "Campeonato Gallego Absoluto"
+        }
+      ]
+    },
+    {
+      "name": "Noviembre",
+      "events": [
+        {
+          "date": "1 noviembre",
+          "title": "1.ª jornada Liga Rías Altas",
+          "place": "Cambre",
+          "detail": "Categorías benjamín, alevín, infantil y cadete."
+        },
+        {
+          "date": "7 noviembre",
+          "title": "Supercopa de España Júnior",
+          "place": "Asturias"
+        },
+        {
+          "date": "14 noviembre",
+          "title": "Supercopa de España Júnior",
+          "place": "Madrid"
+        },
+        {
+          "date": "15 noviembre",
+          "title": "Sector Nacional Absoluto"
+        },
+        {
+          "date": "21–22 noviembre",
+          "title": "Copa de España Infantil y Cadete",
+          "place": "Getafe"
+        },
+        {
+          "date": "28–29 noviembre",
+          "title": "Fase final del Campeonato de España Absoluto"
+        }
+      ]
+    },
+    {
+      "name": "Diciembre",
+      "events": [
+        {
+          "date": "5 diciembre",
+          "title": "2.ª jornada Liga Rías Altas",
+          "place": "Carballo",
+          "detail": "Categorías benjamín, alevín, infantil y cadete."
+        },
+        {
+          "date": "12–13 diciembre",
+          "title": "Copa de España Infantil y Cadete",
+          "place": "Tenerife"
+        },
+        {
+          "date": "13 diciembre",
+          "title": "XXXII Festa do Judo Infantil — Trofeo de Frutos",
+          "place": "Vigo"
+        },
+        {
+          "date": "26–28 diciembre",
+          "title": "Jornadas de Judo Femenino",
+          "place": "A Coruña"
+        }
+      ]
+    }
+  ]
+}

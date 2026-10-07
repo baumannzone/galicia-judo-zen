@@ -12,24 +12,25 @@ import { useEffect, useState, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import logoMark from "../assets/logo-mark.png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import COPY from "@/content/es/common.json";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Error 404</p>
-        <h1 className="mt-4 font-display text-5xl font-semibold tracking-tight">
-          Página no encontrada
-        </h1>
-        <p className="mt-4 text-sm text-muted-foreground">
-          La página que buscas no existe o ha sido movida.
+        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          {COPY.errors.notFoundLabel}
         </p>
+        <h1 className="mt-4 font-display text-5xl font-semibold tracking-tight">
+          {COPY.errors.notFoundTitle}
+        </h1>
+        <p className="mt-4 text-sm text-muted-foreground">{COPY.errors.notFoundDescription}</p>
         <div className="mt-8">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-primary"
           >
-            Volver al inicio
+            {COPY.errors.home}
           </Link>
         </div>
       </div>
@@ -47,10 +48,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-2xl font-semibold tracking-tight">Algo salió mal</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          No pudimos cargar esta página. Prueba de nuevo o vuelve al inicio.
-        </p>
+        <h1 className="font-display text-2xl font-semibold tracking-tight">
+          {COPY.errors.errorTitle}
+        </h1>
+        <p className="mt-2 text-sm text-muted-foreground">{COPY.errors.errorDescription}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
@@ -59,13 +60,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-primary"
           >
-            Reintentar
+            {COPY.errors.retry}
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-full border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
           >
-            Ir al inicio
+            {COPY.errors.goHome}
           </a>
         </div>
       </div>
@@ -78,32 +79,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda" },
+      { title: COPY.site.title },
       {
         name: "description",
-        content:
-          "Judo, pilates, zumba, entrenamiento infantil, masajes, presoterapia y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos.",
+        content: COPY.site.description,
       },
       { name: "author", content: "Club Deportivo Baixo Miño" },
       {
         name: "keywords",
-        content:
-          "judo A Guarda, club deportivo, pilates, zumba, campus verano, torneo santa trega, A Guarda Pontevedra",
+        content: COPY.site.keywords,
       },
       {
         property: "og:title",
-        content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda",
+        content: COPY.site.title,
       },
       {
         property: "og:description",
-        content:
-          "Club deportivo con judo, pilates, zumba, entrenamiento infantil, masajes, presoterapia, campus y torneo internacional en A Guarda.",
+        content: COPY.site.socialDescription,
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Club Deportivo Baixo Miño | Judo y actividades en A Guarda",
+        content: COPY.site.title,
       },
       {
         name: "twitter:description",
@@ -175,11 +173,11 @@ function BrandMark({ className = "h-9 w-9" }: { className?: string }) {
 }
 
 const NAV = [
-  { to: "/", label: "Inicio" },
-  { to: "/judo", label: "Judo" },
-  { to: "/actividades", label: "Actividades" },
-  { to: "/noticias", label: "Noticias" },
-  { to: "/contacto", label: "Contacto" },
+  { to: "/", label: COPY.nav.home },
+  { to: "/judo", label: COPY.nav.judo },
+  { to: "/actividades", label: COPY.nav.activities },
+  { to: "/noticias", label: COPY.nav.news },
+  { to: "/contacto", label: COPY.nav.contact },
 ] as const;
 
 function SiteHeader() {
@@ -192,7 +190,7 @@ function SiteHeader() {
           className="flex items-center gap-2 font-display text-base font-semibold tracking-tight"
         >
           <BrandMark />
-          <span>Baixo Miño</span>
+          <span>{COPY.site.brand}</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (
@@ -209,7 +207,7 @@ function SiteHeader() {
         </nav>
         <button
           onClick={() => setOpen((v) => !v)}
-          aria-label="Menú"
+          aria-label={COPY.nav.menu}
           className="grid h-9 w-9 place-items-center rounded-full border border-border md:hidden"
         >
           <span className="relative block h-2.5 w-4">
@@ -251,21 +249,26 @@ function SiteFooter() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 font-display text-base font-semibold">
             <BrandMark />
-            <span>Club Deportivo Baixo Miño</span>
+            <span>{COPY.site.organization}</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Deporte, valores y familia en A Guarda. Judo, pilates, zumba y más.
+            {COPY.site.footerDescription}
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Ubicación</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {COPY.footer.location}
+          </p>
           <p className="mt-3 text-sm">
-            Rúa Irmáns Noia Xil, 2<br />
-            36780 A Guarda, Pontevedra
+            {COPY.footer.address}
+            <br />
+            {COPY.footer.city}
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contacto</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {COPY.footer.contact}
+          </p>
           <p className="mt-3 text-sm">
             <a href="tel:+34663374895" className="hover:text-primary transition-colors">
               +34 663 37 48 95
@@ -284,20 +287,25 @@ function SiteFooter() {
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
             >
-              Instagram @cdbaixominho
+              {COPY.footer.instagram}
             </a>
           </p>
         </div>
       </div>
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
-          <span>© {new Date().getFullYear()} Club Deportivo Baixo Miño</span>
+          <span>
+            © {new Date().getFullYear()} {COPY.site.organization}
+          </span>
           <div className="flex items-center gap-4">
+            <Link to="/temporadas" className="hover:text-foreground transition-colors">
+              {COPY.footer.seasons}
+            </Link>
             <Link to="/legal" className="hover:text-foreground transition-colors">
-              Aviso Legal
+              {COPY.footer.legal}
             </Link>
             <span>
-              Feito en Galicia por{" "}
+              {COPY.footer.madeIn}{" "}
               <a
                 href="https://instagram.com/baumannzone"
                 target="_blank"

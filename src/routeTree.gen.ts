@@ -16,6 +16,7 @@ import { Route as JudoRouteImport } from './routes/judo'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TemporadasRouteImport } from './routes/temporadas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TemporadasRoute = TemporadasRouteImport.update({
+  id: '/temporadas',
+  path: '/temporadas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/legal': typeof LegalRoute
   '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/temporadas': typeof TemporadasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/legal': typeof LegalRoute
   '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/temporadas': typeof TemporadasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/legal': typeof LegalRoute
   '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/temporadas': typeof TemporadasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/legal'
     | '/noticias'
     | '/sitemap.xml'
+    | '/temporadas'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/legal'
     | '/noticias'
     | '/sitemap.xml'
+    | '/temporadas'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/legal'
     | '/noticias'
     | '/sitemap.xml'
+    | '/temporadas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   LegalRoute: typeof LegalRoute
   NoticiasRoute: typeof NoticiasRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TemporadasRoute: typeof TemporadasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/temporadas': {
+      id: '/temporadas'
+      path: '/temporadas'
+      fullPath: '/temporadas'
+      preLoaderRoute: typeof TemporadasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   LegalRoute: LegalRoute,
   NoticiasRoute: NoticiasRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TemporadasRoute: TemporadasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

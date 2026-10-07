@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "title": "Actividades — Club Deportivo Baixo Miño",
+    "description": "Judo, pilates, zumba, entrenamiento infantil, masajes y presoterapia en A Guarda. Actividades para todas las edades en el Club Deportivo Baixo Miño.",
+    "socialDescription": "Descubre nuestras actividades: judo, pilates, zumba, entrenamiento infantil, masajes y presoterapia."
+  },
+  "intro": {
+    "eyebrow": "Otras actividades",
+    "title": "Deporte y bienestar para todas las edades.",
+    "description": "Actividades para niños y adultos, movimiento y bienestar. Encuentra la actividad que se adapte a ti y forma parte de nuestra comunidad."
+  },
+  "activities": [
+    {
+      "id": "pilates",
+      "name": "Pilates",
+      "age": "Adultos",
+      "level": "Todos los niveles",
+      "description": "Fortalecimiento y flexibilidad. Trabajo profundo de core, conciencia corporal y alineación. Ideal para recuperación y bienestar.",
+      "benefits": ["Core fortalecido", "Flexibilidad", "Postura", "Bienestar"]
+    },
+    {
+      "id": "zumba",
+      "name": "Zumba adultos",
+      "age": "Adultos",
+      "level": "Todos los niveles",
+      "description": "Baile y cardio con ritmo y energía. Sesiones dinámicas en grupo donde el movimiento y la diversión van de la mano.",
+      "benefits": [
+        "Actividad cardiovascular",
+        "Ritmo y coordinación",
+        "Ambiente grupal",
+        "Diversión"
+      ]
+    },
+    {
+      "id": "zumba-infantil",
+      "name": "Zumba infantil",
+      "age": "Niños",
+      "level": "Grupos 1 y 2",
+      "description": "Baile, ritmo y movimiento para los más pequeños. Dos grupos infantiles para disfrutar y aprender juntos.",
+      "benefits": ["Coordinación", "Ritmo", "Actividad física", "Diversión"]
+    },
+    {
+      "id": "training-competidores",
+      "name": "Training competidores",
+      "age": "Competidores",
+      "level": "Preparación física",
+      "description": "Entrenamiento físico para competidores, como complemento a las sesiones de judo en el tatami.",
+      "benefits": ["Fuerza", "Resistencia", "Coordinación", "Trabajo en equipo"]
+    },
+    {
+      "id": "entrenamiento-infantil",
+      "name": "Entrenamiento Infantil",
+      "age": "Niños",
+      "level": "Multideporte",
+      "description": "Actividad física variada con juegos, psicomotricidad y desarrollo de habilidades motoras. Combinamos diversión con aprendizaje.",
+      "benefits": [
+        "Desarrollo motriz",
+        "Juego organizado",
+        "Socialización",
+        "Actividad física divertida"
+      ]
+    },
+    {
+      "id": "masajes",
+      "name": "Área de masajes",
+      "age": "Adultos",
+      "level": "Bienestar",
+      "description": "Un espacio para relajarte y cuidar de ti con masajes y presoterapia. Consulta con el club las sesiones disponibles.",
+      "benefits": ["Masajes", "Presoterapia", "Relajación", "Bienestar"]
+    }
+  ],
+  "schedule": {
+    "eyebrow": "Curso 2026–2027",
+    "title": "Horario completo de actividades.",
+    "headings": ["Horarios", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+    "rows": [
+      {
+        "time": "09:15 – 10:15",
+        "monday": "",
+        "tuesday": "Pilates",
+        "wednesday": "",
+        "thursday": "Pilates",
+        "friday": ""
+      },
+      {
+        "time": "10:30 – 11:20",
+        "monday": "",
+        "tuesday": "Zumba adultos",
+        "wednesday": "",
+        "thursday": "Zumba adultos",
+        "friday": ""
+      },
+      {
+        "time": "17:00 – 17:50",
+        "monday": "",
+        "tuesday": "",
+        "wednesday": "",
+        "thursday": "Zumba infantil 1",
+        "friday": ""
+      },
+      {
+        "time": "17:00 – 18:30",
+        "monday": "",
+        "tuesday": "Training competidores",
+        "wednesday": "",
+        "thursday": "",
+        "friday": ""
+      },
+      {
+        "time": "17:10 – 18:00",
+        "monday": "Judo 1",
+        "tuesday": "",
+        "wednesday": "Judo 1",
+        "thursday": "",
+        "friday": ""
+      },
+      {
+        "time": "18:00 – 18:50",
+        "monday": "",
+        "tuesday": "Training infantil",
+        "wednesday": "",
+        "thursday": "Zumba infantil 2",
+        "friday": ""
+      },
+      {
+        "time": "18:10 – 19:00",
+        "monday": "Judo 2",
+        "tuesday": "",
+        "wednesday": "Judo 2",
+        "thursday": "",
+        "friday": ""
+      },
+      {
+        "time": "19:00 – 20:00",
+        "monday": "",
+        "tuesday": "Pilates",
+        "wednesday": "",
+        "thursday": "Pilates",
+        "friday": ""
+      },
+      {
+        "time": "19:10 – 20:00",
+        "monday": "Judo 3",
+        "tuesday": "",
+        "wednesday": "Judo 3",
+        "thursday": "",
+        "friday": ""
+      },
+      {
+        "time": "20:00 – 21:00",
+        "monday": "Judo competición",
+        "tuesday": "Pilates",
+        "wednesday": "Judo competición",
+        "thursday": "Pilates",
+        "friday": ""
+      },
+      {
+        "time": "21:00 – 21:50",
+        "monday": "",
+        "tuesday": "Zumba adultos",
+        "wednesday": "",
+        "thursday": "Zumba adultos",
+        "friday": ""
+      },
+      {
+        "time": "21:00 – 22:30",
+        "monday": "Judo adultos",
+        "tuesday": "",
+        "wednesday": "Judo adultos",
+        "thursday": "",
+        "friday": "Judo adultos"
+      }
+    ]
+  },
+  "massageArea": {
+    "eyebrow": "Área de masajes",
+    "title": "Un espacio dedicado a tu bienestar.",
+    "description": "Un espacio del club dedicado a los masajes, la presoterapia y tu bienestar.",
+    "salaAlt": "Área de masajes del club con camilla",
+    "salaCaption": "Área de masajes",
+    "camillaAlt": "Detalle de la camilla y toalla del Club Deportivo Baixo Miño",
+    "camillaCaption": "Detalle de la sala"
+  },
+  "cta": {
+    "eyebrow": "Próximo paso",
+    "title": "Prueba una clase sin compromiso.",
+    "description": "La mejor forma de conocernos es viviendo una clase. Contacta con nosotros para reservar tu primera sesión gratuita.",
+    "reserve": "Reservar clase",
+    "schedule": "Ver horarios"
+  },
+  "actions": { "requestInfo": "Solicitar información →" }
+}

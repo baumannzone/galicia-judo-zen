@@ -1,86 +1,29 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import PAGE from "@/content/es/judo.json";
 import tatamiImg from "@/assets/club/tatami-segunda-vista.webp";
 
 export const Route = createFileRoute("/judo")({
   head: () => ({
     meta: [
-      { title: "Judo — Club Deportivo Baixo Miño" },
+      { title: PAGE.meta.title },
       {
         name: "description",
-        content:
-          "Judo en A Guarda. Descubre qué es el judo, sus beneficios, categorías y competición en el Club Deportivo Baixo Miño.",
+        content: PAGE.meta.description,
       },
-      { property: "og:title", content: "Judo — Club Deportivo Baixo Miño" },
+      { property: "og:title", content: PAGE.meta.title },
       {
         property: "og:description",
-        content:
-          "Judo infantil, adulto y competición. Formación en valores, técnica y desarrollo deportivo.",
+        content: PAGE.meta.socialDescription,
       },
     ],
   }),
   component: Judo,
 });
 
-const JUDO_SCHEDULE = [
-  {
-    name: "Judo Grupo 1",
-    ages: "Nacidos en 2023, 2022, 2021 y 2020",
-    slots: ["Lunes · 17:10 – 18:00", "Miércoles · 17:10 – 18:00"],
-  },
-  {
-    name: "Judo Grupo 2",
-    ages: "Nacidos en 2019, 2018 y 2017 (iniciados)",
-    slots: ["Lunes · 18:10 – 19:00", "Miércoles · 18:10 – 19:00"],
-  },
-  {
-    name: "Judo Grupo 3",
-    ages: "Nacidos en 2017, 2016 y 2015",
-    slots: ["Lunes · 19:10 – 20:00", "Miércoles · 19:10 – 20:00"],
-  },
-  {
-    name: "Judo Competición",
-    ages: "Solo competidores · Técnica, táctica y situaciones específicas",
-    slots: ["Lunes · 20:00 – 21:00", "Miércoles · 20:00 – 21:00"],
-  },
-];
-
-const ADULT_JUDO_GROUP = {
-  name: "Judo Adultos",
-  ages: "Grupo de adultos",
-  slots: ["Lunes · 21:00 – 22:30", "Miércoles · 21:00 – 22:30", "Viernes · 21:00 – 22:30"],
-};
-
-const SCHEDULE_ROWS = [
-  {
-    time: "17:00 – 18:30",
-    monday: "",
-    tuesday: "Training competidores",
-    wednesday: "",
-    thursday: "",
-  },
-  { time: "17:10 – 18:00", monday: "Judo 1", tuesday: "", wednesday: "Judo 1", thursday: "" },
-  { time: "18:00 – 18:50", monday: "", tuesday: "Training infantil", wednesday: "", thursday: "" },
-  { time: "18:10 – 19:00", monday: "Judo 2", tuesday: "", wednesday: "Judo 2", thursday: "" },
-  { time: "19:10 – 20:00", monday: "Judo 3", tuesday: "", wednesday: "Judo 3", thursday: "" },
-  {
-    time: "20:00 – 21:00",
-    monday: "Judo competición",
-    tuesday: "",
-    wednesday: "Judo competición",
-    thursday: "",
-  },
-];
-
-const ADULT_SCHEDULE_ROWS = [
-  {
-    time: "21:00 – 22:30",
-    monday: "Judo adultos",
-    tuesday: "",
-    wednesday: "Judo adultos",
-    thursday: "",
-    friday: "Judo adultos",
-  },
-];
+const JUDO_SCHEDULE = PAGE.schedule.groups;
+const ADULT_JUDO_GROUP = PAGE.schedule.adultGroup;
+const SCHEDULE_ROWS = PAGE.schedule.rows;
+const ADULT_SCHEDULE_ROWS = PAGE.schedule.adultRows;
 
 function scheduleTone(activity: string) {
   const value = activity.toLowerCase();
@@ -96,9 +39,11 @@ function Judo() {
     <>
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="max-w-2xl">
-          <p className="reveal text-xs uppercase tracking-[0.3em] text-muted-foreground">Judo</p>
+          <p className="reveal text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            {PAGE.intro.eyebrow}
+          </p>
           <h1 className="reveal reveal-delay-1 mt-6 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            El camino del judo.
+            {PAGE.intro.title}
           </h1>
           <p className="reveal reveal-delay-2 mt-6 text-base leading-relaxed text-muted-foreground">
             Jigoro Kano creó el judo en 1882 como un arte marcial que va más allá de la técnica. Es
@@ -109,7 +54,7 @@ function Judo() {
         <figure className="mt-14 overflow-hidden rounded-3xl border border-border bg-secondary/30">
           <img
             src={tatamiImg}
-            alt="Vista del tatami azul del Club Deportivo Baixo Miño"
+            alt={PAGE.intro.imageAlt}
             width={1536}
             height={1024}
             loading="lazy"
@@ -117,7 +62,7 @@ function Judo() {
             className="aspect-[16/9] w-full object-cover"
           />
           <figcaption className="px-6 py-5 text-sm text-muted-foreground md:px-8">
-            Aquí empieza el camino de cada judoka.
+            {PAGE.intro.imageCaption}
           </figcaption>
         </figure>
       </section>
@@ -126,63 +71,22 @@ function Judo() {
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Filosofía</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                {PAGE.philosophy.eyebrow}
+              </p>
               <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-                Más que técnica.
+                {PAGE.philosophy.title}
               </h2>
             </div>
             <div className="md:col-span-7 md:col-start-6 space-y-6 text-base leading-relaxed text-muted-foreground">
-              <p>
-                En el Club Deportivo Baixo Miño, el judo es una herramienta de aprendizaje y
-                crecimiento. Cada entrenamiento trabaja técnica, disciplina, respeto, diversión y
-                superación personal.
-              </p>
-              <p>
-                Aprendemos a caer sin miedo, a defender sin violencia, y a ganar y perder con
-                humildad. El tatami es el espacio donde construimos carácter, amistades, comunidad y
-                momentos de diversión compartida.
-              </p>
-              <p>
-                El judo nos ayuda a cuidar nuestra salud, desarrollar un cuerpo fuerte y aprender
-                hábitos que nos acompañan durante toda la vida. Crecemos fuertes, tanto física como
-                mentalmente, aprendiendo a confiar en nosotros mismos y a superar nuestros límites.
-              </p>
-              <p>
-                El judo nos enseña que la fuerza no es solo física, sino también mental y emocional.
-                Es el arte de aprovechar la energía del compañero para crecer juntos.
-              </p>
+              {PAGE.philosophy.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
           </div>
 
           <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-3">
-            {[
-              {
-                title: "Respeto",
-                description: "La base de la convivencia en el tatami y en la vida.",
-              },
-              {
-                title: "Eficiencia",
-                description: "Aprovechar la energía física y mental al máximo.",
-              },
-              {
-                title: "Beneficio mutuo",
-                description: "Crecer y aprender juntos, ayudándonos a mejorar.",
-              },
-              {
-                title: "Salud y fuerza",
-                description:
-                  "Cuidar nuestro cuerpo, mantenernos activos y crecer fuertes, sanos y preparados para afrontar nuevos retos.",
-              },
-              {
-                title: "Diversión",
-                description:
-                  "Disfrutar del entrenamiento, del aprendizaje y de compartir el camino con los demás.",
-              },
-              {
-                title: "Superación",
-                description: "Esforzarnos cada día para ser un poco mejores que ayer.",
-              },
-            ].map((v) => (
+            {PAGE.philosophy.values.map((v) => (
               <div key={v.title} className="bg-background p-10">
                 <p className="font-display text-lg font-semibold tracking-tight text-foreground">
                   {v.title}
@@ -197,10 +101,10 @@ function Judo() {
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="max-w-2xl mb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            Curso 2026–2027
+            {PAGE.schedule.course}
           </p>
           <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-            Horarios de judo.
+            {PAGE.schedule.title}
           </h2>
         </div>
 
@@ -225,7 +129,7 @@ function Judo() {
 
         <div className="mt-14">
           <h3 className="font-display text-2xl font-semibold tracking-tight">
-            Judo infantil y competición.
+            {PAGE.schedule.kidsTableTitle}
           </h3>
           <div className="mt-6 overflow-x-auto rounded-3xl border border-border">
             <table className="w-full min-w-190 table-fixed border-collapse text-left text-sm">
@@ -235,7 +139,7 @@ function Judo() {
               </colgroup>
               <thead>
                 <tr className="bg-secondary/60">
-                  {["Horarios", "Lunes", "Martes", "Miércoles", "Jueves"].map((heading) => (
+                  {PAGE.schedule.headings.map((heading) => (
                     <th
                       key={heading}
                       className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground"
@@ -295,7 +199,9 @@ function Judo() {
         </div>
 
         <div className="mt-14">
-          <h3 className="font-display text-2xl font-semibold tracking-tight">Judo adultos.</h3>
+          <h3 className="font-display text-2xl font-semibold tracking-tight">
+            {PAGE.schedule.adultTableTitle}
+          </h3>
           <div className="mt-6 overflow-x-auto rounded-3xl border border-border">
             <table className="w-full min-w-190 table-fixed border-collapse text-left text-sm">
               <colgroup>
@@ -304,16 +210,14 @@ function Judo() {
               </colgroup>
               <thead>
                 <tr className="bg-secondary/60">
-                  {["Horarios", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"].map(
-                    (heading) => (
-                      <th
-                        key={heading}
-                        className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground"
-                      >
-                        {heading}
-                      </th>
-                    ),
-                  )}
+                  {PAGE.schedule.adultHeadings.map((heading) => (
+                    <th
+                      key={heading}
+                      className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground"
+                    >
+                      {heading}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -348,9 +252,9 @@ function Judo() {
         </div>
 
         <div className="mt-8 rounded-3xl border border-primary/30 bg-primary/5 p-8 md:p-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-primary">Curso 2026–2027</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-primary">{PAGE.schedule.course}</p>
           <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight">
-            Licencia federativa obligatoria para judokas.
+            {PAGE.schedule.licenseTitle}
           </h3>
           <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
             <li>
@@ -368,59 +272,19 @@ function Judo() {
 
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="max-w-2xl mb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Beneficios</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {PAGE.benefits.eyebrow}
+          </p>
           <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-            Por qué practicar judo.
+            {PAGE.benefits.title}
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            El judo es mucho más que un deporte: ayuda a mejorar la forma física, refuerza la
-            confianza y transmite valores como el respeto, la disciplina y el compañerismo.
+            {PAGE.benefits.description}
           </p>
         </div>
 
         <div className="grid gap-10 md:grid-cols-2">
-          {[
-            {
-              category: "Físicos",
-              benefits: [
-                "Fuerza y resistencia",
-                "Coordinación motora",
-                "Equilibrio",
-                "Flexibilidad",
-                "Salud cardiovascular",
-              ],
-            },
-            {
-              category: "Mentales y Emocionales",
-              benefits: [
-                "Confianza en uno mismo",
-                "Disciplina",
-                "Concentración",
-                "Manejo del estrés",
-                "Resiliencia",
-              ],
-            },
-            {
-              category: "Sociales",
-              benefits: [
-                "Comunidad y amistad",
-                "Trabajo en equipo",
-                "Respeto al otro",
-                "Liderazgo",
-                "Sentimiento de pertenencia",
-              ],
-            },
-            {
-              category: "Educativos",
-              benefits: [
-                "Aprender del fracaso",
-                "Perseverancia",
-                "Humildad",
-                "Empatía",
-                "Crecimiento personal",
-              ],
-            },
-          ].map((group) => (
+          {PAGE.benefits.groups.map((group) => (
             <div
               key={group.category}
               className="rounded-3xl border border-border bg-background p-8 md:p-10"
@@ -444,33 +308,29 @@ function Judo() {
 
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="max-w-2xl mb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Competición</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {PAGE.competition.eyebrow}
+          </p>
           <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-            Del tatami a la competición.
+            {PAGE.competition.title}
           </h2>
         </div>
 
         <div className="grid gap-10 md:grid-cols-2">
           <div className="rounded-3xl border border-border bg-background p-8 md:p-10">
-            <p className="font-display text-2xl font-semibold tracking-tight">Competiciones</p>
+            <p className="font-display text-2xl font-semibold tracking-tight">
+              {PAGE.competition.cardTitle}
+            </p>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              Nuestros deportistas compiten en campeonatos gallegos, nacionales e internacionales.
-              La competición es una oportunidad para poner en práctica lo aprendido, desafiarse a
-              uno mismo y representar al club.
+              {PAGE.competition.description}
             </p>
             <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <li className="flex gap-2">
-                <span className="text-primary">→</span> Campeonato Gallego
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">→</span> Campeonato de España
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">→</span> Competiciones Europeas
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">→</span> Torneo Internacional Santa Trega
-              </li>
+              {PAGE.competition.events.map((event) => (
+                <li key={event} className="flex gap-2">
+                  <span className="text-primary">→</span>
+                  {event}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -480,10 +340,10 @@ function Judo() {
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="rounded-3xl bg-foreground text-background px-10 py-20 text-center md:px-16 md:py-28">
             <h2 className="mx-auto max-w-2xl font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-              Comienza tu camino.
+              {PAGE.cta.title}
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-sm text-background/70">
-              La mejor forma de conocer el judo es viviéndolo. Ven a entrenar con nosotros.
+              {PAGE.cta.description}
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link

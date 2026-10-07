@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Contacto — Club Deportivo Baixo Miño",
+    "description": "Contacta con el Club Deportivo Baixo Miño en A Guarda. Teléfono, email, ubicación e información de atención.",
+    "socialDescription": "Dirección, teléfono y email del Club Deportivo Baixo Miño en A Guarda, Pontevedra."
+  },
+  "intro": {
+    "eyebrow": "Contacto",
+    "title": "Ponte en contacto.",
+    "description": "Envíanos un mensaje por email, llámanos o visítanos directamente. Estamos en el corazón de A Guarda."
+  },
+  "fields": {
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Email",
+    "social": "Redes sociales",
+    "location": "Ubicación",
+    "locationDescription": "Estamos en Rúa Irmáns Noia Xil, 2, en A Guarda (Pontevedra).",
+    "mapTitle": "Ubicación del Club Deportivo Baixo Miño en Google Maps",
+    "practical": "Información práctica",
+    "trial": "Clase de prueba:",
+    "trialDescription": "Gratuita. Contacta para reservar."
+  },
+  "address": { "street": "Rúa Irmáns Noia Xil, 2", "city": "36780 A Guarda, Pontevedra" },
+  "phones": [
+    { "display": "+34 986 910 408", "href": "tel:+34986910408" },
+    { "display": "+34 663 374 895", "href": "tel:+34663374895" }
+  ],
+  "emailAddress": "judobaixominho@gmail.com",
+  "socialLinks": [
+    { "label": "Instagram @cdbaixominho →", "href": "https://www.instagram.com/cdbaixominho/" },
+    { "label": "Facebook Judo Baixo Miño →", "href": "https://www.facebook.com/judobaixominho/" }
+  ]
+}

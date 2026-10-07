@@ -1,187 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import PAGE from "@/content/es/actividades.json";
 import salaImg from "@/assets/club/sala-fisioterapia.webp";
 import camillaImg from "@/assets/club/camilla-fisioterapia.webp";
 
 export const Route = createFileRoute("/actividades")({
   head: () => ({
     meta: [
-      { title: "Actividades — Club Deportivo Baixo Miño" },
+      { title: PAGE.meta.title },
       {
         name: "description",
-        content:
-          "Judo, pilates, zumba, entrenamiento infantil, masajes y presoterapia en A Guarda. Actividades para todas las edades en el Club Deportivo Baixo Miño.",
+        content: PAGE.meta.description,
       },
-      { property: "og:title", content: "Actividades — Club Deportivo Baixo Miño" },
+      { property: "og:title", content: PAGE.meta.title },
       {
         property: "og:description",
-        content:
-          "Descubre nuestras actividades: judo, pilates, zumba, entrenamiento infantil, masajes y presoterapia.",
+        content: PAGE.meta.socialDescription,
       },
     ],
   }),
   component: Actividades,
 });
 
-const ACTIVITIES = [
-  {
-    id: "pilates",
-    name: "Pilates",
-    age: "Adultos",
-    level: "Todos los niveles",
-    description:
-      "Fortalecimiento y flexibilidad. Trabajo profundo de core, conciencia corporal y alineación. Ideal para recuperación y bienestar.",
-    benefits: ["Core fortalecido", "Flexibilidad", "Postura", "Bienestar"],
-  },
-  {
-    id: "zumba",
-    name: "Zumba adultos",
-    age: "Adultos",
-    level: "Todos los niveles",
-    description:
-      "Baile y cardio con ritmo y energía. Sesiones dinámicas en grupo donde el movimiento y la diversión van de la mano.",
-    benefits: ["Actividad cardiovascular", "Ritmo y coordinación", "Ambiente grupal", "Diversión"],
-  },
-  {
-    id: "zumba-infantil",
-    name: "Zumba infantil",
-    age: "Niños",
-    level: "Grupos 1 y 2",
-    description:
-      "Baile, ritmo y movimiento para los más pequeños. Dos grupos infantiles para disfrutar y aprender juntos.",
-    benefits: ["Coordinación", "Ritmo", "Actividad física", "Diversión"],
-  },
-  {
-    id: "training-competidores",
-    name: "Training competidores",
-    age: "Competidores",
-    level: "Preparación física",
-    description:
-      "Entrenamiento físico para competidores, como complemento a las sesiones de judo en el tatami.",
-    benefits: ["Fuerza", "Resistencia", "Coordinación", "Trabajo en equipo"],
-  },
-  {
-    id: "entrenamiento-infantil",
-    name: "Entrenamiento Infantil",
-    age: "Niños",
-    level: "Multideporte",
-    description:
-      "Actividad física variada con juegos, psicomotricidad y desarrollo de habilidades motoras. Combinamos diversión con aprendizaje.",
-    benefits: [
-      "Desarrollo motriz",
-      "Juego organizado",
-      "Socialización",
-      "Actividad física divertida",
-    ],
-  },
-  {
-    id: "masajes",
-    name: "Área de masajes",
-    age: "Adultos",
-    level: "Bienestar",
-    description:
-      "Un espacio para relajarte y cuidar de ti con masajes y presoterapia. Consulta con el club las sesiones disponibles.",
-    benefits: ["Masajes", "Presoterapia", "Relajación", "Bienestar"],
-  },
-];
-
-const SCHEDULE_ROWS = [
-  {
-    time: "09:15 – 10:15",
-    monday: "",
-    tuesday: "Pilates",
-    wednesday: "",
-    thursday: "Pilates",
-    friday: "",
-  },
-  {
-    time: "10:30 – 11:20",
-    monday: "",
-    tuesday: "Zumba adultos",
-    wednesday: "",
-    thursday: "Zumba adultos",
-    friday: "",
-  },
-  {
-    time: "17:00 – 17:50",
-    monday: "",
-    tuesday: "",
-    wednesday: "",
-    thursday: "Zumba infantil 1",
-    friday: "",
-  },
-  {
-    time: "17:00 – 18:30",
-    monday: "",
-    tuesday: "Training competidores",
-    wednesday: "",
-    thursday: "",
-    friday: "",
-  },
-  {
-    time: "17:10 – 18:00",
-    monday: "Judo 1",
-    tuesday: "",
-    wednesday: "Judo 1",
-    thursday: "",
-    friday: "",
-  },
-  {
-    time: "18:00 – 18:50",
-    monday: "",
-    tuesday: "Training infantil",
-    wednesday: "",
-    thursday: "Zumba infantil 2",
-    friday: "",
-  },
-  {
-    time: "18:10 – 19:00",
-    monday: "Judo 2",
-    tuesday: "",
-    wednesday: "Judo 2",
-    thursday: "",
-    friday: "",
-  },
-  {
-    time: "19:00 – 20:00",
-    monday: "",
-    tuesday: "Pilates",
-    wednesday: "",
-    thursday: "Pilates",
-    friday: "",
-  },
-  {
-    time: "19:10 – 20:00",
-    monday: "Judo 3",
-    tuesday: "",
-    wednesday: "Judo 3",
-    thursday: "",
-    friday: "",
-  },
-  {
-    time: "20:00 – 21:00",
-    monday: "Judo competición",
-    tuesday: "Pilates",
-    wednesday: "Judo competición",
-    thursday: "Pilates",
-    friday: "",
-  },
-  {
-    time: "21:00 – 21:50",
-    monday: "",
-    tuesday: "Zumba adultos",
-    wednesday: "",
-    thursday: "Zumba adultos",
-    friday: "",
-  },
-  {
-    time: "21:00 – 22:30",
-    monday: "Judo adultos",
-    tuesday: "",
-    wednesday: "Judo adultos",
-    thursday: "",
-    friday: "Judo adultos",
-  },
-];
+const ACTIVITIES = PAGE.activities;
+const SCHEDULE_ROWS = PAGE.schedule.rows;
 
 function scheduleTone(activity: string) {
   const value = activity.toLowerCase();
@@ -199,14 +40,13 @@ function Actividades() {
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="max-w-2xl">
           <p className="reveal text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Otras actividades
+            {PAGE.intro.eyebrow}
           </p>
           <h1 className="reveal reveal-delay-1 mt-6 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            Deporte y bienestar para todas las edades.
+            {PAGE.intro.title}
           </h1>
           <p className="reveal reveal-delay-2 mt-6 text-base leading-relaxed text-muted-foreground">
-            Actividades para niños y adultos, movimiento y bienestar. Encuentra la actividad que se
-            adapte a ti y forma parte de nuestra comunidad.
+            {PAGE.intro.description}
           </p>
         </div>
 
@@ -250,7 +90,7 @@ function Actividades() {
                   to="/contacto"
                   className="inline-flex text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                 >
-                  Solicitar información →
+                  {PAGE.actions.requestInfo}
                 </Link>
               </div>
             </div>
@@ -260,23 +100,23 @@ function Actividades() {
         <section className="mt-24" aria-labelledby="espacio-masajes">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Área de masajes
+              {PAGE.massageArea.eyebrow}
             </p>
             <h2
               id="espacio-masajes"
               className="mt-5 font-display text-3xl leading-tight tracking-tight sm:text-4xl"
             >
-              Un espacio dedicado a tu bienestar.
+              {PAGE.massageArea.title}
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Un espacio del club dedicado a los masajes, la presoterapia y tu bienestar.
+              {PAGE.massageArea.description}
             </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-[1.3fr_1fr]">
             <figure className="overflow-hidden rounded-3xl border border-border bg-secondary/30">
               <img
                 src={salaImg}
-                alt="Área de masajes del club con camilla"
+                alt={PAGE.massageArea.salaAlt}
                 width={1536}
                 height={1024}
                 loading="lazy"
@@ -284,13 +124,13 @@ function Actividades() {
                 className="h-72 w-full object-cover sm:h-96 md:h-[26rem]"
               />
               <figcaption className="px-6 py-5 text-sm text-muted-foreground">
-                Área de masajes
+                {PAGE.massageArea.salaCaption}
               </figcaption>
             </figure>
             <figure className="overflow-hidden rounded-3xl border border-border bg-secondary/30">
               <img
                 src={camillaImg}
-                alt="Detalle de la camilla y toalla del Club Deportivo Baixo Miño"
+                alt={PAGE.massageArea.camillaAlt}
                 width={1536}
                 height={1024}
                 loading="lazy"
@@ -298,7 +138,7 @@ function Actividades() {
                 className="h-72 w-full object-cover sm:h-96 md:h-[26rem]"
               />
               <figcaption className="px-6 py-5 text-sm text-muted-foreground">
-                Detalle de la sala
+                {PAGE.massageArea.camillaCaption}
               </figcaption>
             </figure>
           </div>
@@ -307,10 +147,10 @@ function Actividades() {
         <div id="horarios" className="mt-20 scroll-mt-24">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Curso 2026–2027
+              {PAGE.schedule.eyebrow}
             </p>
             <h2 className="mt-5 font-display text-3xl leading-tight tracking-tight sm:text-4xl">
-              Horario completo de actividades.
+              {PAGE.schedule.title}
             </h2>
           </div>
           <div className="mt-8 overflow-x-auto rounded-3xl border border-border">
@@ -321,16 +161,14 @@ function Actividades() {
               </colgroup>
               <thead>
                 <tr className="bg-secondary/60">
-                  {["Horarios", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"].map(
-                    (heading) => (
-                      <th
-                        key={heading}
-                        className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground"
-                      >
-                        {heading}
-                      </th>
-                    ),
-                  )}
+                  {PAGE.schedule.headings.map((heading) => (
+                    <th
+                      key={heading}
+                      className="border-b border-border px-5 py-4 text-xs uppercase tracking-[0.15em] text-muted-foreground"
+                    >
+                      {heading}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -368,13 +206,14 @@ function Actividades() {
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Próximo paso</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+              {PAGE.cta.eyebrow}
+            </p>
             <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
-              Prueba una clase sin compromiso.
+              {PAGE.cta.title}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              La mejor forma de conocernos es viviendo una clase. Contacta con nosotros para
-              reservar tu primera sesión gratuita.
+              {PAGE.cta.description}
             </p>
           </div>
 
@@ -383,10 +222,10 @@ function Actividades() {
               to="/contacto"
               className="inline-flex items-center justify-center rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:bg-primary hover:shadow-soft"
             >
-              Reservar clase
+              {PAGE.cta.reserve}
             </Link>
             <a href="#horarios" className="link-underline text-sm font-medium">
-              Ver horarios →
+              {PAGE.cta.schedule} →
             </a>
           </div>
         </div>

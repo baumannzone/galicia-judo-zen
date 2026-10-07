@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Club Deportivo Baixo Miño | Judo y actividades en A Guarda",
+    "description": "Judo, pilates, zumba, entrenamiento infantil, masajes y presoterapia. Deporte, valores y comunidad para niños, jóvenes y adultos.",
+    "socialDescription": "Club deportivo con judo, pilates, zumba, entrenamiento infantil, masajes, presoterapia, campus y torneo internacional en A Guarda."
+  },
+  "hero": {
+    "eyebrow": "Club Deportivo · A Guarda · Pontevedra",
+    "titleStart": "Deporte,",
+    "titleMiddle": "valores",
+    "titleEnd": "y familia.",
+    "description": "Judo, pilates, zumba, entrenamiento infantil, masajes y presoterapia. Acompañamos a niños, jóvenes y adultos en su crecimiento deportivo y personal.",
+    "trial": "Clase de prueba gratis",
+    "schedule": "Ver horarios",
+    "tatamiAlt": "Tatami del Club Deportivo Baixo Miño en A Guarda",
+    "tatamiCaption": "Nuestro tatami · A Guarda"
+  },
+  "marquee": ["礼 Respeto", "精力善用 Valores", "自他共栄 Familia", "柔 Judo", "道 Pilates"],
+  "club": {
+    "eyebrow": "El club",
+    "title": "Un proyecto de deporte y valores.",
+    "paragraphs": [
+      "El Club Deportivo Baixo Miño es un proyecto deportivo de A Guarda dedicado a la enseñanza del judo, la actividad física, el bienestar y la formación en valores.",
+      "Combinamos deporte base y competición de alto nivel con actividades como pilates, zumba, entrenamiento infantil, masajes y presoterapia. Nuestra filosofía se apoya en el respeto, el esfuerzo, la humildad, la amistad y el sentimiento de equipo.",
+      "Formamos parte de la Federación Galega de Judo. Trabajamos con niños, jóvenes y adultos, acompañándolos en su desarrollo tanto dentro como fuera del tatami."
+    ],
+    "teamAlt": "Judokas y familias del Club Deportivo Baixo Minho reunidos junto al mar en A Guarda",
+    "teamEyebrow": "Baixo Minho · A Guarda",
+    "teamCaption": "Un equipo dentro y fuera del tatami.",
+    "stats": [
+      { "value": "160+", "label": "licencias deportivas" },
+      { "value": "20+", "label": "participantes nacionales" },
+      { "value": "500+", "label": "en Torneo Santa Trega 2026" }
+    ]
+  },
+  "values": {
+    "eyebrow": "Nuestros valores",
+    "title": "Entendemos el deporte como herramienta de crecimiento.",
+    "items": [
+      { "title": "Respeto", "description": "La base de la convivencia en el tatami y en la vida." },
+      { "title": "Eficiencia", "description": "Aprovechar la energía física y mental al máximo." },
+      {
+        "title": "Beneficio mutuo",
+        "description": "Crecer y aprender juntos, ayudándonos a mejorar."
+      },
+      {
+        "title": "Salud y fuerza",
+        "description": "Cuidar nuestro cuerpo, mantenernos activos y crecer fuertes, sanos y preparados para afrontar nuevos retos."
+      },
+      {
+        "title": "Diversión",
+        "description": "Disfrutar del entrenamiento, del aprendizaje y de compartir el camino con los demás."
+      },
+      {
+        "title": "Superación",
+        "description": "Esforzarnos cada día para ser un poco mejores que ayer."
+      }
+    ]
+  },
+  "facilities": {
+    "eyebrow": "Nuestras instalaciones",
+    "title": "Un espacio para entrenar y sentirte en casa.",
+    "description": "Conoce el tatami y los espacios del club en A Guarda.",
+    "galleryHint": "Desliza para descubrir los espacios del club →",
+    "galleryLabel": "Fotos de las instalaciones",
+    "photos": [
+      { "title": "El tatami", "alt": "Tatami azul y zona de entrenamiento del club" },
+      {
+        "title": "Nuestro espacio de entrenamiento",
+        "alt": "Otra vista del tatami del Club Deportivo Baixo Miño"
+      },
+      { "title": "El vestuario", "alt": "Vestuario del club con percheros, espejo y lavabo" },
+      { "title": "Área de masajes", "alt": "Sala de masajes del club con camilla" },
+      {
+        "title": "Un espacio para cuidarte",
+        "alt": "Detalle de la camilla y toalla del área de masajes"
+      }
+    ],
+    "photoCountLabel": "Foto {current} de {total}"
+  },
+  "cta": {
+    "title": "Forma parte de nuestro equipo.",
+    "description": "Prueba una clase gratis. Judo, pilates, zumba, entrenamiento infantil. Actividades para todas las edades.",
+    "activities": "Conoce nuestras actividades",
+    "contact": "Contacta con nosotros"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "site": {
+    "name": "Club Deportivo Baixo Miño",
+    "title": "Club Deportivo Baixo Miño | Judo y actividades en A Guarda",
+    "description": "Judo, pilates, zumba, entrenamiento infantil, masajes, presoterapia y campus en A Guarda. Deporte, valores y comunidad para niños, jóvenes y adultos.",
+    "keywords": "judo A Guarda, club deportivo, pilates, zumba, campus verano, torneo santa trega, A Guarda Pontevedra",
+    "socialDescription": "Club deportivo con judo, pilates, zumba, entrenamiento infantil, masajes, presoterapia, campus y torneo internacional en A Guarda.",
+    "footerDescription": "Deporte, valores y familia en A Guarda. Judo, pilates, zumba y más.",
+    "brand": "Baixo Miño",
+    "organization": "Club Deportivo Baixo Miño"
+  },
+  "nav": {
+    "home": "Inicio",
+    "judo": "Judo",
+    "activities": "Actividades",
+    "news": "Noticias",
+    "contact": "Contacto",
+    "menu": "Menú"
+  },
+  "footer": {
+    "location": "Ubicación",
+    "address": "Rúa Irmáns Noia Xil, 2",
+    "city": "36780 A Guarda, Pontevedra",
+    "contact": "Contacto",
+    "legal": "Aviso Legal",
+    "seasons": "Temporadas",
+    "madeIn": "Feito en Galicia por",
+    "instagram": "Instagram @cdbaixominho"
+  },
+  "errors": {
+    "notFoundLabel": "Error 404",
+    "notFoundTitle": "Página no encontrada",
+    "notFoundDescription": "La página que buscas no existe o ha sido movida.",
+    "home": "Volver al inicio",
+    "errorTitle": "Algo salió mal",
+    "errorDescription": "No pudimos cargar esta página. Prueba de nuevo o vuelve al inicio.",
+    "retry": "Reintentar",
+    "goHome": "Ir al inicio"
+  }
+}
