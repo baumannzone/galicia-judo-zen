@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import logoMark from "../assets/logo-mark.png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import COPY from "@/content/es/common.json";
+import CONTACT from "@/content/es/contacto.json";
 
 function NotFoundComponent() {
   return (
@@ -243,10 +244,12 @@ function SiteHeader() {
 }
 
 function SiteFooter() {
+  const linkClass = "text-sm text-muted-foreground transition-colors hover:text-foreground";
+
   return (
     <footer className="border-t border-border/60 mt-24">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-4">
-        <div className="md:col-span-2">
+      <div className="mx-auto grid max-w-6xl gap-x-8 gap-y-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="lg:col-span-2">
           <div className="flex items-center gap-2 font-display text-base font-semibold">
             <BrandMark />
             <span>{COPY.site.organization}</span>
@@ -255,41 +258,85 @@ function SiteFooter() {
             {COPY.site.footerDescription}
           </p>
         </div>
+
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            {COPY.footer.location}
-          </p>
-          <p className="mt-3 text-sm">
-            {COPY.footer.address}
-            <br />
-            {COPY.footer.city}
-          </p>
+          <h2 className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {COPY.footer.explore}
+          </h2>
+          <nav aria-label={COPY.footer.explore} className="mt-4 flex flex-col items-start gap-3">
+            <Link to="/" className={linkClass}>
+              {COPY.nav.home}
+            </Link>
+            <Link to="/judo" className={linkClass}>
+              {COPY.nav.judo}
+            </Link>
+            <Link to="/actividades" className={linkClass}>
+              {COPY.nav.activities}
+            </Link>
+            <Link to="/noticias" className={linkClass}>
+              {COPY.nav.news}
+            </Link>
+            <Link to="/temporadas" className={linkClass}>
+              {COPY.footer.seasons}
+            </Link>
+          </nav>
         </div>
+
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          <h2 className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {COPY.footer.club}
+          </h2>
+          <nav aria-label={COPY.footer.club} className="mt-4 flex flex-col items-start gap-3">
+            <Link to="/actividades#horarios" className={linkClass}>
+              {COPY.footer.schedule}
+            </Link>
+            <Link to="/contacto" className={linkClass}>
+              {COPY.nav.contact}
+            </Link>
+            <Link to="/legal" className={linkClass}>
+              {COPY.footer.legal}
+            </Link>
+          </nav>
+        </div>
+
+        <div>
+          <h2 className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             {COPY.footer.contact}
-          </p>
-          <p className="mt-3 text-sm">
-            <a href="tel:+34663374895" className="hover:text-primary transition-colors">
-              +34 663 37 48 95
+          </h2>
+          <div className="mt-4 flex flex-col items-start gap-3">
+            {CONTACT.phones.map((phone) => (
+              <a key={phone.href} href={phone.href} className={linkClass}>
+                {phone.display}
+              </a>
+            ))}
+            <a href={`mailto:${CONTACT.emailAddress}`} className={`${linkClass} break-all`}>
+              {CONTACT.emailAddress}
             </a>
-            <br />
-            <a
-              href="mailto:judobaixominho@gmail.com"
-              className="hover:text-primary transition-colors"
-            >
-              judobaixominho@gmail.com
-            </a>
-            <br />
-            <a
-              href="https://www.instagram.com/cdbaixominho/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              {COPY.footer.instagram}
-            </a>
-          </p>
+            <Link to="/contacto" className={`${linkClass} leading-relaxed`}>
+              {COPY.footer.address}
+              <br />
+              {COPY.footer.city}
+            </Link>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {COPY.footer.followUs}
+          </h2>
+          <nav aria-label={COPY.footer.followUs} className="mt-4 flex flex-col items-start gap-3">
+            {CONTACT.socialLinks.map((social) => (
+              <a
+                key={social.href}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                {social.label.replace(" →", "")}
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
       <div className="border-t border-border/60">
@@ -297,25 +344,17 @@ function SiteFooter() {
           <span>
             © {new Date().getFullYear()} {COPY.site.organization}
           </span>
-          <div className="flex items-center gap-4">
-            <Link to="/temporadas" className="hover:text-foreground transition-colors">
-              {COPY.footer.seasons}
-            </Link>
-            <Link to="/legal" className="hover:text-foreground transition-colors">
-              {COPY.footer.legal}
-            </Link>
-            <span>
-              {COPY.footer.madeIn}{" "}
-              <a
-                href="https://instagram.com/baumannzone"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground transition-colors"
-              >
-                @baumannzone
-              </a>
-            </span>
-          </div>
+          <span>
+            {COPY.footer.madeIn}{" "}
+            <a
+              href="https://instagram.com/baumannzone"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              @baumannzone
+            </a>
+          </span>
         </div>
       </div>
     </footer>

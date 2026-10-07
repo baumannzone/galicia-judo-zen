@@ -18,10 +18,14 @@
     "menu": "Menú"
   },
   "footer": {
+    "explore": "Explora",
+    "club": "En el club",
+    "followUs": "Síguenos",
     "location": "Ubicación",
     "address": "Rúa Irmáns Noia Xil, 2",
     "city": "36780 A Guarda, Pontevedra",
     "contact": "Contacto",
+    "schedule": "Horarios",
     "legal": "Aviso Legal",
     "seasons": "Temporadas",
     "madeIn": "Feito en Galicia por",
