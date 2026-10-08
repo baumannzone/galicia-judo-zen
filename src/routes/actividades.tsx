@@ -217,7 +217,7 @@ function Actividades() {
             </p>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               to="/contacto"
               className="inline-flex items-center justify-center rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:bg-primary hover:shadow-soft"

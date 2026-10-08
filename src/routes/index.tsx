@@ -2,12 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import PAGE from "@/content/es/home.json";
 import equipoImg from "@/assets/club/equipo-a-guarda.webp";
 import tatamiImg from "@/assets/club/tatami-vista-general.webp";
-import tatamiDetalleImg from "@/assets/club/tatami-segunda-vista.webp";
+import recepcionImg from "@/assets/club/recepcion-club.webp";
 import salaMasajesImg from "@/assets/club/sala-fisioterapia.webp";
 import camillaImg from "@/assets/club/camilla-fisioterapia.webp";
 import vestuarioImg from "@/assets/club/vestuario.webp";
 
-const facilityImages = [tatamiImg, tatamiDetalleImg, vestuarioImg, salaMasajesImg, camillaImg];
+const facilityImages = [tatamiImg, recepcionImg, vestuarioImg, salaMasajesImg, camillaImg];
 
 export const Route = createFileRoute("/")({
   head: () => ({
