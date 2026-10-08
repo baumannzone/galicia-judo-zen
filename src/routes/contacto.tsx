@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Facebook, Instagram } from "lucide-react";
 import PAGE from "@/content/es/contacto.json";
 
 export const Route = createFileRoute("/contacto")({
@@ -92,9 +93,14 @@ function Contacto() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm hover:text-primary transition-colors"
+                      className="inline-flex items-center gap-2.5 text-sm hover:text-primary transition-colors"
                     >
-                      {social.label}
+                      {social.network === "instagram" ? (
+                        <Instagram aria-hidden="true" className="size-4" />
+                      ) : (
+                        <Facebook aria-hidden="true" className="size-4" />
+                      )}
+                      <span>{social.handle}</span>
                     </a>
                   </div>
                 ))}

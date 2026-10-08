@@ -28,7 +28,15 @@
   ],
   "emailAddress": "judobaixominho@gmail.com",
   "socialLinks": [
-    { "label": "Instagram @cdbaixominho →", "href": "https://www.instagram.com/cdbaixominho/" },
-    { "label": "Facebook Judo Baixo Miño →", "href": "https://www.facebook.com/judobaixominho/" }
+    {
+      "network": "instagram",
+      "handle": "@cdbaixominho",
+      "href": "https://www.instagram.com/cdbaixominho/"
+    },
+    {
+      "network": "facebook",
+      "handle": "Judo Baixo Miño",
+      "href": "https://www.facebook.com/judobaixominho/"
+    }
   ]
 }
