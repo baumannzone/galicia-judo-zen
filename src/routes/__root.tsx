@@ -1,4 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { createIsomorphicFn } from "@tanstack/react-start";
+import { getRequestUrl } from "@tanstack/react-start/server";
 import {
   Outlet,
   Link,
@@ -14,6 +16,10 @@ import logoMark from "../assets/logo-mark.png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import COPY from "@/content/es/common.json";
 import CONTACT from "@/content/es/contacto.json";
+
+const getSiteOrigin = createIsomorphicFn()
+  .server(() => getRequestUrl().origin)
+  .client(() => window.location.origin);
 
 function NotFoundComponent() {
   return (
@@ -76,7 +82,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  loader: () => ({ socialImage: new URL("/og-baixo-mino-v2.png", getSiteOrigin()).href }),
+  head: ({ loaderData }) => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -111,13 +118,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         property: "og:image",
+        content: loaderData?.socialImage,
+      },
+      { property: "og:image:width", content: "1730" },
+      { property: "og:image:height", content: "909" },
+      { property: "og:image:type", content: "image/png" },
+      {
+        property: "og:image:alt",
         content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/11d686cf-84c9-4850-a7ff-b78241215cd4/id-preview-b92fa60a--07910a82-7b24-43fd-9817-00904d83ad6a.lovable.app-1784758799298.png",
+          "Club Deportivo Baixo Miño: deporte, valores y familia. Nuestro tatami en A Guarda.",
       },
       {
         name: "twitter:image",
+        content: loaderData?.socialImage,
+      },
+      {
+        name: "twitter:image:alt",
         content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/11d686cf-84c9-4850-a7ff-b78241215cd4/id-preview-b92fa60a--07910a82-7b24-43fd-9817-00904d83ad6a.lovable.app-1784758799298.png",
+          "Club Deportivo Baixo Miño: deporte, valores y familia. Nuestro tatami en A Guarda.",
       },
     ],
     links: [
