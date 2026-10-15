@@ -168,6 +168,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es">
       <head>
         <HeadContent />
+        <script src="https://cdn.usefathom.com/script.js" data-site="MCYXAXNC" defer />
       </head>
       <body>
         {children}
