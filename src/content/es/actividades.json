@@ -65,7 +65,7 @@
       "name": "Área de masajes",
       "age": "Adultos",
       "level": "Bienestar",
-      "description": "Un espacio para relajarte y cuidar de ti con masajes y presoterapia. Consulta con el club las sesiones disponibles.",
+      "description": "Un espacio para relajarte y cuidar de ti con masajes y presoterapia. Sesiones con cita previa por WhatsApp.",
       "benefits": ["Masajes", "Presoterapia", "Relajación", "Bienestar"]
     }
   ],
@@ -175,7 +175,9 @@
   "massageArea": {
     "eyebrow": "Área de masajes",
     "title": "Un espacio dedicado a tu bienestar.",
-    "description": "Un espacio del club dedicado a los masajes, la presoterapia y tu bienestar.",
+    "description": "Un espacio del club dedicado a los masajes, la presoterapia y tu bienestar. Las sesiones son con cita previa por WhatsApp.",
+    "booking": "Cita previa por WhatsApp",
+    "bookingHref": "https://wa.me/34663374895",
     "salaAlt": "Área de masajes del club con camilla",
     "salaCaption": "Área de masajes",
     "camillaAlt": "Detalle de la camilla y toalla del Club Deportivo Baixo Miño",

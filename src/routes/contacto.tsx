@@ -51,22 +51,16 @@ function Contacto() {
                 {PAGE.fields.phone}
               </dt>
               <dd className="mt-2 space-y-1">
-                <div>
-                  <a
-                    href={PAGE.phones[0].href}
-                    className="font-medium hover:text-primary transition-colors"
-                  >
-                    {PAGE.phones[0].display}
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href={PAGE.phones[1].href}
-                    className="font-medium hover:text-primary transition-colors"
-                  >
-                    {PAGE.phones[1].display}
-                  </a>
-                </div>
+                {PAGE.phones.map((phone) => (
+                  <div key={phone.href}>
+                    <a
+                      href={phone.href}
+                      className="font-medium hover:text-primary transition-colors"
+                    >
+                      {phone.display}
+                    </a>
+                  </div>
+                ))}
               </dd>
             </div>
             <div>

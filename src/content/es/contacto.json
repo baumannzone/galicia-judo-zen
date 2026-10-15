@@ -22,10 +22,7 @@
     "trialDescription": "Gratuita. Contacta para reservar."
   },
   "address": { "street": "Rúa Irmáns Noia Xil, 2", "city": "36780 A Guarda, Pontevedra" },
-  "phones": [
-    { "display": "+34 986 910 408", "href": "tel:+34986910408" },
-    { "display": "+34 663 374 895", "href": "tel:+34663374895" }
-  ],
+  "phones": [{ "display": "+34 663 374 895", "href": "tel:+34663374895" }],
   "emailAddress": "judobaixominho@gmail.com",
   "socialLinks": [
     {

@@ -86,12 +86,23 @@ function Actividades() {
               </ul>
 
               <div className="mt-8 pt-6 border-t border-border">
-                <Link
-                  to="/contacto"
-                  className="inline-flex text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                >
-                  {PAGE.actions.requestInfo}
-                </Link>
+                {activity.id === "masajes" ? (
+                  <a
+                    href={PAGE.massageArea.bookingHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                  >
+                    {PAGE.massageArea.booking} →
+                  </a>
+                ) : (
+                  <Link
+                    to="/contacto"
+                    className="inline-flex text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                  >
+                    {PAGE.actions.requestInfo}
+                  </Link>
+                )}
               </div>
             </div>
           ))}
@@ -111,6 +122,14 @@ function Actividades() {
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               {PAGE.massageArea.description}
             </p>
+            <a
+              href={PAGE.massageArea.bookingHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+            >
+              {PAGE.massageArea.booking} →
+            </a>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-[1.3fr_1fr]">
             <figure className="overflow-hidden rounded-3xl border border-border bg-secondary/30">
