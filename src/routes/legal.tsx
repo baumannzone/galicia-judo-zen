@@ -7,6 +7,7 @@ export const Route = createFileRoute("/legal")({
       { title: PAGE.meta.title },
       { name: "description", content: PAGE.meta.description },
       { property: "og:title", content: PAGE.meta.title },
+      { property: "og:description", content: PAGE.meta.description },
     ],
   }),
   component: Legal,

@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-
-const BASE_URL = "";
+import { canonicalUrl } from "@/lib/site";
 
 interface SitemapEntry {
   path: string;
@@ -20,12 +19,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/noticias", changefreq: "weekly", priority: "0.8" },
           { path: "/temporadas", changefreq: "monthly", priority: "0.7" },
           { path: "/contacto", changefreq: "monthly", priority: "0.7" },
+          { path: "/legal", changefreq: "monthly", priority: "0.3" },
         ];
 
         const urls = entries.map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <loc>${canonicalUrl(e.path)}</loc>`,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,

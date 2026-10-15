@@ -9,17 +9,17 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import logoMark from "../assets/logo-mark.png";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { canonicalUrl, SITE_ORIGIN } from "@/lib/site";
 import COPY from "@/content/es/common.json";
 import CONTACT from "@/content/es/contacto.json";
 
-const getSiteOrigin = createIsomorphicFn()
-  .server(() => getRequestUrl().origin)
-  .client(() => window.location.origin);
+const getCanonicalUrl = createIsomorphicFn()
+  .server(() => canonicalUrl(getRequestUrl().pathname))
+  .client(() => canonicalUrl(window.location.pathname));
 
 function NotFoundComponent() {
   return (
@@ -48,9 +48,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -82,7 +79,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  loader: () => ({ socialImage: new URL("/og-baixo-mino-v2.png", getSiteOrigin()).href }),
+  loader: () => ({
+    canonicalUrl: getCanonicalUrl(),
+    socialImage: new URL("/og-baixo-mino-v2.png", SITE_ORIGIN).href,
+  }),
   head: ({ loaderData }) => ({
     meta: [
       { charSet: "utf-8" },
@@ -106,6 +106,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: COPY.site.socialDescription,
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: loaderData?.canonicalUrl },
+      { property: "og:locale", content: "es_ES" },
+      { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
@@ -139,6 +142,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     links: [
+      { rel: "canonical", href: loaderData?.canonicalUrl },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", sizes: "any" },
       { rel: "icon", href: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
