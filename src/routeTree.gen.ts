@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ActividadesRouteImport } from './routes/actividades'
 import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as HorariosRouteImport } from './routes/horarios'
 import { Route as JudoRouteImport } from './routes/judo'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as NoticiasRouteImport } from './routes/noticias'
@@ -31,6 +32,11 @@ const ActividadesRoute = ActividadesRouteImport.update({
 const ContactoRoute = ContactoRouteImport.update({
   id: '/contacto',
   path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HorariosRoute = HorariosRouteImport.update({
+  id: '/horarios',
+  path: '/horarios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JudoRoute = JudoRouteImport.update({
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/actividades': typeof ActividadesRoute
   '/contacto': typeof ContactoRoute
+  '/horarios': typeof HorariosRoute
   '/judo': typeof JudoRoute
   '/legal': typeof LegalRoute
   '/noticias': typeof NoticiasRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/actividades': typeof ActividadesRoute
   '/contacto': typeof ContactoRoute
+  '/horarios': typeof HorariosRoute
   '/judo': typeof JudoRoute
   '/legal': typeof LegalRoute
   '/noticias': typeof NoticiasRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/actividades': typeof ActividadesRoute
   '/contacto': typeof ContactoRoute
+  '/horarios': typeof HorariosRoute
   '/judo': typeof JudoRoute
   '/legal': typeof LegalRoute
   '/noticias': typeof NoticiasRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/actividades'
     | '/contacto'
+    | '/horarios'
     | '/judo'
     | '/legal'
     | '/noticias'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/actividades'
     | '/contacto'
+    | '/horarios'
     | '/judo'
     | '/legal'
     | '/noticias'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/actividades'
     | '/contacto'
+    | '/horarios'
     | '/judo'
     | '/legal'
     | '/noticias'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ActividadesRoute: typeof ActividadesRoute
   ContactoRoute: typeof ContactoRoute
+  HorariosRoute: typeof HorariosRoute
   JudoRoute: typeof JudoRoute
   LegalRoute: typeof LegalRoute
   NoticiasRoute: typeof NoticiasRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/contacto'
       fullPath: '/contacto'
       preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/horarios': {
+      id: '/horarios'
+      path: '/horarios'
+      fullPath: '/horarios'
+      preLoaderRoute: typeof HorariosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/judo': {
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ActividadesRoute: ActividadesRoute,
   ContactoRoute: ContactoRoute,
+  HorariosRoute: HorariosRoute,
   JudoRoute: JudoRoute,
   LegalRoute: LegalRoute,
   NoticiasRoute: NoticiasRoute,

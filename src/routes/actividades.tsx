@@ -243,9 +243,9 @@ function Actividades() {
             >
               {PAGE.cta.reserve}
             </Link>
-            <a href="#horarios" className="link-underline text-sm font-medium">
+            <Link to="/horarios" className="link-underline text-sm font-medium">
               {PAGE.cta.schedule} →
-            </a>
+            </Link>
           </div>
         </div>
       </section>

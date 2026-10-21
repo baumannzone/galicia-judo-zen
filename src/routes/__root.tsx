@@ -200,6 +200,7 @@ const NAV = [
   { to: "/", label: COPY.nav.home },
   { to: "/judo", label: COPY.nav.judo },
   { to: "/actividades", label: COPY.nav.activities },
+  { to: "/horarios", label: COPY.nav.schedule },
   { to: "/noticias", label: COPY.nav.news },
   { to: "/contacto", label: COPY.nav.contact },
 ] as const;
@@ -310,7 +311,7 @@ function SiteFooter() {
             {COPY.footer.club}
           </h2>
           <nav aria-label={COPY.footer.club} className="mt-4 flex flex-col items-start gap-3">
-            <Link to="/actividades#horarios" className={linkClass}>
+            <Link to="/horarios" className={linkClass}>
               {COPY.footer.schedule}
             </Link>
             <Link to="/contacto" className={linkClass}>

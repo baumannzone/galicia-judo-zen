@@ -41,7 +41,7 @@
     },
     {
       "id": "training-competidores",
-      "name": "Training competidores",
+      "name": "Training competición",
       "age": "Competidores",
       "level": "Preparación física",
       "description": "Entrenamiento físico para competidores, como complemento a las sesiones de judo en el tatami.",
@@ -101,7 +101,7 @@
       {
         "time": "17:00 – 18:30",
         "monday": "",
-        "tuesday": "Training competidores",
+        "tuesday": "Training competición",
         "wednesday": "",
         "thursday": "",
         "friday": ""

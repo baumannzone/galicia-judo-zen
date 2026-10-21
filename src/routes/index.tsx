@@ -57,8 +57,7 @@ function Index() {
                   {PAGE.hero.trial}
                 </Link>
                 <Link
-                  to="/actividades"
-                  hash="horarios"
+                  to="/horarios"
                   className="link-underline text-sm font-medium"
                 >
                   {PAGE.hero.schedule}
