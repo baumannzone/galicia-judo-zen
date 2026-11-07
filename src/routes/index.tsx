@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { articles } from "virtual:articles";
+import { formatArticleDate } from "@/lib/articles";
 import PAGE from "@/content/es/home.json";
 import equipoImg from "@/assets/club/equipo-a-guarda.webp";
 import tatamiImg from "@/assets/club/tatami-vista-general.webp";
@@ -8,6 +10,7 @@ import camillaImg from "@/assets/club/camilla-fisioterapia.webp";
 import vestuarioImg from "@/assets/club/vestuario.webp";
 
 const facilityImages = [tatamiImg, recepcionImg, vestuarioImg, salaMasajesImg, camillaImg];
+const latestArticles = articles.filter((article) => !article.draft).slice(0, 3);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,10 +59,7 @@ function Index() {
                 >
                   {PAGE.hero.trial}
                 </Link>
-                <Link
-                  to="/horarios"
-                  className="link-underline text-sm font-medium"
-                >
+                <Link to="/horarios" className="link-underline text-sm font-medium">
                   {PAGE.hero.schedule}
                 </Link>
               </div>
@@ -237,6 +237,83 @@ function Index() {
           ))}
         </div>
       </section>
+
+      {latestArticles.length > 0 && (
+        <section
+          aria-labelledby="latest-news-title"
+          className="border-y border-border/60 bg-secondary/30"
+        >
+          <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                  {PAGE.news.eyebrow}
+                </p>
+                <h2
+                  id="latest-news-title"
+                  className="mt-6 font-display text-4xl leading-tight tracking-tight sm:text-5xl"
+                >
+                  {PAGE.news.title}
+                </h2>
+              </div>
+              <Link
+                to="/noticias"
+                className="text-sm font-medium text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                {PAGE.news.all}
+              </Link>
+            </div>
+            <div className="mt-12 grid gap-8 md:grid-cols-3">
+              {latestArticles.map((article) => (
+                <article
+                  key={article.slug}
+                  className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-background"
+                >
+                  {article.cover && (
+                    <img
+                      src={article.cover.src}
+                      alt={article.cover.alt}
+                      width={article.cover.width}
+                      height={article.cover.height}
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-[4/3] w-full bg-secondary/30 object-cover grayscale transition-[filter] duration-500 ease-out group-hover:grayscale-0 group-focus-within:grayscale-0 motion-reduce:transition-none"
+                    />
+                  )}
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex flex-wrap gap-x-3 gap-y-2 text-xs">
+                      <span className="font-medium text-primary">{article.category}</span>
+                      <time dateTime={article.date} className="text-muted-foreground">
+                        {formatArticleDate(article.date)}
+                      </time>
+                    </div>
+                    <h3 className="mt-4 font-display text-2xl font-semibold leading-tight tracking-tight">
+                      <Link
+                        to="/noticias/$slug"
+                        params={{ slug: article.slug }}
+                        className="hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                      >
+                        {article.title}
+                      </Link>
+                    </h3>
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                      {article.excerpt}
+                    </p>
+                    <Link
+                      to="/noticias/$slug"
+                      params={{ slug: article.slug }}
+                      className="mt-auto pt-6 text-sm font-medium text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                    >
+                      {PAGE.news.read}
+                      <span className="sr-only">: {article.title}</span>
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">

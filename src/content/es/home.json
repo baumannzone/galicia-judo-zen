@@ -78,6 +78,12 @@
     ],
     "photoCountLabel": "Foto {current} de {total}"
   },
+  "news": {
+    "eyebrow": "Actualidad del club",
+    "title": "Últimas noticias",
+    "all": "Ver todas las noticias",
+    "read": "Leer artículo"
+  },
   "cta": {
     "title": "Forma parte de nuestro equipo.",
     "description": "Prueba una clase gratis. Judo, pilates, zumba, entrenamiento infantil. Actividades para todas las edades.",
