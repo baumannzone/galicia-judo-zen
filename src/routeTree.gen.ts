@@ -15,9 +15,10 @@ import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as HorariosRouteImport } from './routes/horarios'
 import { Route as JudoRouteImport } from './routes/judo'
 import { Route as LegalRouteImport } from './routes/legal'
-import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TemporadasRouteImport } from './routes/temporadas'
+import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -49,11 +50,6 @@ const LegalRoute = LegalRouteImport.update({
   path: '/legal',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NoticiasRoute = NoticiasRouteImport.update({
-  id: '/noticias',
-  path: '/noticias',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -64,6 +60,16 @@ const TemporadasRoute = TemporadasRouteImport.update({
   path: '/temporadas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
+  id: '/noticias/',
+  path: '/noticias/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/noticias/$slug',
+  path: '/noticias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -72,9 +78,10 @@ export interface FileRoutesByFullPath {
   '/horarios': typeof HorariosRoute
   '/judo': typeof JudoRoute
   '/legal': typeof LegalRoute
-  '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/temporadas': typeof TemporadasRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/noticias/': typeof NoticiasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -83,9 +90,10 @@ export interface FileRoutesByTo {
   '/horarios': typeof HorariosRoute
   '/judo': typeof JudoRoute
   '/legal': typeof LegalRoute
-  '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/temporadas': typeof TemporadasRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/noticias': typeof NoticiasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -95,9 +103,10 @@ export interface FileRoutesById {
   '/horarios': typeof HorariosRoute
   '/judo': typeof JudoRoute
   '/legal': typeof LegalRoute
-  '/noticias': typeof NoticiasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/temporadas': typeof TemporadasRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/noticias/': typeof NoticiasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -108,9 +117,10 @@ export interface FileRouteTypes {
     | '/horarios'
     | '/judo'
     | '/legal'
-    | '/noticias'
     | '/sitemap.xml'
     | '/temporadas'
+    | '/noticias/$slug'
+    | '/noticias/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -119,9 +129,10 @@ export interface FileRouteTypes {
     | '/horarios'
     | '/judo'
     | '/legal'
-    | '/noticias'
     | '/sitemap.xml'
     | '/temporadas'
+    | '/noticias/$slug'
+    | '/noticias'
   id:
     | '__root__'
     | '/'
@@ -130,9 +141,10 @@ export interface FileRouteTypes {
     | '/horarios'
     | '/judo'
     | '/legal'
-    | '/noticias'
     | '/sitemap.xml'
     | '/temporadas'
+    | '/noticias/$slug'
+    | '/noticias/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -142,9 +154,10 @@ export interface RootRouteChildren {
   HorariosRoute: typeof HorariosRoute
   JudoRoute: typeof JudoRoute
   LegalRoute: typeof LegalRoute
-  NoticiasRoute: typeof NoticiasRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TemporadasRoute: typeof TemporadasRoute
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
+  NoticiasIndexRoute: typeof NoticiasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -191,13 +204,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/noticias': {
-      id: '/noticias'
-      path: '/noticias'
-      fullPath: '/noticias'
-      preLoaderRoute: typeof NoticiasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -212,6 +218,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TemporadasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/noticias/': {
+      id: '/noticias/'
+      path: '/noticias'
+      fullPath: '/noticias/'
+      preLoaderRoute: typeof NoticiasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/noticias/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -222,9 +242,10 @@ const rootRouteChildren: RootRouteChildren = {
   HorariosRoute: HorariosRoute,
   JudoRoute: JudoRoute,
   LegalRoute: LegalRoute,
-  NoticiasRoute: NoticiasRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TemporadasRoute: TemporadasRoute,
+  NoticiasSlugRoute: NoticiasSlugRoute,
+  NoticiasIndexRoute: NoticiasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

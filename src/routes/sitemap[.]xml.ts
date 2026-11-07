@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { canonicalUrl } from "@/lib/site";
 
+import { articles } from "virtual:articles";
+
 interface SitemapEntry {
   path: string;
   changefreq?: "weekly" | "monthly";
@@ -13,6 +15,9 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const entries: SitemapEntry[] = [
+          ...articles
+            .filter((article) => !article.draft)
+            .map((article) => ({ path: `/noticias/${article.slug}` })),
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/judo", changefreq: "monthly", priority: "0.9" },
           { path: "/actividades", changefreq: "monthly", priority: "0.9" },

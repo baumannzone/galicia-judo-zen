@@ -1,8 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import React from "react";
+import { articles } from "virtual:articles";
+import { formatArticleDate } from "@/lib/articles";
 import PAGE from "@/content/es/noticias.json";
 
-export const Route = createFileRoute("/noticias")({
+export const Route = createFileRoute("/noticias/")({
   head: () => ({
     meta: [
       { title: PAGE.meta.title },
@@ -20,7 +22,7 @@ export const Route = createFileRoute("/noticias")({
   component: Noticias,
 });
 
-const NOTICIAS = PAGE.articles;
+const NOTICIAS = articles.filter((article) => !article.draft || import.meta.env.DEV);
 const CATEGORIES = [PAGE.filters.all, ...new Set(NOTICIAS.map((noticia) => noticia.category))];
 
 function Noticias() {
@@ -69,7 +71,7 @@ function Noticias() {
         <div className="space-y-8" aria-live="polite" aria-atomic="true">
           {filtered.map((noticia, i) => (
             <article
-              key={noticia.id}
+              key={noticia.slug}
               className="reveal border-b border-border pb-12 last:border-0"
               style={{ animationDelay: `${0.1 + i * 0.05}s` }}
             >
@@ -79,16 +81,30 @@ function Noticias() {
                     <span className="text-xs uppercase tracking-[0.15em] text-primary font-medium">
                       {noticia.category}
                     </span>
-                    <span className="text-xs text-muted-foreground">{noticia.date}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {formatArticleDate(noticia.date)}
+                    </span>
                   </div>
                   <h2 className="font-display text-2xl font-semibold tracking-tight mb-3">
-                    {noticia.title}
+                    <Link
+                      to="/noticias/$slug"
+                      params={{ slug: noticia.slug }}
+                      className="hover:text-primary focus-visible:outline-primary"
+                    >
+                      {noticia.title}
+                    </Link>
                   </h2>
                   <p className="text-base text-muted-foreground leading-relaxed">
                     {noticia.excerpt}
                   </p>
                   <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                    {noticia.content}
+                    <Link
+                      to="/noticias/$slug"
+                      params={{ slug: noticia.slug }}
+                      className="font-medium text-primary underline underline-offset-4"
+                    >
+                      Leer artículo<span className="sr-only">: {noticia.title}</span>
+                    </Link>
                   </p>
                 </div>
               </div>
