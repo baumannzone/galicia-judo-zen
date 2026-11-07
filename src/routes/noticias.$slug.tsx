@@ -19,7 +19,47 @@ export const Route = createFileRoute("/noticias/$slug")({
     if (!article) return {};
     const title = `${article.title} — Club Deportivo Baixo Miño`;
     const image = canonicalUrl(article.cover?.src ?? "/og-baixo-mino-v2.png");
+    const url = canonicalUrl(`/noticias/${article.slug}`);
+    const blogPosting = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": `${url}#article`,
+      url,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      headline: article.title,
+      description: article.excerpt,
+      inLanguage: "es",
+      articleSection: article.category,
+      publisher: {
+        "@type": "Organization",
+        name: "Club Deportivo Baixo Miño",
+        url: canonicalUrl("/"),
+      },
+      // Historical entries may only specify a month; do not invent a day or time.
+      ...(article.date.length === 10 ? { datePublished: article.date } : {}),
+      ...(article.updated?.length === 10 ? { dateModified: article.updated } : {}),
+      ...(article.author ? { author: { "@type": "Person", name: article.author } } : {}),
+      ...(article.cover
+        ? {
+            image: {
+              "@type": "ImageObject",
+              url: canonicalUrl(article.cover.src),
+              width: article.cover.width,
+              height: article.cover.height,
+              caption: article.cover.alt,
+            },
+          }
+        : {}),
+    };
     return {
+      scripts: article.draft
+        ? []
+        : [
+            {
+              type: "application/ld+json",
+              children: JSON.stringify(blogPosting).replace(/</g, "\\u003c"),
+            },
+          ],
       meta: [
         { title },
         { name: "description", content: article.excerpt },
