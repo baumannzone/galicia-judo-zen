@@ -17,7 +17,7 @@ en `public/noticias/<slug-del-artículo>/` a la máxima resolución que sirve In
 
 | Archivo                                                               | Qué se ve                                                                                                                                        |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `public/noticias/xavi-lomba-bronce-supercopa-vera/01.jpg` (1080×1350) | Xavi, de judogi blanco y cinturón marrón, posa en el pabellón con la medalla de bronce colgada y el diploma de competición «VERA 2026 — BRONCE». |
+| `public/noticias/2026-xavi-lomba-bronce-supercopa-vera/01.jpg` (1080×1350) | Xavi, de judogi blanco y cinturón marrón, posa en el pabellón con la medalla de bronce colgada y el diploma de competición «VERA 2026 — BRONCE». |
 
 **Pie de foto**
 
@@ -46,8 +46,8 @@ Un logro muy merecido que seguro será el primero de muchos.
 
 | Archivo                                                              | Qué se ve                                                                                                                                       |
 | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `public/noticias/doble-cita-supercopa-vera-gijon/01.jpg` (1018×1272) | Cartel «SUPERCOPA DE ESPAÑA CADETE — 7 noviembre 2026 / Vera (Almería)», PARTICIPANTE: Xavi Zekareyas Lomba Gesto. Fondo azul con salpicaduras. |
-| `public/noticias/doble-cita-supercopa-vera-gijon/02.jpg` (1024×1280) | Cartel «SUPERCOPA DE ESPAÑA JUNIOR 2026», PARTICIPANTE: Antía Januario Rodríguez. Palacio de Deportes de La Guía, 08/11/2026 - 09:00.           |
+| `public/noticias/2026-doble-cita-supercopa-vera-gijon/01.jpg` (1018×1272) | Cartel «SUPERCOPA DE ESPAÑA CADETE — 7 noviembre 2026 / Vera (Almería)», PARTICIPANTE: Xavi Zekareyas Lomba Gesto. Fondo azul con salpicaduras. |
+| `public/noticias/2026-doble-cita-supercopa-vera-gijon/02.jpg` (1024×1280) | Cartel «SUPERCOPA DE ESPAÑA JUNIOR 2026», PARTICIPANTE: Antía Januario Rodríguez. Palacio de Deportes de La Guía, 08/11/2026 - 09:00.           |
 
 **Pie de foto**
 
@@ -72,7 +72,7 @@ Dos grandes retos y una nueva oportunidad para demostrar todo el trabajo y esfue
 
 | Archivo                                                          | Qué se ve                                                                                                                                                                                         |
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `public/noticias/campeonato-gallego-absoluto/01.jpg` (1089×1071) | Cuatro judokas del club (tres de judogi azul, uno de blanco) posan abrazados junto a su entrenadora sobre el tatami azul y amarillo del pabellón, con las gradas al fondo. Formato casi cuadrado. |
+| `public/noticias/2026-campeonato-gallego-absoluto/01.jpg` (1089×1071) | Cuatro judokas del club (tres de judogi azul, uno de blanco) posan abrazados junto a su entrenadora sobre el tatami azul y amarillo del pabellón, con las gradas al fondo. Formato casi cuadrado. |
 
 **Pie de foto**
 
@@ -105,9 +105,9 @@ Desde el Judo Baixo Miño os deseamos muchísima suerte. ¡A disfrutar, competir
 
 | Archivo                                                          | Qué se ve                                                                                                                                            |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `public/noticias/carlota-calvo-bronce-aviles/01.jpg` (1080×1342) | Carlota, de judogi y cinturón verde, sonríe sosteniendo el diploma «INFANTIL SUB-15 FEMENINO — TERCER CLASIFICADO — 36 kg» del XXVI Villa de Avilés. |
-| `public/noticias/carlota-calvo-bronce-aviles/02.jpg` (855×1062)  | Grupo de judokas infantiles sobre el podio con sus diplomas y medallas, con la mascota roja del Judo Club Avilés en primer plano.                    |
-| `public/noticias/carlota-calvo-bronce-aviles/03.jpg` (1074×1335) | Carlota posando abrazada a la mascota roja del club anfitrión en los pasillos del pabellón.                                                          |
+| `public/noticias/2026-carlota-calvo-bronce-aviles/01.jpg` (1080×1342) | Carlota, de judogi y cinturón verde, sonríe sosteniendo el diploma «INFANTIL SUB-15 FEMENINO — TERCER CLASIFICADO — 36 kg» del XXVI Villa de Avilés. |
+| `public/noticias/2026-carlota-calvo-bronce-aviles/02.jpg` (855×1062)  | Grupo de judokas infantiles sobre el podio con sus diplomas y medallas, con la mascota roja del Judo Club Avilés en primer plano.                    |
+| `public/noticias/2026-carlota-calvo-bronce-aviles/03.jpg` (1074×1335) | Carlota posando abrazada a la mascota roja del club anfitrión en los pasillos del pabellón.                                                          |
 
 **Pie de foto**
 
@@ -129,8 +129,8 @@ Enhorabuena a seguir trabajando y sobre todo disfrutar del camino 🩵
 
 | Archivo                                                      | Qué se ve                                                                                                                                                                    |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `public/noticias/supercopa-aviles-cadete/01.jpg` (1080×1334) | Dos judokas del club, abrazadas sobre el tatami azul de Avilés, con sus diplomas; el visible es «CADETE SUB-18 FEMENINO — SEGUNDO CLASIFICADO — +70 kg» (la plata de Antía). |
-| `public/noticias/supercopa-aviles-cadete/02.jpg` (1165×1440) | Foto de equipo al completo (unos 20 judokas con chándal negro y celeste del club) delante de la furgoneta de Vepersa, en la calle.                                           |
+| `public/noticias/2026-supercopa-aviles-cadete/01.jpg` (1080×1334) | Dos judokas del club, abrazadas sobre el tatami azul de Avilés, con sus diplomas; el visible es «CADETE SUB-18 FEMENINO — SEGUNDO CLASIFICADO — +70 kg» (la plata de Antía). |
+| `public/noticias/2026-supercopa-aviles-cadete/02.jpg` (1165×1440) | Foto de equipo al completo (unos 20 judokas con chándal negro y celeste del club) delante de la furgoneta de Vepersa, en la calle.                                           |
 
 **Pie de foto**
 
@@ -162,7 +162,7 @@ Muchísima suerte, Carlota! Disfruta de la experiencia, aprende y vive cada mome
 
 | Archivo                                                   | Qué se ve                                                                                                                                                                             |
 | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `public/noticias/trofeo-cidade-de-vigo/01.jpg` (1016×704) | Foto de grupo de doce judokas del club en el vestíbulo del pabellón de Vigo, delante del roll-up «COPAS ESPAÑA — CATEGORÍAS MASCULINA Y FEMENINA» de la Federación. Formato apaisado. |
+| `public/noticias/2026-trofeo-cidade-de-vigo/01.jpg` (1016×704) | Foto de grupo de doce judokas del club en el vestíbulo del pabellón de Vigo, delante del roll-up «COPAS ESPAÑA — CATEGORÍAS MASCULINA Y FEMENINA» de la Federación. Formato apaisado. |
 
 **Pie de foto**
 
@@ -199,7 +199,7 @@ Lucas Álvarez Lomba (-73
 
 | Archivo                                                       | Qué se ve                                                                                                                                                                  |
 | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `public/noticias/supercopa-junior-ourense/01.jpg` (1080×1350) | Antía y Carlota en el pabellón de Ourense con sus trofeos y diplomas del XXII Trofeo Internacional Cidade de Ourense: «1ª CLASIFICADA — 78 kg» y «3ª CLASIFICADA — 57 kg». |
+| `public/noticias/2026-supercopa-junior-ourense/01.jpg` (1080×1350) | Antía y Carlota en el pabellón de Ourense con sus trofeos y diplomas del XXII Trofeo Internacional Cidade de Ourense: «1ª CLASIFICADA — 78 kg» y «3ª CLASIFICADA — 57 kg». |
 
 **Pie de foto**
 
