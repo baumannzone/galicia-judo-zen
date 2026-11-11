@@ -36,19 +36,31 @@ Campos opcionales: `author`, `updated` (mismo formato de fecha) y `cover`:
 
 ```yaml
 cover:
-  src: "/images/noticias/mi-articulo/portada.webp"
+  src: "/noticias/mi-articulo/01.webp"
   alt: "Descripción de la fotografía"
   width: 1080
   height: 1350
 ```
 
-Guarda esa imagen en `public/images/noticias/mi-articulo/portada.webp`. Optimiza las imágenes a WebP antes de publicarlas. La portada debe existir y tener texto alternativo y sus dimensiones reales en píxeles (`width` y `height`); la compilación exige estos campos para reservar espacio durante la carga.
+Guarda esa imagen en `public/noticias/mi-articulo/01.webp`. Optimiza las imágenes a WebP antes de publicarlas. La portada debe existir y tener texto alternativo y sus dimensiones reales en píxeles (`width` y `height`); la compilación exige estos campos para reservar espacio durante la carga.
+
+### Imagen para compartir (Open Graph)
+
+Tras añadir o cambiar una portada, genera su versión para redes:
+
+```bash
+./scripts/generate-og.sh
+```
+
+El script escribe `public/noticias/mi-articulo/og.jpg` (1200x630, JPEG, por debajo de 300 KB) y es lo que se publica en `og:image` y `twitter:image`. Son JPEG a propósito: WhatsApp y algunos scrapers no leen WebP ni AVIF. Como las redes recortan a 1.91:1 y nuestras portadas suelen ser verticales, la foto se encaja entera sobre un fondo difuminado de ella misma en lugar de recortarla.
+
+Necesita ImageMagick 7 (`brew install imagemagick`) y hay que commitear el `og.jpg` resultante. Si falta, el artículo cae en la imagen social genérica del club (`public/og-baixo-mino.jpg`) en vez de romper la compilación.
 
 En el cuerpo usa una imagen MDX con sus dimensiones reales y carga diferida:
 
 ```mdx
 <img
-  src="/images/noticias/mi-articulo/foto.webp"
+  src="/noticias/mi-articulo/02.webp"
   alt="Descripción de la fotografía"
   width={1080}
   height={1350}
