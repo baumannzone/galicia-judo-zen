@@ -13,7 +13,7 @@ import { useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import logoMark from "../assets/logo-mark.png";
-import { canonicalUrl, SITE_ORIGIN } from "@/lib/site";
+import { canonicalUrl, SITE_ORIGIN, SOCIAL_IMAGE } from "@/lib/site";
 import COPY from "@/content/es/common.json";
 import CONTACT from "@/content/es/contacto.json";
 
@@ -81,7 +81,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   loader: () => ({
     canonicalUrl: getCanonicalUrl(),
-    socialImage: new URL("/og-baixo-mino-v2.png", SITE_ORIGIN).href,
+    socialImage: new URL(SOCIAL_IMAGE.src, SITE_ORIGIN).href,
   }),
   head: ({ loaderData }) => ({
     meta: [
@@ -123,23 +123,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         property: "og:image",
         content: loaderData?.socialImage,
       },
-      { property: "og:image:width", content: "1730" },
-      { property: "og:image:height", content: "909" },
-      { property: "og:image:type", content: "image/png" },
-      {
-        property: "og:image:alt",
-        content:
-          "Club Deportivo Baixo Miño: deporte, valores y familia. Nuestro tatami en A Guarda.",
-      },
+      { property: "og:image:width", content: String(SOCIAL_IMAGE.width) },
+      { property: "og:image:height", content: String(SOCIAL_IMAGE.height) },
+      { property: "og:image:type", content: SOCIAL_IMAGE.type },
+      { property: "og:image:alt", content: SOCIAL_IMAGE.alt },
       {
         name: "twitter:image",
         content: loaderData?.socialImage,
       },
-      {
-        name: "twitter:image:alt",
-        content:
-          "Club Deportivo Baixo Miño: deporte, valores y familia. Nuestro tatami en A Guarda.",
-      },
+      { name: "twitter:image:alt", content: SOCIAL_IMAGE.alt },
     ],
     links: [
       { rel: "canonical", href: loaderData?.canonicalUrl },
