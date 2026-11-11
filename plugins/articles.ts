@@ -65,7 +65,16 @@ export function articlesPlugin(): Plugin {
           ) {
             throw new Error(`${name}: portada inexistente`);
           }
-          return { slug, ...parsed.data };
+          // Variante 1200x630 en JPEG para compartir, generada por scripts/generate-og.sh.
+          // Si falta, la página cae en la imagen social genérica del club.
+          const og = parsed.data.cover
+            ? `${path.posix.dirname(parsed.data.cover.src)}/og.jpg`
+            : undefined;
+          return {
+            slug,
+            ...parsed.data,
+            ...(og && fs.existsSync(path.resolve("public", og.slice(1))) ? { og } : {}),
+          };
         })
         .filter((article) => development || !article.draft)
         .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));

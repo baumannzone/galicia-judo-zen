@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { articles, articleLoaders } from "virtual:articles";
 import { formatArticleDate } from "@/lib/articles";
-import { canonicalUrl } from "@/lib/site";
+import { canonicalUrl, OG_IMAGE, SOCIAL_IMAGE } from "@/lib/site";
 
 const components = Object.fromEntries(
   Object.entries(articleLoaders).map(([slug, load]) => [slug, lazy(load)]),
@@ -18,7 +18,13 @@ export const Route = createFileRoute("/noticias/$slug")({
   head: ({ loaderData: article }) => {
     if (!article) return {};
     const title = `${article.title} — Club Deportivo Baixo Miño`;
-    const image = canonicalUrl(article.cover?.src ?? "/og-baixo-mino-v2.png");
+    // Las portadas suelen ser verticales y en WebP; para compartir usamos la
+    // variante 1200x630 en JPEG y, si el artículo no tiene, la genérica del club.
+    const social =
+      article.og && article.cover
+        ? { ...OG_IMAGE, src: article.og, alt: article.cover.alt }
+        : SOCIAL_IMAGE;
+    const image = canonicalUrl(social.src);
     const url = canonicalUrl(`/noticias/${article.slug}`);
     const blogPosting = {
       "@context": "https://schema.org",
@@ -67,14 +73,14 @@ export const Route = createFileRoute("/noticias/$slug")({
         { property: "og:description", content: article.excerpt },
         { property: "og:type", content: "article" },
         { property: "og:image", content: image },
-        { property: "og:image:alt", content: article.cover?.alt ?? article.title },
-        { property: "og:image:width", content: undefined },
-        { property: "og:image:height", content: undefined },
-        { property: "og:image:type", content: undefined },
+        { property: "og:image:alt", content: social.alt },
+        { property: "og:image:width", content: String(social.width) },
+        { property: "og:image:height", content: String(social.height) },
+        { property: "og:image:type", content: social.type },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: article.excerpt },
         { name: "twitter:image", content: image },
-        { name: "twitter:image:alt", content: article.cover?.alt ?? article.title },
+        { name: "twitter:image:alt", content: social.alt },
         ...(article.draft ? [{ name: "robots", content: "noindex, nofollow" }] : []),
       ],
     };

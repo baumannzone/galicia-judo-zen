@@ -10,6 +10,8 @@ declare module "virtual:articles" {
     author?: string;
     updated?: string;
     cover?: { src: string; alt: string; width: number; height: number };
+    /** Portada 1200x630 en JPEG para Open Graph, si se ha generado. */
+    og?: string;
   }
   export const articles: Article[];
   export const articleLoaders: Record<string, () => Promise<{ default: ComponentType }>>;
